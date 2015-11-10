@@ -1,0 +1,209 @@
+1. user 
+
+	This table will store the user information
+
+	-id
+	-username
+	-password
+	-first_name
+	-last_name
+	-city
+        -spouse
+	-country
+	-address
+	-zip
+	-email
+	-mobile
+	-phone
+	-notify_solicitor (Y/N)
+	-credit_limits
+	-is_active
+	-is_admin
+	-status
+	-mobile_verified
+	-phone_verified
+	-date_created
+	-date_modified
+	-deleted
+	-created_by
+	-modified_by
+
+
+2. user_donation
+
+	This table will hold all information of the user donations
+
+	-id
+	-user_id
+	-visit_id
+	-mobile
+	-solicitor_id
+	-amount
+	-mode (web,mobile)
+	-payment_status (pending,cancelled,transferred)
+	-reference_number (unique for each donation)
+ 	-status
+	-date_created
+	-date_modified
+	-deleted
+	-created_by
+	-modified_by
+
+
+
+3. user_credit
+
+	This table will only contain the information of credit of user account
+
+	-id
+	-user_id
+	-amount
+	-mode (cash/cheque)
+	-status
+	-date_created
+	-date_modified
+	-deleted
+	-created_by
+	-modified_by
+
+4. solicitor 
+
+	This table will hold the information about the solicitor
+
+	-id
+	-solicitor_code (short code that will be dispalyed)
+	-first_name
+	-last_name
+	-city
+	-state
+	-country
+	-address
+	-married
+	-children
+	-zip
+	-mobile
+	-email
+	-gender
+	-date_of_estd
+	-freezed (Y/N)
+	-status
+	-date_created
+	-date_modified
+	-deleted
+	-created_by
+	-modified_by
+
+5. visits
+	
+	This table will hold the information about the visits for which solicitor will receive the funding
+	
+	-id
+	-visit_code
+	-reason       (Brief purpose for collecting the fund)
+	-description  (Description of the purpose for collecting the fund)
+	-solicitor_id
+	-start_date   (Date from which the donation receiving will be started)
+	-end_date     (Date after which no donation will be received)
+	-status
+	-date_created
+	-date_modified
+	-deleted
+	-created_by
+	-modified_by
+
+
+
+6.   solicitor_credit
+
+	This table will hold all the information about the funds that solicitor receives from administrator
+
+	-id
+	-solicitor_id
+	-visit_id
+	-amount
+	-mode (cash/cheque)
+	-status
+	-date_created
+	-date_modified
+	-deleted
+	-created_by
+	-modified_by
+	
+
+
+
+7. log
+
+	This table will hold the information of the user login
+
+	-id
+	-user_id
+	-ip_address
+	-browser
+	-platform
+	-os
+	-user_agent
+	-status
+	-date_created
+	-date_modified
+	-deleted
+	-created_by
+	-modified_by
+
+8. Country
+
+	This table will hold the information of the country
+
+	-id
+	-name
+	-short_code
+	-status
+	-date_created
+	-date_modified
+	-deleted
+	-created_by
+	-modified_by
+
+
+
+
+ 
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
