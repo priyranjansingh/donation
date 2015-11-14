@@ -18,6 +18,10 @@ body {
 .layout-boxed body {
   height: 100%;
 }
+.errorMessage
+  {
+      color:red !important;
+  }
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -4726,4 +4730,7 @@ table.text-center th {
   .table-responsive > .table tr td {
     white-space: normal!important;
   }
+  
+  
+  
 }

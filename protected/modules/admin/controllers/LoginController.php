@@ -9,8 +9,22 @@ class LoginController extends Controller {
      * Displays the login page
      */
     public function actionLogin() {
-        $this->render('index');
+        if (Yii::app()->user->isGuest) {
+            $model = new UserLogin;
+            if (isset($_POST['UserLogin'])) {
+                $model->attributes = $_POST['UserLogin'];
+                if ($model->validate()) {
+                    $this->redirect(array("/admin/profile"));
+                }
+            }
+            $this->render('index', array('model' => $model));
+        } else {
+            $user_id = Yii::app()->user->id;
+            if ($user_id != '') {
+                $this->redirect(array("/admin/profile"));
+            } else
+                $this->redirect(Yii::app()->controller->module->returnUrl);
+        }
     }
-
 
 }
