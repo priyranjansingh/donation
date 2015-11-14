@@ -1,6 +1,6 @@
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b></a>
+        <b>Admin</b>
     </div><!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
@@ -19,7 +19,7 @@
         ));
         ?>
         <div class="form-group has-feedback">
-            <?php echo $form->textField($model, 'username', array('class' => 'form-control', 'placeholder' => 'Email')); ?>
+            <?php echo $form->textField($model, 'username', array('class' => 'form-control', 'placeholder' => 'Username')); ?>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             <?php echo $form->error($model, 'username'); ?>
         </div>
