@@ -166,6 +166,21 @@
 	-created_by
 	-modified_by
 
+9. Tax Reciept
+
+        This table will hold the information of the tax receipt of users
+
+        -id
+        -receipt
+        -path
+        -user
+        -status
+        -deleted
+        -date_created
+        -date_modified
+        -created_by
+        -modified_by
+
 
 
 
