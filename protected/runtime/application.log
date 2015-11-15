@@ -375,3 +375,55 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/donation/
 ---
+2015/11/14 19:05:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/profile".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/profile')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/index.php/admin/profile
+HTTP_REFERER=http://localhost/donation/
+---
+2015/11/14 19:06:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/profile".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/profile')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/index.php/admin/profile
+---
+2015/11/14 19:08:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('profile')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/login/pro...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/admin/login/profile
+---
+2015/11/14 19:09:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "profile".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('profile')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/index.php/profile
+---
+2015/11/14 19:09:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/profile".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/profile')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/index.php/admin/profile
+---
+2015/11/14 19:09:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/pages/tables/data.html".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/pages/tab...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/index.php/admin/pages/tables/data.html
+HTTP_REFERER=http://localhost/donation/index.php/admin/profile
+---

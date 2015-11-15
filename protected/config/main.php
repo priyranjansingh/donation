@@ -38,9 +38,16 @@ return array(
         'urlManager' => array(
             'urlFormat' => 'path',
             'rules' => array(
-                '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                '<module:(admin)>/<controller:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/<controller>/<action>/<id>',
+                 '<module:(admin)>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+                 '<module:(admin)>/<controller:\w+>' => '<module>/<controller>',
+                 '<module:(gii)>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+                 '<module:(gii)>/<controller:\w+>' => '<module>/<controller>',
+                 '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
+                 '<module:\w+>/<action:\w+>' => '<module>/default/<action>',
+                // '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                // '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                // '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ),
         ),
         // database settings are configured in database.php
