@@ -10,7 +10,7 @@ return array(
     // preloading 'log' component
     'preload' => array('log'),
     'defaultController' => 'admin/login',
-    'theme' => 'admin',
+    'theme' => 'user',
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
@@ -21,6 +21,7 @@ return array(
         'admin' => array(
             'defaultController' => 'login',
         ),
+        'user',
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => '123456',
