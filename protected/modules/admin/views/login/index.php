@@ -9,7 +9,6 @@
         $form = $this->beginWidget('CActiveForm', array(
             'id' => 'login-form',
             'enableClientValidation' => true,
-            //'enableAjaxValidation'=>true,
             'clientOptions' => array(
                 'validateOnSubmit' => true,
             ),
@@ -24,7 +23,7 @@
             <?php echo $form->error($model, 'username'); ?>
         </div>
         <div class="form-group has-feedback">
-            <?php echo $form->passwordField($model, 'password',array('class' => 'form-control' , 'placeholder'=> 'Password')); ?>
+            <?php echo $form->passwordField($model, 'password', array('class' => 'form-control', 'placeholder' => 'Password')); ?>
             <?php echo $form->error($model, 'password'); ?>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
