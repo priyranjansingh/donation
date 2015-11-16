@@ -1,1 +1,0 @@
-(function(){dust.register("widgets/alertMsg",body_0);function body_0(chk,ctx){return chk.write("<span class=\"icon icon-small icon-critical-small\" aria-hidden=\"true\"></span><span class=\"msg\">").reference(ctx.get(["message"], false),ctx,"h",["s"]).write("</span>");}return body_0;})();

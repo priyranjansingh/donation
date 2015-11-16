@@ -1,0 +1,329 @@
+/* can't use any mixins or variables in here */
+/* CSS fixes for IE8 */
+.button {
+  background-image: url("https://www.paypalobjects.com/webstatic/i/sparta/sprite/sprite_ieButtons.png");
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  border: 0 none;
+  height: auto;
+  outline: none;
+}
+.button:hover,
+.button:focus {
+  background-position: 0 -100px;
+}
+.button:active {
+  background-position: 0 -200px;
+}
+.button.light,
+.button.secondary {
+  background-position: 0 -301px;
+}
+.button.light:hover,
+.button.light:focus,
+.button.secondary:hover,
+.button.secondary:focus {
+  background-position: 0 -400px;
+}
+.button.light:active,
+.button.secondary:active {
+  background-position: 0 -500px;
+}
+.button.notify {
+  background-position: 0 -600px;
+}
+.button.notify:hover,
+.button.notify:focus {
+  background-position: 0 -700px;
+}
+.button.notify:active {
+  background-position: 0 -800px;
+}
+.button.disabled,
+.button.disabled:hover,
+.button.disabled:active,
+.button.disabled:focus {
+  background-position: 0 -900px;
+}
+form .textInput input {
+  padding-top: 0.5em;
+  background: url('https://www.paypalobjects.com/webstatic/i/ex_ce2/sprite/sprite_ieButtons.png') 0 -1701px repeat-x #fafafa;
+}
+form .textInput input.userText,
+form .textInput input.completed {
+  background-color: #fff;
+}
+form .textInput input:focus {
+  background-color: #fff;
+}
+form .textInput.tall input {
+  padding-top: 0.8em;
+}
+/* Default IE Corrections */
+.selectDropdown select {
+  width: 97%;
+  /* JS Disabled/Non-enhanced No-Error case */
+  height: auto;
+  /* JS Disabled/Non-enhanced No-Error case */
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.hasError .selectDropdown {
+  background: url('https://www.paypalobjects.com/webstatic/mktg/consumer/onboarding/ui-sprite.png') no-repeat scroll right -2191px;
+}
+.hasError .selectDropdown select {
+  width: 90%;
+  /* JS Disabled/Non-enhanced Error case */
+  height: auto;
+  /* JS Disabled/Non-enhanced Error case */
+}
+.hasError .selectDropdown .custom-select {
+  background: url('https://www.paypalobjects.com/webstatic/mktg/consumer/onboarding/ui-sprite.png') no-repeat scroll 91% -2191px;
+}
+.hasError.tall .selectDropdown {
+  background: url('https://www.paypalobjects.com/webstatic/mktg/consumer/onboarding/ui-sprite.png') no-repeat scroll right -2188px;
+}
+.hasError.tall .selectDropdown .custom-select {
+  background: url('https://www.paypalobjects.com/webstatic/mktg/consumer/onboarding/ui-sprite.png') no-repeat scroll 91% -2188px;
+}
+/* Dropdown Icon - JS enabled case */
+.js .enhanced .selectDropdown {
+  background: url('https://www.paypalobjects.com/webstatic/mktg/consumer/onboarding/ui-sprite.png') no-repeat scroll right -1687px;
+}
+.js .enhanced.hasError .selectDropdown select {
+  width: 100%;
+}
+.js .enhanced.tall .selectDropdown {
+  background: url('https://www.paypalobjects.com/webstatic/mktg/consumer/onboarding/ui-sprite.png') no-repeat scroll right -1683px;
+}
+/**
+ * @fileOverview Variables contains variables
+ * @name Variables
+ * @author hdoan, mdaveshah, ziliu
+ * @tested browsers FF 12, Chrome 18, Safari 5 on Mac
+ */
+/* Font sizes */
+/* Inputs */
+/** old styles **/
+/****************/
+/* Colors */
+/* button colors */
+/* New color variables from Adam Dustan's Patterns sheet: https://ebay.box.com/s/apis0xukrp25jzdvjyky */
+/* engagement module colors, named via http://chir.ag/projects/name-that-color */
+/* info / warning icon colors */
+/* generic colors for colors except text like box-border, shadow, background */
+/* card colors */
+/* textColor for all the colors of text */
+/* font weights */
+/* Z-index list */
+/* user for a bird's eye view of components based on z-axis */
+/* for example, if you want to put a button in header, just assign z-index of that button to @zindexHeader */
+/* these will overwrite the bootstrap pre defined variables */
+/* TODO: check the clean the non-needed modal styles in bootstrap */
+/* the same as bootstrap one, just overwrite */
+/* Setting for Sidepanel */
+/* This is not used by all side panels, only for the default one */
+/* what about larger phones like gs3? what about phablets like the note?
+/* responsive breakpoints */
+/* borders */
+/* Image Paths */
+/* Image URIs */
+/* Navigation */
+/* Activity */
+/* send money */
+/* data uri for notification */
+/* wallet */
+/* shop static landing page */
+/* feedback icon */
+/* Image Paths */
+/* HEADER */
+.header > .navbar-inner .brand .backBtn {
+  width: 60px;
+}
+.alerts {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAZCAYAAADaILXQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCODhCQThCMEM5QjIxMUUzQjQ1QkE3QkFFNzkxMjMzOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCODhCQThCMUM5QjIxMUUzQjQ1QkE3QkFFNzkxMjMzOSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkI4OEJBOEFFQzlCMjExRTNCNDVCQTdCQUU3OTEyMzM5IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkI4OEJBOEFGQzlCMjExRTNCNDVCQTdCQUU3OTEyMzM5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+vX6isgAAAzhJREFUeNqcVk1oE1EQfrvZ/DQ/JoYmaQ4tLQiFIFj8Q8WDIAUvhfbWg3opBqGIehM96MmTF08K3r2IePBYDxEKoiKIh1zSWAIlTalN0zRp0vz6fdts3N1umtQHQ97Ozvtm5pt5k5USiYTotdrttpAkSSiKImq12myhUPgAdRz6N06nU4RCIeFyuVQb2pqX4na7Dylp3Gq1RDabFcPDwyIQCIhkMvkYDvjudTQa/dVsNr82Gg1x1JIJZBZZlrt7Aq6trd2F7QW73a6egW6Bzml3JDjTMQsPEhhg3nw+/x7ySqPI4XCIra2tO5AUnFwhPTabzVIUK+/UIWWpWq2+rdfrM+RcXwdmAFpOgbaPeHcesgo71bkBxyodgu3u7t7c29szAJtt4CC4vr7+iNl4vV4xNDRkECWXy1kWFFHf6nDcs5PoAL+zyPQJbP/AmTGAsbExg4JcMcVUKuUXfRbpA3g4k8lM4dwnczsqKNahAwC/DMOLZg6tVqVSEZFI5OT4+Li6N1Fn5JT8lcvlSbYg9/0WqYP9zMbGxjtz3yt6XrVI9/f350jPIIuZAjzGy9apwT9wAJlbcBK6a/0uiD4g0HgODXA1GAwus15dcD1P9FwsFq+j6id6tWCvUVEqlebQfsuks4vHuaF1CaK2b29vLwwatb5OCOoGtk+BU6IzlQlGSOE1hvd5pHf2uOBcyDaGc/OgRr1QFJmckyd4ZtT3B6XDvJg5bvUiaHZxrw5ARMruEKSDhfmfqLVmAM4Ux8bo6KiYmJgQst/vZ0q+nZ2dxUHbr0/0zzExowxaxoMHXL+A59OD3MijFilFMUMrKyvP0um0W9nc3LyH9omz4lZ/VcdZ2jgGPXEwsaqEw+ElRB+DnEFaBXMbtw88VpEV+0s6wGizMC7pIFVDRGhnMO3/6fP5lhSPx/MDqdyGJ6HnnOc4K/ArQ89/rIaueArq1IKuxTP6jLnvtiJnMMXMN9uTVI2MjLTA5QM8/4b6C37TeH6IjKkX+uuu63k1MLkXd2wtAHOc8hPiMyIMI8NLAIzwme/wFaDNdOv2tFLy+jIqUKYexOfHd8g0ivUS82Ma+2+04/tOh1iC/xVgAGirzAXsDn91AAAAAElFTkSuQmCC);
+}
+.linkSettings {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCODhCQThBQ0M5QjIxMUUzQjQ1QkE3QkFFNzkxMjMzOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCODhCQThBREM5QjIxMUUzQjQ1QkE3QkFFNzkxMjMzOSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkFGRjg2QkZGQzlBRjExRTNCNDVCQTdCQUU3OTEyMzM5IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkFGRjg2QzAwQzlBRjExRTNCNDVCQTdCQUU3OTEyMzM5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+v6/HzwAABIpJREFUeNp0lktoXFUYx8+d3Mn7OUmaxMQkQ5OsQjc+aDciiEVpQCq04kLoStwYEYpSUUSKUAs+FhUpugndKGgWUhBUZiOUIYggJDbBBAMhkxAnr5m8Jo+Jv//xnuE4iRcu99xzv8f/+3+Pc4N0Om3CMDTr6+tmbW3N9Pf3m66uLrO/v29isZg5Pj4209PT4xsbG5fj8Xie9+qjo6P40NDQM52dnalCoWAqKiqs/OLiotnb2zPNzc0l3dB4V2VlpVlZWbFPKenCwODW1tbl6L0hCAJzeHhoVldXr9bU1KS0LhaLBqcWaPkVK9+QgVwuZzBqlTC8h+KB0PgyRLMnlJLb3Ny0TrRffoXa9G8Uzc7Ojo1gd3fXVFVVDYoSGSuhYk1kZyUnGdEjWiJAJVtWVptCx/MNlH4BySPV1dU23Hw+f31hYeG+vvvoBIKcjMzPzz+E8+fq6+utUyIfxen3yLdFNk2QSqW0aCPJE/CZBPEM3N5A8QrIXnaIT7vEP4YKiUTiG2y0Q9XzMtzU1PQ2Tm9b2iYnJ83s7Oy729vbN5VclzAZ9UP1c+Dy4K6Dg4NSZJID2EIymXyytbV1OSSsx0F7U9w5KvxqkEPZ5/tvOM0iE7B3DhCdrtJk2HeM3KPYvQ0Tr4WU5WdCADUnKIiM51paWkZ5jqlaamtrDYrd9MxdKLrknPgOtEeOXkF/Otbe3n4dasZAdFhOA3tFwrxC0sdcMcgAiovsj7A/rjyU6SiCdUC819jY+G3IIk1C0ij9QMl97Yyo9DDySU9Pz48yoiilrHVbW5upq6szDQ0Nb83NzT2NbsJ1LtdUb2/vRWxltBdTLetGKOsnLqrnn+hYhau6tzSKNslrtPCcg/9f/QjQW4HKjBpQYMLl5WW74G51TWI7kERjIJCgkAmNkikHcur2/qU9KPHP9xY3bhR1qCaREgrLUSRWUIg7OjrOMNCs8tLSkjWsKKDAqBklQ7MlvNzo+9/QbotBsjEhBUkAv+f9jtU+ob6O07ibSy4KvWtE8P0aKB9zjRgNwi7snBMA6wADb6LwJ8+P/jMFUSLRT0DhPTeS3b7ubDb7LKX6hd/lURTD2PqdHH3HqLkQgmiEJJ6VxxOTkCjo8JdAP8j6Y5xkQFhE8QXuUYyH5WPEdT96L1JlPwcTExNnZmZm0jhK/t/MiXJkHWqtu7zB/EslTg/cGBgYuBVDcYVm+9QZ8Z8+XTLoCsA3LtmoCktgYOMhA/BzojQxNQxH5B3K6oHKikjus36KKvjKNddpA84NOfb+4iy4CuIPZRxqhP4DmjGvJAdTU1PWCOU2zMZ5aLiH50I0WS+B7BbDcLicPo0WSvwuDt4BZE7VRRlf5DnU3d19Rzm154HGtZCo4XQqCYE6Vw4YcrJ1IZPJPPAjkDwUfImhV9UfES22fPv6+qwd9ZSdzD6XbqAJLRXgDhR7XPo50RoAh0o6juy7Stk93flw4q/CVQcnknHnA063JasA/FzwbUfyciKu3d/FiVI/7a/CP824/+D9fRwlWW9huIL3Wrge90e05fuUv4p/BBgAsUc7ExX6QK4AAAAASUVORK5CYII=);
+}
+.overlay-open .header > .navbar-inner .brand .backBtn {
+  width: 0;
+}
+.dismiss {
+  background: url("https://www.paypalobjects.com/webstatic/icon/lightbox_close.png") center no-repeat;
+}
+.clearInput {
+  background-image: url("data:image/png;base64,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");
+}
+/* ACTIVITY */
+.activity .row.active a,
+.activity .row.firstActive a {
+  background: #E5F1F8;
+}
+.accountSection .checked,
+.activity .backToTop {
+  background: none;
+}
+.accountSection .checked:before,
+.activity .backToTop:before,
+.accountSection .checked:after,
+.activity .backToTop:after {
+  border: none !important;
+}
+.accountSection .checked {
+  background: url("https://www.paypalobjects.com/webstatic/mktg/consumer/onboarding/mobile/ios/icon_overlay_checkmark.png") no-repeat 95% 30%;
+}
+.activity .backToTop {
+  margin-left: -5px;
+  display: inline-block;
+  background: url("https://www.paypalobjects.com/webstatic/icon/back-to-top_btn.png") no-repeat;
+}
+.datepicker .prev,
+.datepicker .next {
+  font-size: 14px;
+}
+.datepicker .prev:before,
+.datepicker .next:before,
+.datepicker .prev:after,
+.datepicker .next:after {
+  border: 0;
+}
+/* WALLET */
+.fadeOutDownShort {
+  display: none;
+}
+.openModal .wallet {
+  display: none;
+}
+.modal-dark .wallet.row-fluid .paypalSources {
+  display: block;
+}
+.modal-dark .wallet.row-fluid .thumbnail {
+  display: block;
+}
+.modal-dark .wallet .cards header {
+  display: block;
+}
+.modal-dark .wallet .addFI {
+  display: block;
+}
+.ppFundsDetails .menu .paypalLogo {
+  background: url("https://www.paypalobjects.com/webstatic/logo/logo_paypal_106x27.png") no-repeat center;
+}
+.wallet .card {
+  border: 1px solid;
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+}
+.wallet .card:hover,
+.wallet .card:focus {
+  border-color: #bfbfbf #bfbfbf #e6e6e6;
+}
+.cards .banking .bank {
+  background: url("https://www.paypalobjects.com/webstatic/icon/generic-bank.png") no-repeat;
+  background-position: 96% 93%;
+}
+.cards .cardImage1 .card {
+  background: url("https://www.paypalobjects.com/webstatic/scr/wallet/scr_generic_card_1.png") no-repeat center;
+}
+.cards .cardImage2 .card {
+  background: url("https://www.paypalobjects.com/webstatic/scr/wallet/scr_generic_card_2.png") no-repeat center;
+}
+.cards .cardImage3 .card {
+  background: url("https://www.paypalobjects.com/webstatic/scr/wallet/scr_generic_card_3.png") no-repeat center;
+}
+.cards .cardImage4 .card {
+  background: url("https://www.paypalobjects.com/webstatic/scr/wallet/scr_generic_card_4.png") no-repeat center;
+}
+.cards .creditOrDebit.visa:after {
+  background: url("https://www.paypalobjects.com/webstatic/logo/cards/visa.png") no-repeat right bottom;
+}
+.cards .creditOrDebit.mastercard:after {
+  background: url("https://www.paypalobjects.com/webstatic/logo/cards/mastercard.png") no-repeat;
+}
+.cards .creditOrDebit.amex:after {
+  width: 20%;
+  height: 35%;
+  background: url("https://www.paypalobjects.com/webstatic/logo/cards/amex.png") no-repeat;
+}
+.cards .creditOrDebit.discover:after {
+  background: url("https://www.paypalobjects.com/webstatic/logo/cards/discover.png") no-repeat;
+}
+.cards .menu .creditOrDebit:after {
+  width: 32%;
+  height: 30%;
+}
+.cards .menu .creditOrDebit.amex:after {
+  width: 25%;
+  height: 41%;
+}
+.selectAddType .thumbnails li:first-child + li + li + li {
+  margin: 0;
+}
+.selectAddType a:before {
+  background: url("https://www.paypalobjects.com/webstatic/sprite/sprite_wallet_icons.png") no-repeat center 0;
+}
+.addBankCard .btn-group > .btn.checked {
+  color: #fff;
+  background-color: #258cca;
+}
+.addCreditCard .ccNumber input,
+.addDebitCard .ccNumber input {
+  height: 3.3em;
+  background: url("https://www.paypalobjects.com/webstatic/sprite/sprite_logos_wallet_2x_v2.png");
+  background-repeat: no-repeat;
+  background-position: 92% -492px;
+}
+.addCreditCard .ccNumber input[data-ctype="visa"],
+.addDebitCard .ccNumber input[data-ctype="visa"] {
+  background-position: 92% -88px;
+}
+.addCreditCard .ccNumber input[data-ctype="master_card"],
+.addDebitCard .ccNumber input[data-ctype="master_card"] {
+  background-position: 92% -195px;
+}
+.addCreditCard .ccNumber input[data-ctype="amex"],
+.addDebitCard .ccNumber input[data-ctype="amex"] {
+  background-position: 92% -294px;
+}
+.addCreditCard .ccNumber input[data-ctype="discover"],
+.addDebitCard .ccNumber input[data-ctype="discover"] {
+  background-position: 92% -591px;
+}
+.addCreditCard .ccNumber.hasError input,
+.addDebitCard .ccNumber.hasError input {
+  background: url("https://www.paypalobjects.com/webstatic/mktg/consumer/onboarding/ui-sprite.png") #ffffff right -2188px no-repeat;
+}
+.toggleBtnGroup input[type="radio"]:focus + .btn {
+  border: 1px dotted #0666b3;
+}
+form.confirmDeposits .sampleStatement p:before {
+  background-color: transparent;
+}
+.onoffswitch input[type="checkbox"].on + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch input[type="checkbox"].on + .onoffswitch-label .onoffswitch-switch {
+  right: 0;
+}
+.onoffswitch input[type="checkbox"]:focus + .onoffswitch-label {
+  border: 1px dotted #0666b3;
+}
+.fiDetails .dismiss {
+  background: none;
+}
+/* Skype plugin messes up Phone Number formatting for IE, removing and hiding the elements it adds */
+span.skype_pnh_container {
+  display: none !important;
+}
+span.skype_pnh_print_container {
+  display: inline !important;
+}
+/* spinner fallback for IE */
+.hasSpinner:before,
+.spinner.loading:before {
+  height: 42px;
+  width: 42px;
+  margin: -21px auto auto -21px;
+  background-image: url("data:image/gif;base64,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");
+  border: none;
+}

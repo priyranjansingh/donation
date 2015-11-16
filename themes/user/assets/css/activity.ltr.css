@@ -1,0 +1,2062 @@
+/**
+ * @fileOverview Activity contains styles for activity section
+ * @name activity
+ * @author tbroussard, nnursalim, mdaveshah, dquock, swesthafer
+ */
+/**
+ * @fileOverview Variables contains variables
+ * @name Variables
+ * @author hdoan, mdaveshah, ziliu
+ * @tested browsers FF 12, Chrome 18, Safari 5 on Mac
+ */
+/* Font sizes */
+/* Inputs */
+/** old styles **/
+/****************/
+/* Colors */
+/* button colors */
+/* New color variables from Adam Dustan's Patterns sheet: https://ebay.box.com/s/apis0xukrp25jzdvjyky */
+/* engagement module colors, named via http://chir.ag/projects/name-that-color */
+/* info / warning icon colors */
+/* generic colors for colors except text like box-border, shadow, background */
+/* card colors */
+/* textColor for all the colors of text */
+/* font weights */
+/* Z-index list */
+/* user for a bird's eye view of components based on z-axis */
+/* for example, if you want to put a button in header, just assign z-index of that button to @zindexHeader */
+/* these will overwrite the bootstrap pre defined variables */
+/* TODO: check the clean the non-needed modal styles in bootstrap */
+/* the same as bootstrap one, just overwrite */
+/* Setting for Sidepanel */
+/* This is not used by all side panels, only for the default one */
+/* what about larger phones like gs3? what about phablets like the note?
+/* responsive breakpoints */
+/* borders */
+/* Image Paths */
+/* Image URIs */
+/* Navigation */
+/* Activity */
+/* send money */
+/* data uri for notification */
+/* wallet */
+/* shop static landing page */
+/* feedback icon */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+/**
+ * @fileOverview Mixins contains mixins
+ * @name Mixins
+ * @author hdoan, mdaveshah
+ * @tested browsers FF 12, Chrome 18, Safari 5 on Mac
+ * Please do not modify Mixins to add IE related styles.
+ */
+.ltrInput {
+  text-align: left;
+  /*! @noflip */
+  direction: ltr;
+}
+.ltrInputGroup {
+  /*! @noflip */
+  text-align: left;
+  /*! @noflip */
+  direction: ltr;
+}
+.enforceLtr {
+  /*! @noflip */
+  direction: ltr;
+  unicode-bidi: embed;
+}
+.overflow-auto {
+  overflow: auto;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/**
+ *  Multi-line truncation utilizing overflow:hidden and specified height of content
+ *  http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/
+ *
+ *  @height - height of content to cut off
+ *  @lineheight - spacing between lines
+ *  @ellipsiswidth - width of ellipsis area
+ */
+/**
+ *	Vertical separator with radial box shadow right
+ *	@width - width of vertical separator
+ *	@height1 - height of first darker box shadow
+ *	@height2 - height of second lighter box shadow (taller than first height)
+ *	@top1 - top position of first box shadow
+ *	@top2 - top position of second box shadow
+ *	@right - right position of separator
+ *	@z - z-index of separator
+ *	@borderRadius - how radial the box shadow is
+ */
+/**
+ *	Horizontal separator with radial box shadow down
+ *	@height - height of horizontal separator
+ *	@width1 - width of first darker box shadow
+ *	@width2 - width of second lighter box shadow (longer than first width)
+ *	@left1 - left position of first box shadow
+ *	@left2 - left position of second box shadow
+ *	@bottom - bottom position of separator
+ *	@z - z-index of separator
+ *	@borderRadius - how radial the box shadow is
+ */
+/* This mixin is to add a pointer to a dropdown */
+/* mixin for creating a triangle */
+/* Mixin for bubbles */
+/* mixin for creating carets bubbles with a border */
+/* mixins for creating caret for customSelectBtn */
+/*  START SPINNER  */
+/* DEFAULT USAGE: add .hasSpinner classes (in app.less) to the elements that we want to have an overlay and spinner graphic on top of */
+/* Applies to Modals and other DIV elements: Apply this mixin selectively to other CSS properties to avoid duplication of CSS code */
+/* Just use .spinner() to apply spinner, or along with .overlay() to add overlay behind spinner and block the user interaction on the DIV */
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-moz-keyframes rotation {
+  from {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-o-keyframes rotation {
+  from {
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes revrotation {
+  from {
+    -webkit-transform: rotate(0deg) scaleX(-1);
+    transform: rotate(0deg) scaleX(-1);
+  }
+  to {
+    -webkit-transform: rotate(359deg) scaleX(-1);
+    transform: rotate(359deg) scaleX(-1);
+  }
+}
+@-moz-keyframes revrotation {
+  from {
+    -moz-transform: rotate(0deg) scaleX(-1);
+    transform: rotate(0deg) scaleX(-1);
+  }
+  to {
+    -moz-transform: rotate(359deg) scaleX(-1);
+    transform: rotate(359deg) scaleX(-1);
+  }
+}
+@-o-keyframes revrotation {
+  from {
+    -o-transform: rotate(0deg) scaleX(-1);
+    transform: rotate(0deg) scaleX(-1);
+  }
+  to {
+    -o-transform: rotate(359deg) scaleX(-1);
+    transform: rotate(359deg) scaleX(-1);
+  }
+}
+@keyframes revrotation {
+  from {
+    transform: rotate(0deg) scaleX(-1);
+  }
+  to {
+    transform: rotate(359deg) scaleX(-1);
+  }
+}
+/*  END SPINNER  */
+/* mixin to create flat white button (iOS7 style) */
+.flatBtn {
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  background: #ffffff;
+  -moz-box-shadow: 0 1px 3px #cccccc;
+  -webkit-box-shadow: 0 1px 3px #cccccc;
+  box-shadow: 0 1px 3px #cccccc;
+  background-color: #faf9f9;
+  background-image: -moz-linear-gradient(top, #fffefe, #f3f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fffefe), to(#f3f2f2));
+  background-image: -webkit-linear-gradient(top, #fffefe, #f3f2f2);
+  background-image: -o-linear-gradient(top, #fffefe, #f3f2f2);
+  background-image: linear-gradient(to bottom, #fffefe, #f3f2f2);
+  background-image: -webkit-linear-gradient(top, #fffefe 0%, #f3f2f2 100%);
+  background-image: -o-linear-gradient(top, #fffefe 0%, #f3f2f2 100%);
+  background-image: linear-gradient(to bottom, #fffefe 0%, #f3f2f2 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffffefe', endColorstr='#fff3f2f2', GradientType=0);
+}
+/**
+ * The following are just the overrides for TWBS
+ */
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.dropup,
+.dropdown {
+  position: relative;
+}
+.dropdown-toggle:focus {
+  outline: 0;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+.dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #f5f5f5;
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #337ab7;
+}
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  color: #777777;
+}
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+.open > .dropdown-menu {
+  display: block;
+}
+.open > a {
+  outline: 0;
+}
+.dropdown-menu-right {
+  left: auto;
+  right: 0;
+}
+.dropdown-menu-left {
+  left: 0;
+  right: auto;
+}
+.dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #777777;
+  white-space: nowrap;
+}
+.dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 990;
+}
+.pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+.dropup .caret,
+.navbar-fixed-bottom .dropdown .caret {
+  border-top: 0;
+  border-bottom: 4px solid;
+  content: "";
+}
+.dropup .dropdown-menu,
+.navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 2px;
+}
+@media (min-width: 768px) {
+  .navbar-right .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+  .navbar-right .dropdown-menu-left {
+    left: 0;
+    right: auto;
+  }
+}
+/* Setting these elements to height of 100% ensures that
+ * .vx_foreground-container fully covers the whole viewport
+ */
+html,
+body {
+  height: 100%;
+}
+/* This wraps the foreground or main part of the app.
+ * It's purpose is to provide the "front" layer of the app and
+ * allow the "back" layer to exist behind it.
+ */
+.vx_foreground-container {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 800;
+  -webkit-transition: left 250ms, right 250ms;
+  -moz-transition: left 250ms, right 250ms;
+  -ms-transition: left 250ms, right 250ms;
+  -o-transition: left 250ms, right 250ms;
+  transition: left 250ms, right 250ms;
+}
+.vx_mainContent {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 64px 0 5em;
+  position: relative;
+}
+.screenreader-only {
+  position: absolute;
+  text-indent: -1000em;
+}
+@media (max-width: 768px) {
+  .vx_hidden-phone {
+    display: none !important;
+  }
+  .vx_foreground-container {
+    width: 100%;
+    min-height: 100%;
+  }
+  .vx_mainContent {
+    padding-top: 0;
+  }
+}
+/**
+ * DO NOT EDIT THIS FILE AS IT'S GENERATED CODE.
+ * UED: cgrigson, adustin, nvandewater
+ * UIE: jlowery
+ * Note: If modifications are needed, don't modify this file! Either override or make a PR to:
+ * https://github.paypal.com/jlowery/paypal-vxpattern-lib
+*/
+/* Icons */
+/* Z-index list */
+/* user for a bird's eye view of components based on z-axis */
+/* for example, if you want to put a button in header, just assign z-index of that button to @zindexHeader */
+/* these will overwrite the bootstrap pre defined variables */
+/* TODO: check the clean the non-needed modal styles in bootstrap */
+/* the same as bootstrap one, just overwrite */
+/* Setting for Sidepanel */
+/* This is not used by all side panels, only for the default one */
+/* what about larger phones like gs3? what about phablets like the note?
+/* responsive breakpoints */
+/* Navigation */
+/**
+ * @fileOverview Contains type treatment for PayPal's new VX Patterns
+ * @name type-vxPtrn
+ * @author jlowery
+ * @notes The below styles are mobile first
+ */
+.vx_h1,
+.vx_h2,
+.vx_h3,
+.vx_h4 {
+  -webkit-font-smoothing: antialiased;
+}
+.vx_h1 {
+  font-size: 36px;
+  line-height: 37px;
+  font-weight: 300;
+  text-transform: none;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.vx_h2 {
+  /* Yes, the below H3 vars are intended
+	 * this is the mobile sizing, so it's this first.
+	 * Desktop is below.
+	 */
+  font-size: 26px;
+  line-height: 29px;
+  font-weight: 300;
+  text-transform: none;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.vx_h3 {
+  font-size: 26px;
+  line-height: 29px;
+  font-weight: 300;
+  text-transform: none;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.vx_h4 {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 300;
+  text-transform: none;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.vx_h5 {
+  font-size: 15px;
+  line-height: 21px;
+  font-weight: 700;
+  text-transform: none;
+  font-family: 'HelveticaNeue-Bold', 'Helvetica Neue Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.vx_h6 {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 700;
+  text-transform: none;
+  font-family: 'HelveticaNeue-Bold', 'Helvetica Neue Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.vx_h7 {
+  font-size: 10px;
+  line-height: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'HelveticaNeue-Bold', 'Helvetica Neue Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+body {
+  font-size: 15px;
+  line-height: 21px;
+  font-family: 'HelveticaNeue', 'Helvetica Neue', helvetica, Arial, sans-serif;
+}
+.vx_small-text {
+  font-size: 13px;
+  line-height: 18px;
+}
+.vx_secondary-text {
+  color: #9da3a6;
+}
+.vx_text-block {
+  padding: 21px 21px 10.5px;
+}
+.vx_reverse-contrast {
+  background: #2c2e2f;
+  color: #ffffff;
+}
+.vx_reverse-contrast .vx_secondary-text {
+  color: #cbd2d6;
+}
+.vx_reverse-contrast .small-text {
+  font-weight: bold;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 10.5px 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+li {
+  line-height: 21px;
+}
+dl {
+  margin-bottom: 21px;
+}
+dt,
+dd {
+  line-height: 21px;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 10.5px;
+}
+.vx_unstyled-list {
+  list-style: none;
+  padding: 0;
+}
+/* Mobile First, aka Desktop Later */
+@media (min-width: 768px) {
+  .vx_h2 {
+    font-size: 32px;
+    line-height: 35px;
+    font-weight: 300;
+    text-transform: none;
+  }
+}
+a,
+a:visited {
+  color: #0079ad;
+  text-decoration: none;
+}
+a:active,
+a:focus,
+a:hover {
+  color: #00567a;
+  text-decoration: underline;
+}
+.filters-container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 1em 0 0.4em;
+  display: table;
+}
+@media (max-width: 640px) {
+  .filters-container {
+    padding: 0;
+  }
+}
+.filters-section {
+  display: table-cell;
+  vertical-align: middle;
+}
+.filters-section label {
+  margin-bottom: 0;
+}
+@media (max-width: 1170px) {
+  .filters-section {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+@media (max-width: 640px) {
+  .filters-section {
+    padding-top: 1em;
+    padding-bottom: 0.2em;
+  }
+}
+.filters-form input[readonly] {
+  background-color: #ffffff;
+}
+.filters-transactionType,
+.filters-elasticSearch,
+.filters-date {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 1em;
+  padding-top: 0em;
+  font-family: "HelveticaNeue", "Helvetica Neue", helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #2c2e2f;
+  line-height: 1.5em;
+  border-color: #9da3a6;
+  background: #ffffff;
+}
+.filters-transactionType,
+.filters-date,
+.filters-elasticSearch,
+.filters-searchBtn {
+  margin-bottom: 1em;
+}
+@media (max-width: 640px) {
+  .filters-transactionType,
+  .filters-date,
+  .filters-elasticSearch,
+  .filters-searchBtn {
+    display: block;
+    max-width: none;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+.filter-searchIcon {
+  background: url("https://www.paypalobjects.com/webstatic/i/icon/search.png") no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.filter-searchIcon-textbox {
+  display: table-cell;
+  background-color: #f1f1f1;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  height: 40px;
+  text-align: center;
+  width: 45px;
+  margin-top: 1px;
+}
+.filters-overlayTrigger {
+  height: 41px;
+  width: 41px;
+  display: inline-block;
+  position: absolute;
+  top: -50px;
+  right: 12%;
+  z-index: 1030;
+  border-radius: 5px;
+}
+.filters-overlayTrigger .icon {
+  width: 100%;
+  display: block;
+  color: #666666;
+  font-size: 2.0571428571428574em;
+  font-size: 2.25rem;
+  line-height: 1.0555555555555556em;
+  text-align: center;
+}
+.filters-overlayTrigger:hover,
+.filters-overlayTrigger:focus {
+  text-decoration: none;
+}
+.filters-date {
+  min-width: 200px;
+  max-width: 220px;
+}
+.filters-elasticSearch {
+  max-width: 300px;
+}
+/* Date Dropdown (Bootstrap 3) */
+.dateDropdown-toggle {
+  padding: 0 10px;
+  text-align: left;
+}
+.dateDropdown-toggle .caret {
+  float: right;
+  margin-top: 10px;
+}
+.dateDropdown-menu {
+  margin-top: -2px;
+  min-width: 200px;
+}
+@media (max-width: 640px) {
+  .dateDropdown-menu {
+    width: 100%;
+  }
+}
+.caret-design {
+  background: #009cde;
+  margin-left: 0.6cm;
+  font-weight: bold;
+}
+.dateDropdown-menu .active a,
+.dateDropdown-menu .active a:hover,
+.dateDropdown-menu .active a:focus {
+  background: #009cde;
+  font-weight: bold;
+}
+.dateDropdown-label {
+  padding-right: 6px;
+}
+/* Custom Dates Container */
+.customDate-container,
+.customDate-actions {
+  padding: 5px 15px 15px 15px;
+}
+.customDate-actions {
+  padding-top: 13px;
+  padding-bottom: 8px;
+}
+.customDate-saveBtn {
+  width: 100%;
+}
+.customDate-container input {
+  margin-bottom: 10px;
+  padding: 13px 8px 0;
+}
+.customDate-container label {
+  position: absolute;
+  top: 0px;
+  left: 8px;
+  -moz-transition: top 0.5s ease-in-out;
+  -ms-transition: top 0.5s ease-in-out;
+  -webkit-transition: top 0.5s ease-in-out;
+  -o-transition: top 0.5s ease-in-out;
+  transition: top 0.5s ease-in-out;
+  font-weight: normal;
+}
+.customDate-container label.active {
+  color: #009cde;
+}
+.customDate-container label.dateLabel-empty {
+  top: 11px;
+}
+.customDate-inputGroup {
+  position: relative;
+  -moz-transition: margin-bottom 0.5s ease-in-out;
+  -ms-transition: margin-bottom 0.5s ease-in-out;
+  -webkit-transition: margin-bottom 0.5s ease-in-out;
+  -o-transition: margin-bottom 0.5s ease-in-out;
+  transition: margin-bottom 0.5s ease-in-out;
+}
+.customDate-inputGroup.hasError {
+  margin-bottom: 2.6em;
+}
+.customDate-inputGroup.hasError:before {
+  right: 4px;
+  bottom: 16px;
+}
+/* Overpanel style (mobile device only) */
+.theoverpanel .filters-form {
+  min-height: 25em;
+}
+.theoverpanel .filters-transactionType,
+.theoverpanel .filters-elasticSearch,
+.theoverpanel .filters-date,
+.theoverpanel .filters-searchBtn {
+  display: block;
+  max-width: none;
+  width: 100%;
+  margin-bottom: 1em;
+}
+/* Display Mode styles */
+.displayMode-container {
+  display: table-cell;
+  vertical-align: top;
+}
+@media (max-width: 1170px) {
+  .displayMode-container {
+    padding-right: 1em;
+  }
+}
+.displayMode-list {
+  margin: 0 0 0 auto;
+  display: table;
+  border-collapse: collapse;
+  list-style: none;
+  text-align: right;
+}
+.displayMode-item {
+  min-width: 75px;
+  display: table-cell;
+  vertical-align: top;
+  border-bottom: 1px solid #c5c5c5;
+  text-align: center;
+}
+.displayMode-btn {
+  padding: 10px 0.5em 7px;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #6c7378;
+  font-weight: bold;
+}
+.active .displayMode-btn {
+  border-bottom: 2px solid #009cde;
+  padding-bottom: 5px;
+  color: #2c2e2f;
+}
+/* Display Mode modifiers */
+.icon_displayMode-item {
+  vertical-align: -0.1em;
+  margin-bottom: 0.75em;
+  display: block;
+}
+@media (max-width: 896px) {
+  .displayMode-list {
+    position: relative;
+  }
+  .displayMode-item {
+    display: table-row;
+  }
+  .displayMode-item:last-child {
+    border-bottom: none;
+  }
+  .icon_displayMode-item {
+    display: none;
+  }
+  .active .displayMode-btn {
+    border-bottom: none;
+    color: #009cde;
+  }
+}
+.messageView {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto -1em auto;
+  padding: 1.25em 0.75em 1px;
+  background-color: white;
+}
+.messageView.resultCount-zero {
+  padding-bottom: 1.5em;
+  margin-bottom: 0;
+}
+/**
+ * @fileOverview Styles for edit and cancel money request
+ * @name modify-request
+ * @author nnursalim
+ * @tested browsers Chrome 25+, FF 19+, Safari 6, IE8+
+ */
+/*
+ * this forces edit and cancel request modal to be in front of the grey backdrop
+*/
+body.modal-open .transaction {
+  position: absolute;
+  top: 0;
+}
+.editRequest,
+.cancelRequest {
+  font-size: 1.2em;
+}
+.editRequest h3,
+.cancelRequest h3 {
+  font-size: 1.4em;
+  text-align: center;
+}
+.editRequest .modal-body .field,
+.cancelRequest .modal-body .field {
+  margin: 1em auto;
+}
+.editRequest .modal-body .field span,
+.cancelRequest .modal-body .field span {
+  display: inline-block;
+}
+.editRequest .modal-body .field span:first-child,
+.cancelRequest .modal-body .field span:first-child {
+  width: 40%;
+  text-align: right;
+}
+.editRequest .modal-body .field span:last-child,
+.cancelRequest .modal-body .field span:last-child {
+  width: 50%;
+  padding-left: 20px;
+  text-align: left;
+}
+.editRequest .amount,
+.cancelRequest .amount,
+.editRequest .subject,
+.cancelRequest .subject,
+.editRequest .note,
+.cancelRequest .note {
+  padding-left: 20px;
+  display: inline-block;
+}
+.editRequest .amount input,
+.cancelRequest .amount input,
+.editRequest .subject input,
+.cancelRequest .subject input,
+.editRequest .note input,
+.cancelRequest .note input {
+  border-radius: 5px;
+}
+.editRequest .buttons,
+.cancelRequest .buttons {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+}
+.editRequest .sendEmail,
+.cancelRequest .sendEmail {
+  display: block;
+  text-align: center;
+}
+.editRequest .onOff label,
+.cancelRequest .onOff label {
+  display: inline-block;
+  font-size: 1em;
+}
+.editRequest .onoffswitch,
+.cancelRequest .onoffswitch {
+  display: inline-block;
+  margin: 10px;
+}
+/*** toggle switch ***/
+/* http://proto.io/freebies/onoff/ */
+.onOff {
+  width: 100%;
+  padding: 0.8em 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  background: #f5f5f5;
+  border-radius: 6px;
+}
+.onOff > label {
+  margin: 0;
+  display: inline-block;
+  line-height: 35px;
+}
+.onoffswitch {
+  width: 80px;
+  margin: auto;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* enables checkbox keyboard usage */
+.onoffswitch input[type="checkbox"] {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+}
+.onoffswitch input[type="checkbox"]:focus + .onoffswitch-label {
+  box-shadow: 0 0 3px 2px #0666b3;
+}
+.onoffswitch-label {
+  height: 34px;
+  margin: 0;
+  border: 2px solid;
+  border-color: #c5c5c5;
+  border-color: rgba(69, 69, 69, 0.14);
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+.onoffswitch-inner {
+  width: 200%;
+  margin-left: -100%;
+  display: inline-block;
+  -moz-transition: margin 0.3s ease-in 0s;
+  -ms-transition: margin 0.3s ease-in 0s;
+  -webkit-transition: margin 0.3s ease-in 0s;
+  -o-transition: margin 0.3s ease-in 0s;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner .on,
+.onoffswitch-inner .off {
+  width: 44%;
+  height: 32px;
+  display: inline-block;
+  line-height: 32px;
+  font-weight: 600;
+  text-shadow: none;
+}
+.onoffswitch-inner .on {
+  padding-left: 0.5em;
+  background: #468427;
+  background: rgba(70, 132, 39, 0.8);
+  color: #ffffff;
+}
+.onoffswitch-inner .off {
+  text-align: right;
+  background-color: #cfcfcf;
+  background-image: -moz-linear-gradient(top, #c3c3c3, #e1e1e1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c3c3c3), to(#e1e1e1));
+  background-image: -webkit-linear-gradient(top, #c3c3c3, #e1e1e1);
+  background-image: -o-linear-gradient(top, #c3c3c3, #e1e1e1);
+  background-image: linear-gradient(to bottom, #c3c3c3, #e1e1e1);
+  background-image: -webkit-linear-gradient(top, #c3c3c3 0%, #e1e1e1 100%);
+  background-image: -o-linear-gradient(top, #c3c3c3 0%, #e1e1e1 100%);
+  background-image: linear-gradient(to bottom, #c3c3c3 0%, #e1e1e1 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc3c3c3', endColorstr='#ffe1e1e1', GradientType=0);
+  color: #333333;
+  text-shadow: 0 1px 1px #ffffff;
+}
+.onoffswitch-switch {
+  width: 33px;
+  height: 31px;
+  margin: 1px 0 0;
+  border: 1px solid;
+  border-color: #c5c5c5;
+  border-color: rgba(69, 69, 69, 0.14);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 46px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  -moz-transition: all 0.3s ease-in 0s;
+  -ms-transition: all 0.3s ease-in 0s;
+  -webkit-transition: all 0.3s ease-in 0s;
+  -o-transition: all 0.3s ease-in 0s;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch input[type="checkbox"]:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch input[type="checkbox"]:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0;
+}
+/**
+ * @fileOverview Styles for the transaction detail inline
+ * @name Transaction
+ * @author tsullivan
+ */
+/**
+ * @fileOverview Shared styles for the transaction detail and summary installment detail
+ * @name sharedPanel
+ * @author tsullivan hkori
+ */
+.highlightTransactionRow,
+.highlightTransactionPanel,
+.highlightInstallmentRow,
+.highlightInstallmentPanel {
+  border-left: 4px solid #009cde;
+  margin-left: -4px;
+}
+.highlightTransactionPanel,
+.highlightInstallmentPanel {
+  background-color: #ffffff;
+  border-left-color: #b2d9ea;
+  border-top: 1px solid #e1e7eb;
+  border-right: 1px solid #e1e7eb;
+  border-bottom: 1px solid #e1e7eb;
+  /* animation helper for cool slide-down of the transaction details panel */
+}
+.highlightTransactionPanel.panel-transition,
+.highlightInstallmentPanel.panel-transition {
+  -moz-transition: height 0.5s ease;
+  -ms-transition: height 0.5s ease;
+  -webkit-transition: height 0.5s ease;
+  -o-transition: height 0.5s ease;
+  transition: height 0.5s ease;
+  overflow: hidden;
+}
+.inlineTransactionDetails .icon-close-small.colorDefault,
+.installmentPanel-container .icon-close-small.colorDefault {
+  color: #2c2e2f;
+}
+.inlineTransactionDetails .closeIcon-container,
+.installmentPanel-container .closeIcon-container {
+  float: right;
+  margin-right: 1.4em;
+  width: 1.5em;
+}
+.inlineTransactionDetails .closeIcon-container a:hover,
+.installmentPanel-container .closeIcon-container a:hover {
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .inlineTransactionDetails .closeIcon-container,
+  .installmentPanel-container .closeIcon-container {
+    margin-top: 0.5em;
+    margin-right: 0.5em;
+  }
+}
+@media (max-width: 768px) {
+  .inlineTransactionDetails,
+  .installmentPanel-container {
+    padding: 1em;
+  }
+}
+.fullpageTransactionDetails,
+.inlineTransactionDetails {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.fullpageTransactionDetails.fullpageError,
+.inlineTransactionDetails.fullpageError {
+  max-width: none;
+}
+.fullpageTransactionDetails dl,
+.inlineTransactionDetails dl {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.fullpageTransactionDetails dd,
+.inlineTransactionDetails dd {
+  margin-left: 0;
+}
+.fullpageTransactionDetails footer,
+.inlineTransactionDetails footer {
+  padding-top: 1.5em;
+  padding-bottom: 4.5em;
+  border-top: 1px solid #eeeeee;
+}
+.fullpageTransactionDetails footer dl,
+.inlineTransactionDetails footer dl {
+  margin-bottom: 0;
+}
+.fullpageTransactionDetails footer ul,
+.inlineTransactionDetails footer ul {
+  margin-top: 1.4em;
+  list-style: none;
+}
+@media (max-width: 768px) {
+  .fullpageTransactionDetails footer,
+  .inlineTransactionDetails footer {
+    padding-top: 1em;
+  }
+}
+.fullpageTransactionDetails p,
+.inlineTransactionDetails p,
+.fullpageTransactionDetails .tdStatusInfo,
+.inlineTransactionDetails .tdStatusInfo {
+  margin-bottom: 25px;
+}
+.fullpageTransactionDetails .numeral,
+.inlineTransactionDetails .numeral {
+  /*! @noflip */
+  direction: ltr;
+}
+.fullpageTransactionDetails .smallGray,
+.inlineTransactionDetails .smallGray {
+  color: #6c7378;
+}
+.fullpageTransactionDetails .icon-small,
+.inlineTransactionDetails .icon-small {
+  color: #cbd2d6;
+  background: #ffffff;
+}
+.fullpageTransactionDetails .vx_small-text .icon-small:before,
+.inlineTransactionDetails .vx_small-text .icon-small:before {
+  font-size: 1.4rem;
+}
+.fullpageTransactionDetails .marginTopContent,
+.inlineTransactionDetails .marginTopContent {
+  margin-top: 30px;
+}
+.fullpageTransactionDetails .italic,
+.inlineTransactionDetails .italic {
+  font-style: italic;
+}
+.fullpageTransactionDetails {
+  padding: 1em;
+  background-color: #ffffff;
+}
+.fullpageTransactionDetails .transactionDate {
+  margin-bottom: 0.25em;
+  font-weight: bold;
+}
+.fullpageTransactionDetails .breadcrumb,
+.fullpageTransactionDetails .transactionTopLevel {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.fullpageTransactionDetails .breadcrumb .icon {
+  color: #009cde;
+  vertical-align: sub;
+}
+.fullpageTransactionDetails .transactionTopLevel {
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #f7f9fa;
+}
+.fullpageTransactionDetails a.icon:hover {
+  text-decoration: none;
+}
+.fullpageTransactionDetails .transactionNetAmount {
+  float: right;
+  position: relative;
+  top: -1.25em;
+}
+@media (max-width: 768px) {
+  .fullpageTransactionDetails .breadcrumb {
+    border-bottom: 1px solid #eeeeee;
+  }
+}
+@media print {
+  .fullpageTransactionDetails .transactionTopLevel {
+    padding-top: 6mm;
+    padding-bottom: 7mm;
+    border-color: #6c7378;
+  }
+  .fullpageTransactionDetails footer {
+    padding-top: 6mm;
+    border-color: #6c7378;
+  }
+  .fullpageTransactionDetails .row .halfColForPrint {
+    float: left;
+    margin-left: 0;
+    width: 48.5%;
+  }
+  .fullpageTransactionDetails .row .thirdOfColForPrint {
+    float: left;
+    margin-left: 0;
+    width: 32.3%;
+  }
+  .fullpageTransactionDetails .row .fullColForPrint {
+    float: none;
+    margin-left: 0;
+    width: 97%;
+  }
+}
+.inlineTransactionDetails {
+  margin-top: 25px;
+}
+.inlineTransactionDetails .closeIcon-container {
+  margin-top: -2px;
+}
+.inlineTransactionDetails .closeIcon-container:active {
+  text-decoration: none;
+}
+.tdPurchaseDetails .item {
+  margin-bottom: 20px;
+}
+.tdPurchaseDetails .numeral {
+  /*! @noflip */
+  text-align: right;
+}
+.tdPurchaseDetails .primary {
+  margin-top: 5px;
+  font-weight: bold;
+}
+.tdPurchaseDetails .purchaseDetailFields {
+  padding-top: 1em;
+}
+.tdDetailFieldsMain {
+  margin-top: 3px;
+  padding-top: 0.6em;
+  border-top: 1px solid #e1e7eb;
+}
+.tdRefundDetails .numeral {
+  /*! @noflip */
+  text-align: right;
+}
+.tdRefundDetails .primary {
+  margin-top: 5px;
+  font-weight: bold;
+}
+.tdResCenterLinks li {
+  margin-bottom: 10px;
+  min-height: 1.4em;
+}
+.tdRefundLink .icon,
+.tdPrintLink .icon,
+.tdResCenterLinks .icon,
+.tdRefundLink .iconifiedText,
+.tdPrintLink .iconifiedText,
+.tdResCenterLinks .iconifiedText,
+.tdRefundLink a,
+.tdPrintLink a,
+.tdResCenterLinks a {
+  display: inline;
+}
+.tdRefundLink .icon,
+.tdPrintLink .icon,
+.tdResCenterLinks .icon {
+  line-height: 0.6em;
+}
+.tdRefundLink a,
+.tdPrintLink a,
+.tdResCenterLinks a,
+.tdRefundLink .iconifiedText,
+.tdPrintLink .iconifiedText,
+.tdResCenterLinks .iconifiedText {
+  margin-left: 10px;
+}
+.tdStatusInfo-icon,
+.tdStatusInfo-message {
+  display: table-cell;
+}
+.tdStatusInfo-icon {
+  width: 2.8em;
+}
+.tdInlineList {
+  margin: 0 0 15px 0;
+  padding: 0;
+}
+.tdInlineList li {
+  list-style: none;
+  padding-right: 0.5em;
+}
+.tdInlineList li:first-child {
+  padding-left: 0;
+}
+.tdInlineList li:after {
+  content: '';
+  display: inline-block;
+  padding-left: 0.5em;
+  vertical-align: middle;
+  height: 0.9em;
+}
+.tdInlineList li:last-child:after {
+  border: none;
+}
+.tdInlineList:after {
+  content: '';
+  display: block;
+  clear: left;
+}
+.tdNoteText {
+  word-wrap: break-word;
+}
+.tdPosReturnPolicy {
+  margin-top: 1.5em;
+  padding-top: 1.5em;
+  border-top: 1px solid #eeeeee;
+}
+/* Error messages, when transaction could not be loaded */
+.tdInlineError .icon-critical-small {
+  color: #c72b2d;
+}
+/* fullScreenDialog customizations, for error scenario */
+/* in the smartphone experience, this is a server-side rendered overpanel */
+.tdErrorDialog .icon {
+  margin-top: 8px;
+  font-size: 90px;
+}
+.tdErrorDialog.notoverpanel {
+  margin-top: 80px;
+  /* top padding for non-smartphone fullpage */
+}
+.tdErrorDialog h2 {
+  margin-top: 0.7em;
+  margin-bottom: 10px;
+}
+/**
+ * @fileOverview Styles for the activity section and activity module of summary page
+ * @name activityModule
+ * Corresponding Dust file is public/templates/widgets/activityModule.dust
+ * @author tsullivan
+ * @tested Chrome, Firefox, Safari, IE9, IOS6
+ */
+/* Alternating table row colors */
+.activityModule {
+  max-width: 1170px;
+  margin: 1em auto 2em;
+  padding: 1.25em 1em 1.5em;
+  background-color: #ffffff;
+}
+.activityModule .moduleHeader {
+  margin-top: 0;
+  border: 0;
+  padding-bottom: 0;
+}
+.activityModule .canceled,
+.activityModule .denied {
+  text-decoration: line-through;
+}
+.summarySection .activityModule {
+  margin-top: 2em;
+}
+.withStatements {
+  display: inline-block;
+}
+.downloads {
+  margin-left: 3em;
+  display: inline-block;
+  color: #0666b3;
+}
+.transactionList,
+.installmentList {
+  margin: auto;
+  max-width: 1170px;
+}
+.transactionRow:nth-child(odd),
+.installmentRow:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+.isCurrencyConversion {
+  width: 14px;
+  height: 11px;
+  background-repeat: no-repeat;
+  /* Hide the text. */
+  display: inline-block;
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.currencyCode {
+  display: block;
+  line-height: 0;
+  padding-top: 0.5em;
+}
+.transactionAmount {
+  /*! @noflip */
+  direction: ltr;
+}
+.transactionRow,
+.installmentRow {
+  position: relative;
+  background-color: #ffffff;
+}
+.transactionRow:nth-child(odd),
+.installmentRow:nth-child(odd),
+.transactionRow.year-title:nth-child(odd),
+.installmentRow.year-title:nth-child(odd) {
+  background-color: #f7f9fa;
+}
+.transactionRow:nth-child(odd) .transactionAmount,
+.installmentRow:nth-child(odd) .transactionAmount,
+.transactionRow.year-title:nth-child(odd) .transactionAmount,
+.installmentRow.year-title:nth-child(odd) .transactionAmount,
+.transactionRow:nth-child(odd) .installmentSummary .balance,
+.installmentRow:nth-child(odd) .installmentSummary .balance,
+.transactionRow.year-title:nth-child(odd) .installmentSummary .balance,
+.installmentRow.year-title:nth-child(odd) .installmentSummary .balance {
+  background-color: #f7f9fa;
+  /* This creates the subtle fade for text trunctation */
+}
+.transactionRow:nth-child(odd) .transactionAmount:before,
+.installmentRow:nth-child(odd) .transactionAmount:before,
+.transactionRow.year-title:nth-child(odd) .transactionAmount:before,
+.installmentRow.year-title:nth-child(odd) .transactionAmount:before,
+.transactionRow:nth-child(odd) .installmentSummary .balance:before,
+.installmentRow:nth-child(odd) .installmentSummary .balance:before,
+.transactionRow.year-title:nth-child(odd) .installmentSummary .balance:before,
+.installmentRow.year-title:nth-child(odd) .installmentSummary .balance:before {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(248, 248, 248, 0)), to(#f8f8f8));
+  background-image: -webkit-linear-gradient(left, rgba(248, 248, 248, 0), #f8f8f8);
+  background-image: -moz-linear-gradient(left, rgba(248, 248, 248, 0), #f8f8f8);
+  background-image: -ms-linear-gradient(left, rgba(248, 248, 248, 0), #f8f8f8);
+  background-image: -o-linear-gradient(left, rgba(248, 248, 248, 0), #f8f8f8);
+  background-image: linear-gradient(to right, rgba(248, 248, 248, 0), #f8f8f8);
+}
+.transactionRow.hasSpinner:before,
+.installmentRow.hasSpinner:before {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  top: 55%;
+}
+.transactionRow.hasSpinner:after,
+.installmentRow.hasSpinner:after {
+  position: absolute;
+}
+.transactionRow:nth-child(even) .transactionAmount,
+.installmentRow:nth-child(even) .transactionAmount,
+.transactionRow.year-title:nth-child(even) .transactionAmount,
+.installmentRow.year-title:nth-child(even) .transactionAmount,
+.transactionRow:nth-child(even) .installmentSummary .balance,
+.installmentRow:nth-child(even) .installmentSummary .balance,
+.transactionRow.year-title:nth-child(even) .installmentSummary .balance,
+.installmentRow.year-title:nth-child(even) .installmentSummary .balance {
+  background-color: #ffffff;
+  /* This creates the subtle fade for text trunctation */
+}
+.transactionRow:nth-child(even) .transactionAmount:before,
+.installmentRow:nth-child(even) .transactionAmount:before,
+.transactionRow.year-title:nth-child(even) .transactionAmount:before,
+.installmentRow.year-title:nth-child(even) .transactionAmount:before,
+.transactionRow:nth-child(even) .installmentSummary .balance:before,
+.installmentRow:nth-child(even) .installmentSummary .balance:before,
+.transactionRow.year-title:nth-child(even) .installmentSummary .balance:before,
+.installmentRow.year-title:nth-child(even) .installmentSummary .balance:before {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(#ffffff));
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff);
+  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff);
+  background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff);
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+}
+.year-title .span1 {
+  padding: 1em;
+  text-align: center;
+}
+.transactionRow,
+.installmentRow {
+  min-height: 4em;
+  display: block;
+}
+.transactionRow:last-child,
+.installmentRow:last-child {
+  border-bottom: none;
+}
+.transactionRow .transactionDescriptionContainer,
+.installmentRow .transactionDescriptionContainer {
+  text-decoration: none;
+  padding-bottom: 5px;
+  display: inline-block;
+  width: 100%;
+}
+.transactionRow .transactionDescriptionContainer:focus,
+.installmentRow .transactionDescriptionContainer:focus {
+  text-decoration: underline;
+}
+.transactionRow .transactionDescriptionContainer:active,
+.installmentRow .transactionDescriptionContainer:active {
+  text-decoration: none;
+}
+.transactionRow .transactionDescription,
+.installmentRow .transactionDescription,
+.transactionRow .installmentSummary .creditPlanDescription,
+.installmentRow .installmentSummary .creditPlanDescription {
+  padding-top: 0.9em;
+  line-height: 1.25em;
+}
+.transactionRow .transactionAmount,
+.installmentRow .transactionAmount,
+.transactionRow .installmentSummary .balance,
+.installmentRow .installmentSummary .balance {
+  line-height: 1rem;
+  margin-top: 0.5em;
+  padding-top: 0.4em;
+  height: 80%;
+}
+.transactionRow .transactionAmount.primaryCurrency,
+.installmentRow .transactionAmount.primaryCurrency,
+.transactionRow .installmentSummary .balance.primaryCurrency,
+.installmentRow .installmentSummary .balance.primaryCurrency {
+  margin-top: 0.45em;
+}
+.transactionRow .transactionAmount.currencyConversion,
+.installmentRow .transactionAmount.currencyConversion,
+.transactionRow .installmentSummary .balance.currencyConversion,
+.installmentRow .installmentSummary .balance.currencyConversion {
+  padding-top: 1em;
+}
+.transactionRow .transactionAmount.currencyConversion .currencyCode,
+.installmentRow .transactionAmount.currencyConversion .currencyCode,
+.transactionRow .installmentSummary .balance.currencyConversion .currencyCode,
+.installmentRow .installmentSummary .balance.currencyConversion .currencyCode {
+  padding-top: 0.75em;
+}
+.transactionRow .transactionAmount .currencyCode,
+.installmentRow .transactionAmount .currencyCode,
+.transactionRow .installmentSummary .balance .currencyCode,
+.installmentRow .installmentSummary .balance .currencyCode {
+  padding-top: 0.3em;
+  font-family: 'HelveticaNeue', 'Helvetica Neue', helvetica, Arial, sans-serif;
+}
+.transactionRow .actions,
+.installmentRow .actions {
+  float: right;
+}
+.transactionRow .transactionType,
+.installmentRow .transactionType,
+.transactionRow .installmentSummary .creditPlanType,
+.installmentRow .installmentSummary .creditPlanType {
+  display: block;
+  padding-top: 0.02em;
+  color: #2c2e2f;
+}
+.transactionRow .creditPlan-balance,
+.installmentRow .creditPlan-balance {
+  color: #6c7378;
+}
+.transactionRow .transactionType,
+.installmentRow .transactionType {
+  width: 96%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.transactionRow .transactionType-principal,
+.installmentRow .transactionType-principal {
+  display: block;
+  color: #6c7378;
+}
+.transactionRow.year-title,
+.installmentRow.year-title {
+  /* adjust the min-height to 2/3 the height of the transactionRow and vertically center the content */
+  min-height: 2.66em;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 2.66em;
+}
+.transactionRow.year-title .span1,
+.installmentRow.year-title .span1 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.transactionRowHover:hover,
+.installmentRow:not(.isInactive):hover {
+  background-color: #eeeeee;
+  border-left: 4px solid #009cde;
+  margin-left: -4px;
+}
+.transactionRowHover:hover .transactionDetailsContainer .transactionAmount,
+.installmentRow:not(.isInactive):hover .transactionDetailsContainer .transactionAmount,
+.transactionRowHover:hover .installmentSummary .balance,
+.installmentRow:not(.isInactive):hover .installmentSummary .balance {
+  background-color: #eeeeee;
+  /* This creates the subtle fade for text trunctation */
+}
+.transactionRowHover:hover .transactionDetailsContainer .transactionAmount:before,
+.installmentRow:not(.isInactive):hover .transactionDetailsContainer .transactionAmount:before,
+.transactionRowHover:hover .installmentSummary .balance:before,
+.installmentRow:not(.isInactive):hover .installmentSummary .balance:before {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(238, 238, 238, 0)), to(#eeeeee));
+  background-image: -webkit-linear-gradient(left, rgba(238, 238, 238, 0), #eeeeee);
+  background-image: -moz-linear-gradient(left, rgba(238, 238, 238, 0), #eeeeee);
+  background-image: -ms-linear-gradient(left, rgba(238, 238, 238, 0), #eeeeee);
+  background-image: -o-linear-gradient(left, rgba(238, 238, 238, 0), #eeeeee);
+  background-image: linear-gradient(to right, rgba(238, 238, 238, 0), #eeeeee);
+}
+.transactionItem {
+  padding: 0 0 0.55em;
+}
+.dateParts {
+  display: block;
+  padding-top: 0.9em;
+}
+.dateDay,
+.dateMonth {
+  display: block;
+  text-align: center;
+  line-height: 1.1em;
+  color: #2c2e2f;
+}
+.dateMonth {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.transactionDetailsContainer {
+  position: relative;
+}
+/* Inline actions */
+.transactionDetailsContainer .action,
+.detailedTable-transactionItem_actions .action,
+.transactionDetailsContainer .action-highlight,
+.detailedTable-transactionItem_actions .action-highlight {
+  margin-bottom: 0.175em;
+  margin-top: 0.175em;
+  margin-left: -0.25em;
+}
+.transactionDetailsContainer .action .icon,
+.detailedTable-transactionItem_actions .action .icon,
+.transactionDetailsContainer .action-highlight .icon,
+.detailedTable-transactionItem_actions .action-highlight .icon {
+  color: #9da3a6;
+}
+.transactionDetailsContainer .action a,
+.detailedTable-transactionItem_actions .action a,
+.transactionDetailsContainer .action-highlight a,
+.detailedTable-transactionItem_actions .action-highlight a {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0.82em 0 0.4em;
+  border-right: 1px solid #2c2e2f;
+  white-space: nowrap;
+}
+.transactionDetailsContainer .action a:first-of-type,
+.detailedTable-transactionItem_actions .action a:first-of-type,
+.transactionDetailsContainer .action-highlight a:first-of-type,
+.detailedTable-transactionItem_actions .action-highlight a:first-of-type {
+  padding-left: 0.2em;
+}
+.transactionDetailsContainer .action a:last-of-type,
+.detailedTable-transactionItem_actions .action a:last-of-type,
+.transactionDetailsContainer .action-highlight a:last-of-type,
+.detailedTable-transactionItem_actions .action-highlight a:last-of-type {
+  border-right: none;
+}
+.transactionDetailsContainer .action-highlight .icon,
+.detailedTable-transactionItem_actions .action-highlight .icon {
+  color: #f8981f;
+}
+.transactionDescription,
+.transactionAmount,
+.installmentSummary .creditPlanDescription,
+.installmentSummary .balance {
+  color: #2c2e2f;
+}
+.transactionDescription,
+.installmentSummary .creditPlanDescription {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.transactionAmount,
+.installmentSummary .balance {
+  position: absolute;
+  /* Create stacking context for amount */
+  right: 0.7em;
+  /* Align right */
+  top: 0;
+  padding-right: 1.2em;
+  text-align: right;
+  /* Create pseudoelement for the text trancation fading */
+}
+.transactionAmount:before,
+.installmentSummary .balance:before {
+  content: '';
+  width: 2em;
+  height: 98%;
+  /* < 100% prevents triggering scrollbar */
+  position: absolute;
+  left: -2em;
+  top: 0;
+  z-index: 0;
+}
+.transactionAmount .netAmount,
+.installmentSummary .balance .netAmount {
+  color: #2c2e2f;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.transactionAmount .balanceAmount,
+.installmentSummary .balance .balanceAmount {
+  display: block;
+  color: #2c2e2f;
+}
+/**
+ * @fileOverview Responsive styles for the activity section and activity module of summary page
+ * @name responsive-activityModule
+ * Corresponding Dust file is public/templates/widgets/activityModule.dust
+ * @author tsullivan
+ * @tested Chrome, Firefox, Safari, IE9, IOS6
+ */
+/* phone portrait */
+@media (max-width: 640px) {
+  .row-fluid .transactionAmount,
+  .row-fluid .installmentSummary .balance {
+    margin-left: 1em;
+    padding-left: 0.35em;
+    padding-right: 0;
+  }
+  .activityModule {
+    padding: 1.25em 0 0.5em;
+    border-bottom: none;
+    border-top: none;
+  }
+  .activityModule .moduleHeader {
+    padding: 0 1.5em 0.5em;
+  }
+  .activityModule .transactionItem,
+  .activityModule .installmentRow .creditPlan {
+    padding: 0 1.4em 0.55em 1.5em;
+  }
+  .activityModule .dateParts {
+    padding-top: 1.05em;
+  }
+  .activityModule .dateParts .dateDay {
+    min-width: inherit;
+  }
+  .activityModule.none {
+    padding: 1.25em 1.5em 0;
+  }
+  .activityModule.none .moduleHeader {
+    padding: 0 0 0.5em;
+  }
+  .transactionRow .dropdown-toggle,
+  .installmentRow .dropdown-toggle {
+    margin-right: 0.5em;
+  }
+  .transactionRow .transactionAmount.primaryCurrency,
+  .installmentRow .transactionAmount.primaryCurrency {
+    padding-top: 0.65em;
+    height: 85%;
+  }
+  .transactionRow .transactionAmount.currencyConversion,
+  .installmentRow .transactionAmount.currencyConversion {
+    padding-top: 1em;
+    height: 80%;
+  }
+  .transactionAmount,
+  .installmentSummary .balance {
+    padding-right: 5px;
+  }
+  .counterparty {
+    font-size: 0.8em;
+    font-size: 0.875rem;
+    line-height: 1.5em;
+  }
+  .dateParts,
+  .transactionAmount,
+  .installmentSummary .balance {
+    font-size: 0.6857142857142857em;
+    font-size: 0.75rem;
+    line-height: 1.75em;
+    line-height: 1.5em;
+    /* preserve baseline alignment with payment status */
+  }
+  .transactionDetailsContainer {
+    padding-left: 1.5em;
+  }
+  .transactionDetailsContainer .action,
+  .transactionDetailsContainer .action-highlight {
+    padding-left: 0;
+    background: none !important;
+  }
+  .transactionDetailsContainer .action a:first-of-type,
+  .transactionDetailsContainer .action-highlight a:first-of-type {
+    padding-left: 0;
+  }
+}
+/**
+ * @fileOverview Styles that utilize base64 images for non-retina screens
+ * @name nonretina-activityModule.less
+ * @author tsullivan
+ * @tested browsers Chrome, IOS6
+ */
+.activityModule .isCurrencyConversion {
+  height: 11px;
+  width: 13px;
+  padding-bottom: 1px;
+  background-clip: content-box;
+  background-image: url(https://www.paypalobjects.com/webstatic/i/sprite/sprite_summary.png);
+  background-position: -316px 0;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /**
+ * @fileOverview Styles that utilize base64 images for retina screens
+ * @name retina-activityModule.less
+ * @author tsullivan
+ * @tested browsers Chrome, IOS6
+ */
+  .activityModule .isCurrencyConversion {
+    background-image: url(https://www.paypalobjects.com/webstatic/i/sprite/sprite_summary_2x.png);
+    background-size: 329px 206px;
+  }
+}
+/**
+ * Detailed View styles
+ */
+.detailedModule .moduleHeader {
+  margin-bottom: 0.2em;
+}
+.detailedTable {
+  width: 100%;
+}
+.detailedTable caption {
+  padding: 1.25em 0 0 1.5em;
+  background: #ffffff;
+  line-height: 0;
+  text-align: left;
+}
+.detailedTable thead th {
+  padding: 1em 0.9em;
+  border-top: 1px solid #dddddd;
+  color: #2c2e2f;
+}
+.detailedTable tbody th {
+  font-weight: normal;
+}
+.detailedView.hasSpinner:before {
+  width: 24px;
+  height: 24px;
+  top: 55%;
+}
+.detailedView.hasSpinner:after {
+  position: absolute;
+}
+.detailedTable tbody:nth-child(odd) tr {
+  background-color: #ffffff;
+}
+.detailedTable tbody:nth-child(even) tr {
+  background-color: #f7f9fa;
+}
+.detailedTable-transactionItem_row.highlightTransactionRow .detailedTable-transactionColumn_date {
+  padding-left: 0.563em;
+}
+.detailedTable-transactionItem_actions.highlightTransactionRow td {
+  padding-left: 0.375em;
+}
+.detailedTable-transactionItem:hover .detailedTable-transactionItem_row,
+.detailedTable-transactionItem:hover .detailedTable-transactionItem_actions {
+  background-color: #eeeeee;
+  border-left: 4px solid #009cde;
+  cursor: pointer;
+}
+.detailedTable-transactionItem:hover .detailedTable-transactionColumn_date {
+  padding-left: 0.563em;
+}
+.detailedTable-transactionItem:hover .detailedTable-transactionItem_actions td {
+  padding-left: 0.375em;
+}
+.detailedTable-transactionColumn_date {
+  width: 6.5%;
+  white-space: nowrap;
+  text-align: left;
+}
+.detailedTable-transactionColumn_desc {
+  width: 25%;
+  text-align: left;
+}
+.detailedTable-transactionColumn_type {
+  text-align: left;
+}
+.detailedTable-transactionColumn_gross,
+.detailedTable-transactionColumn_fee,
+.detailedTable-transactionColumn_net {
+  width: 12%;
+  white-space: nowrap;
+  text-align: right;
+}
+.detailedTable-transactionColumn_desc a {
+  color: #2c2e2f;
+  text-decoration: none;
+}
+.detailedTable-transactionColumn_desc a:focus {
+  text-decoration: underline;
+}
+.detailedTable-transactionColumn_desc a:active {
+  text-decoration: none;
+}
+.detailedTable-transactionColumn_date,
+.detailedTable-transactionItem_row td {
+  vertical-align: top;
+  padding: 0.7em;
+}
+.detailedTable-transactionItem_row.hasActions th,
+.detailedTable-transactionItem_row.hasActions td {
+  padding-bottom: 0.2em;
+}
+.detailedTable-transactionItem_actions td {
+  padding: 0 0 0.5em 0.5em;
+}
+.detailedTable-transactionItem_actions a {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0.82em 0 0.4em;
+  border-right: 1px solid #2c2e2f;
+  white-space: nowrap;
+}
+.detailedTable-transactionItem_actions a:first-of-type {
+  padding-left: 0.2em;
+}
+.detailedTable-transactionItem_actions a:last-of-type {
+  border-right: none;
+}
+.detailedTable-transactionItem_actions .icon-small:before {
+  font-size: 1.58rem;
+}
+.detailedTable-transactionItem_details td {
+  padding: 0 0 0 2px;
+}
+.detailedTable-yearTitle th {
+  padding-left: 0.7em;
+  line-height: 2.66em;
+  min-height: 2.66em;
+  text-align: left;
+}
+.activityModule-error .icon-critical-small:before {
+  color: #c72b2d;
+}
+.banner-notification--container + .navbar {
+  margin-bottom: 0;
+  position: static;
+}
+.banner-notification--container ~ .contents > .summaryContainer {
+  padding-top: 0;
+}
+.banner-notification--content {
+  width: 100%;
+  margin: 0 0 9px 0;
+  overflow: hidden;
+  background-color: #ffd571;
+  color: #2c2e2f;
+}
+.banner-notification--table {
+  display: table;
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.72em 2.5em;
+}
+.banner-notification--table .icon {
+  display: table-cell;
+  width: 1.5em;
+  font-size: 1.5em;
+}
+.banner-notification--table > p {
+  display: table-cell;
+  line-height: 1.5em;
+}
+.loadMore-container {
+  margin-top: -10px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.loadMore-innerContainer {
+  position: relative;
+  top: 0.6em;
+}
+.spinner.loading {
+  padding-top: 5em;
+  margin-top: 8em;
+  position: relative;
+  text-align: center;
+  font-size: 1.5em;
+}
+.spinner.loading:before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  margin: -15px auto auto -15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 6;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #2180c0 rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2);
+  -webkit-animation: rotation 0.7s infinite linear;
+  -moz-animation: rotation 0.7s infinite linear;
+  -ms-animation: rotation 0.7s infinite linear;
+  animation: rotation 0.7s infinite linear;
+  border-radius: 100%;
+}
+.activityModule {
+  margin-top: 0;
+}
+.globalNav a,
+.globalNav a:visited {
+  color: #666666;
+}
+.globalNav a:hover,
+.globalNav a:focus,
+.globalNav a:active,
+.globalNav a.active {
+  color: #0092d1;
+}
+@media (max-width: 768px) {
+  .globalNav a,
+  .globalNav a:visited,
+  .globalNav a:hover,
+  .globalNav a:focus,
+  .globalNav a:active,
+  .globalNav a.active {
+    color: white;
+  }
+}
