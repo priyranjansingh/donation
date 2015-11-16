@@ -4734,3 +4734,7 @@ table.text-center th {
   
   
 }
+
+label.error, span.required{
+  color: red;
+}

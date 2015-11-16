@@ -1,11 +1,11 @@
 <section class="content-header">
   <h1>
     Manage
-    <small>Countries</small>
+    <small>Users</small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="<?php echo base_url().'/admin'; ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="<?php echo base_url().'/admin/country'; ?>"><i class="fa fa-dashboard"></i> Country</a></li>
+    <li><a href="<?php echo base_url().'/admin/users'; ?>"><i class="fa fa-dashboard"></i> Users</a></li>
     <li class="active">Manage</li>
   </ol>
 </section>
@@ -15,7 +15,7 @@
 		<div class="col-xs-12">
 			<div class="box">
 				<div class="box-header">
-					<h3 class="box-title">Country List</h3>
+					<h3 class="box-title">Users List</h3>
 				</div>
 				<div class="box-body">
 					<div class="dataTables_wrapper form-inline dt-bootstrap">
@@ -23,13 +23,17 @@
 						<div class="row">
 							<div class="col-sm-12 table-responsive">
 								<?php $this->widget('zii.widgets.grid.CGridView', array(
-										'id'=>'country-grid',
+										'id'=>'users-grid',
 										'itemsCssClass' => 'table table-bordered table-hover dataTable',
 										'dataProvider'=>$model->search(),
 										'filter'=>$model,
 										'columns'=>array(
-											'name',
-											'short_code',
+											'username',
+											'first_name',
+											'last_name',
+											'mobile',
+											'email',
+											'country',
 											array(
 												'class'=>'CButtonColumn',
 											),
@@ -46,26 +50,26 @@
 
 </section>
 <?php
-/* @var $this CountryController */
-/* @var $model Country */
-/*
+/* @var $this UsersController */
+/* @var $model Users */
+
 $this->breadcrumbs=array(
-	'Countries'=>array('index'),
+	'Users'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Country', 'url'=>array('index')),
-	array('label'=>'Create Country', 'url'=>array('create')),
+	array('label'=>'List Users', 'url'=>array('index')),
+	array('label'=>'Create Users', 'url'=>array('create')),
 );
-*/
+
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#country-grid').yiiGridView('update', {
+	$('#users-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -73,7 +77,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Countries</h1>
+<h1>Manage Users</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -86,5 +90,3 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
-
-

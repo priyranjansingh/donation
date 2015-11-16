@@ -3,80 +3,32 @@
 /* @var $model Country */
 /* @var $form CActiveForm */
 ?>
-
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'country-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'id'); ?>
-		<?php echo $form->textField($model,'id',array('size'=>36,'maxlength'=>36)); ?>
-		<?php echo $form->error($model,'id'); ?>
+<?php 
+	$form=$this->beginWidget('CActiveForm', array(
+		'id'=>'country-form',
+		// Please note: When you enable ajax validation, make sure the corresponding
+		// controller action is handling ajax validation correctly.
+		// There is a call to performAjaxValidation() commented in generated controller code.
+		// See class documentation of CActiveForm for details on this.
+		'enableAjaxValidation'=>false,
+		)); 
+?>
+<div class="box-body">
+	<div class="form-group">
+		<?php echo $form->errorSummary($model); ?>
+		<div class="col-xs-6">
+			<?php echo $form->labelEx($model,'name'); ?>
+			<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255,'class' => 'form-control')); ?>
+			<?php echo $form->error($model,'name'); ?>
+		</div>
+		<div class="col-xs-6">
+			<?php echo $form->labelEx($model,'short_code'); ?>
+			<?php echo $form->textField($model,'short_code',array('size'=>60,'maxlength'=>64,'class' => 'form-control')); ?>
+			<?php echo $form->error($model,'short_code'); ?>
+		</div>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'short_code'); ?>
-		<?php echo $form->textField($model,'short_code',array('size'=>60,'maxlength'=>64)); ?>
-		<?php echo $form->error($model,'short_code'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status'); ?>
-		<?php echo $form->error($model,'status'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'deleted'); ?>
-		<?php echo $form->textField($model,'deleted'); ?>
-		<?php echo $form->error($model,'deleted'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'created_by'); ?>
-		<?php echo $form->textField($model,'created_by',array('size'=>36,'maxlength'=>36)); ?>
-		<?php echo $form->error($model,'created_by'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'modified_by'); ?>
-		<?php echo $form->textField($model,'modified_by',array('size'=>36,'maxlength'=>36)); ?>
-		<?php echo $form->error($model,'modified_by'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'date_entered'); ?>
-		<?php echo $form->textField($model,'date_entered'); ?>
-		<?php echo $form->error($model,'date_entered'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'date_modified'); ?>
-		<?php echo $form->textField($model,'date_modified'); ?>
-		<?php echo $form->error($model,'date_modified'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
+</div>
+<div class="box-footer">
+	<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array("class" => 'btn btn-info pull-right')); ?>
+</div>
 <?php $this->endWidget(); ?>
-
-</div><!-- form -->

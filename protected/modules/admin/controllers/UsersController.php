@@ -1,6 +1,6 @@
 <?php
 
-class SolicitorController extends Controller
+class UsersController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,15 +62,14 @@ class SolicitorController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Solicitor;
+		$model=new Users;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Solicitor']))
+		if(isset($_POST['Users']))
 		{
-			// pre($_POST['Solicitor'],true);
-			$model->attributes=$_POST['Solicitor'];
+			$model->attributes=$_POST['Users'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -92,9 +91,9 @@ class SolicitorController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Solicitor']))
+		if(isset($_POST['Users']))
 		{
-			$model->attributes=$_POST['Solicitor'];
+			$model->attributes=$_POST['Users'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -123,10 +122,6 @@ class SolicitorController extends Controller
 	 */
 	public function actionIndex()
 	{
-		/*$dataProvider=new CActiveDataProvider('Solicitor');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));*/
 		$this->redirect(array('manage'));
 	}
 
@@ -135,10 +130,10 @@ class SolicitorController extends Controller
 	 */
 	public function actionManage()
 	{
-		$model=new Solicitor('search');
+		$model=new Users('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Solicitor']))
-			$model->attributes=$_GET['Solicitor'];
+		if(isset($_GET['Users']))
+			$model->attributes=$_GET['Users'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -149,12 +144,12 @@ class SolicitorController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Solicitor the loaded model
+	 * @return Users the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Solicitor::model()->findByPk($id);
+		$model=Users::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -162,11 +157,11 @@ class SolicitorController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Solicitor $model the model to be validated
+	 * @param Users $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='solicitor-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='users-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

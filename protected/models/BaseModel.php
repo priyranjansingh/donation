@@ -16,16 +16,16 @@ class BaseModel extends CActiveRecord {
 // set the create date, last updated date and the user doing the creating
             if (create_guid()) {
                 $this->id = create_guid();
-                $this->created_date = date("Y-m-d H:i:s");
+                $this->date_entered = date("Y-m-d H:i:s");
                 $this->created_by = Yii::app()->user->id;
+                $this->modified_by = Yii::app()->user->id;
                 $this->deleted = 0;
                 $this->status = 1;
-                $this->modified_date = date("Y-m-d H:i:s");
-                $this->modified_by = Yii::app()->user->id;
+                $this->date_modified = date("Y-m-d H:i:s");
             }
         } else {
 //not a new record, so just set the last updated time and last updated user id
-            $this->modified_date = date("Y-m-d H:i:s");
+            $this->date_modified = date("Y-m-d H:i:s");
             $this->modified_by = Yii::app()->user->id;
         }
         return parent::beforeValidate();

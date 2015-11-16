@@ -33,6 +33,7 @@
  */
 class Users extends BaseModel
 {
+	public $verifyPassword;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -49,15 +50,15 @@ class Users extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, username, password, first_name, last_name, address, city, state, country, zip, email, mobile, notify_solicitor, credit_limits, is_active, is_admin, created_by, modified_by, date_entered, date_modified', 'required'),
+			array('id, username, password,verifyPassword, first_name, last_name, address, city, state, country, zip, email, mobile, notify_solicitor, credit_limits, is_active, is_admin, created_by, modified_by, date_entered, date_modified', 'required'),
 			array('notify_solicitor, is_active, is_admin, mobile_verified, phone_verified, status, deleted', 'numerical', 'integerOnly'=>true),
 			array('id, created_by, modified_by', 'length', 'max'=>36),
-			array('username, password, address, city, state, country, email, email2', 'length', 'max'=>255),
+			array('username, password,verifyPassword, address, city, state, country, email, email2', 'length', 'max'=>255),
 			array('first_name, last_name', 'length', 'max'=>128),
 			array('zip, mobile, phone, credit_limits', 'length', 'max'=>16),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, first_name, last_name, address, city, state, country, zip, email, email2, mobile, phone, notify_solicitor, credit_limits, is_active, is_admin, mobile_verified, phone_verified, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on'=>'search'),
+			array('id, username, password, verifyPassword, first_name, last_name, address, city, state, country, zip, email, email2, mobile, phone, notify_solicitor, credit_limits, is_active, is_admin, mobile_verified, phone_verified, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -81,6 +82,7 @@ class Users extends BaseModel
 			'id' => 'ID',
 			'username' => 'Username',
 			'password' => 'Password',
+			'verifyPassword' => 'Re-Password',
 			'first_name' => 'First Name',
 			'last_name' => 'Last Name',
 			'address' => 'Address',
