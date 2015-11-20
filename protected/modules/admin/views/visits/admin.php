@@ -20,7 +20,7 @@
 				<?php 
 						Yii::app()->clientScript->registerScript('search', "
 						$('.search-form form').submit(function(){
-							$('#solicitor-credit-grid').yiiGridView('update', {
+							$('#visits-grid').yiiGridView('update', {
 								data: $(this).serialize()
 							});
 							return false;
@@ -44,11 +44,14 @@
 										'id'=>'visits-grid',
 										'itemsCssClass' => 'table table-bordered table-hover dataTable',
 										'dataProvider'=>$model->search(),
-										'filter'=>$model,
+										// 'filter'=>$model,
 										'columns'=>array(
 											'visit_code',
 											'reason',
-											'solicitor_id',
+											array(
+									            'name' => 'solicitor_id',
+									            'value' => array($this, 'gridSolicitor'),
+									        ),
 											'start_date',
 											array(
 												'class'=>'CButtonColumn',

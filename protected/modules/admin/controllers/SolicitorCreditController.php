@@ -130,10 +130,7 @@ class SolicitorCreditController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('SolicitorCredit');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->redirect(array('manage'));
 	}
 
 	/**

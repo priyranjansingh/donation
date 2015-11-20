@@ -133,12 +133,14 @@ class VisitsController extends Controller
 	public function actionManage()
 	{
 		$model=new Visits('search');
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Visits']))
 			$model->attributes=$_GET['Visits'];
 
 		$this->render('admin',array(
 			'model'=>$model,
+			'solicitors' => $solicitors
 		));
 	}
 
@@ -169,4 +171,11 @@ class VisitsController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function gridSolicitor($data, $row) {
+        $solicitor = $data->solicitor_id;
+        $code = Solicitor::model()->findByPk($solicitor);
+        return $code->first_name.' '.$code->last_name.'('.$code->solicitor_code.')';
+    }
+
 }
