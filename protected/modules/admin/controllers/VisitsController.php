@@ -32,11 +32,11 @@ class VisitsController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','manage'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('manage','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -63,7 +63,7 @@ class VisitsController extends Controller
 	public function actionCreate()
 	{
 		$model=new Visits;
-
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -76,6 +76,7 @@ class VisitsController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'solicitors' => $solicitors
 		));
 	}
 
@@ -87,7 +88,7 @@ class VisitsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -100,6 +101,7 @@ class VisitsController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'solicitors' => $solicitors
 		));
 	}
 
@@ -114,7 +116,7 @@ class VisitsController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('manage'));
 	}
 
 	/**
@@ -122,16 +124,13 @@ class VisitsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Visits');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->redirect(array('manage'));
 	}
 
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+	public function actionManage()
 	{
 		$model=new Visits('search');
 		$model->unsetAttributes();  // clear any default values

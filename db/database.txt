@@ -1,3 +1,5 @@
+Alteration: ALTER TABLE `solicitor` CHANGE `children` `children` INT(2) NOT NULL;
+
 1. user 
 
 	This table will store the user information

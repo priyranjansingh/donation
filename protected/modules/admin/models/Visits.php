@@ -118,6 +118,22 @@ class Visits extends BaseModel
 		));
 	}
 
+	public function solicitors($id)
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('visit_code',$this->visit_code,true);
+		$criteria->compare('reason',$this->reason,true);
+		$criteria->compare('solicitor_id',$this->solicitor_id,$id);
+		$criteria->compare('start_date',$this->start_date,true);
+		
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
@@ -128,4 +144,10 @@ class Visits extends BaseModel
 	{
 		return parent::model($className);
 	}
+
+	public function solicitorName($id){
+		$model = Solicitor::model()->findByPk($id);
+		return $model->first_name.' '.$model->last_name.'('.$model->solicitor_code.')';
+	}
+
 }

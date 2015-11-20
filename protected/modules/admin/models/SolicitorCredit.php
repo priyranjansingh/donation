@@ -14,7 +14,7 @@
  * @property string $created_by
  * @property string $modified_by
  * @property string $date_entered
- * @property string $date_modifed
+ * @property string $date_modified
  */
 class SolicitorCredit extends BaseModel
 {
@@ -34,14 +34,14 @@ class SolicitorCredit extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, solicitor_id, visit_id, amount, mode, created_by, modified_by, date_entered, date_modifed', 'required'),
+			array('id, solicitor_id, visit_id, amount, mode, created_by, modified_by, date_entered, date_modified', 'required'),
 			array('status, deleted', 'numerical', 'integerOnly'=>true),
 			array('id, solicitor_id, visit_id, created_by, modified_by', 'length', 'max'=>36),
 			array('amount', 'length', 'max'=>16),
 			array('mode', 'length', 'max'=>6),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, solicitor_id, visit_id, amount, mode, status, deleted, created_by, modified_by, date_entered, date_modifed', 'safe', 'on'=>'search'),
+			array('id, solicitor_id, visit_id, amount, mode, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,7 +72,7 @@ class SolicitorCredit extends BaseModel
 			'created_by' => 'Created By',
 			'modified_by' => 'Modified By',
 			'date_entered' => 'Date Entered',
-			'date_modifed' => 'Date Modifed',
+			'date_modified' => 'Date Modified',
 		);
 	}
 
@@ -104,8 +104,25 @@ class SolicitorCredit extends BaseModel
 		$criteria->compare('created_by',$this->created_by,true);
 		$criteria->compare('modified_by',$this->modified_by,true);
 		$criteria->compare('date_entered',$this->date_entered,true);
-		$criteria->compare('date_modifed',$this->date_modifed,true);
+		$criteria->compare('date_modified',$this->date_modified,true);
 
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	public function payment($id)
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('solicitor_id',$id);
+		$criteria->compare('visit_id',$this->visit_id,true);
+		$criteria->compare('amount',$this->amount,true);
+		$criteria->compare('mode',$this->mode,true);
+		$criteria->compare('date_entered',$this->date_entered,true);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -120,5 +137,9 @@ class SolicitorCredit extends BaseModel
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function visitName($visit_id){
+		return Visits::model()->findByPk($visit_id)->visit_code;
 	}
 }

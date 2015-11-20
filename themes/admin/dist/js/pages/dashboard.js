@@ -44,7 +44,12 @@ $(function () {
   }, function (start, end) {
     window.alert("You chose: " + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
   });
-
+  /* Datepicker */
+  $('.dateholder input').datepicker({
+      format: "yyyy-mm-dd"
+  });
+  /* Autocomplete */
+  $(".select2").select2();
   /* jQueryKnob */
   $(".knob").knob();
 
@@ -124,6 +129,7 @@ $(function () {
 
   /* Morris.js Charts */
   // Sales chart
+/*
   var area = new Morris.Area({
     element: 'revenue-chart',
     resize: true,

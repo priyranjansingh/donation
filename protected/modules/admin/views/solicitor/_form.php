@@ -53,7 +53,7 @@
 	<div class="form-group">
 		<div class="col-xs-6">
 			<?php echo $form->labelEx($model,'country'); ?>
-			<?php echo $form->dropDownList($model,'country',countryList(),array('prompt' => 'Select Country','class' => 'form-control')); ?>
+			<?php echo $form->textField($model,'country',array('size'=>60,'maxlength'=>255,'class' => 'form-control')); ?>
 			<?php echo $form->error($model,'country'); ?>
 		</div>
 		<div class="col-xs-6">
@@ -77,7 +77,7 @@
 	<div class="form-group">
 		<div class="col-xs-6">
 			<?php echo $form->labelEx($model,'children'); ?>
-			<?php echo $form->dropDownList($model,'children',getParam('boolean'),array('class' => 'form-control')); ?>
+			<?php echo $form->dropDownList($model,'children',getParam('children'),array('empty' => 'Select Children', 'class' => 'form-control')); ?>
 			<?php echo $form->error($model,'children'); ?>
 		</div>
 		<div class="col-xs-6">
@@ -95,11 +95,8 @@
 		<div class="col-xs-6">
 			<?php echo $form->labelEx($model,'date_of_estd'); ?>
 			<?php // echo $form->textField($model,'date_of_estd',array('class' => 'form-control')); ?>
-			<div class="input-group">
-				<div class="input-group-addon">
-				<i class="fa fa-calendar"></i>
-				</div>
-				<input type="text" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask="" name="Solicitor[date_of_estd]">
+			<div class="input-group dateholder">
+				<input type="text" class="form-control" value="<?php echo $model->date_of_estd; ?>" name="Solicitor[date_of_estd]">
             </div>
 			<?php echo $form->error($model,'date_of_estd'); ?>
 		</div>
