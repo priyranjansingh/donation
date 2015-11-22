@@ -31,7 +31,7 @@
  * @property string $date_entered
  * @property string $date_modified
  */
-class Registration extends BaseModel
+class Registration extends FrontBaseModel
 {
     
         public $confirm_password;
@@ -52,7 +52,8 @@ class Registration extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, username, password, first_name, last_name, address, city, state, country, zip, email, mobile, notify_solicitor, credit_limits, is_active, is_admin, created_by, modified_by, date_entered, date_modified', 'required'),
+			array('id, username, password,confirm_password, first_name, last_name,spouse_name, address, city, state, country, zip, email, mobile, created_by, date_entered, ', 'required'),
+                        array('confirm_password', 'compare', 'compareAttribute'=>'password'),
 			array('notify_solicitor, is_active, is_admin, mobile_verified, phone_verified, status, deleted', 'numerical', 'integerOnly'=>true),
 			array('id, created_by, modified_by', 'length', 'max'=>36),
 			array('username, password, address, city, state, country, email, email2', 'length', 'max'=>255),
@@ -60,7 +61,7 @@ class Registration extends BaseModel
 			array('zip, mobile, phone, credit_limits', 'length', 'max'=>16),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, first_name, last_name, address, city, state, country, zip, email, email2, mobile, phone, notify_solicitor, credit_limits, is_active, is_admin, mobile_verified, phone_verified, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on'=>'search'),
+			array('id, username, password, first_name, last_name,spouse_name, address, city, state, country, zip, email, email2, mobile, phone, notify_solicitor, credit_limits, is_active, is_admin, mobile_verified, phone_verified, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -84,8 +85,10 @@ class Registration extends BaseModel
 			'id' => 'ID',
 			'username' => 'Username',
 			'password' => 'Password',
+                         'confirm_password' => 'Confirm Password',
 			'first_name' => 'First Name',
 			'last_name' => 'Last Name',
+                        'spouse_name' => 'Spouse Name',
 			'address' => 'Address',
 			'city' => 'City',
 			'state' => 'State',
@@ -132,6 +135,7 @@ class Registration extends BaseModel
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('first_name',$this->first_name,true);
+                $criteria->compare('spouse_name',$this->spouse_name,true);
 		$criteria->compare('last_name',$this->last_name,true);
 		$criteria->compare('address',$this->address,true);
 		$criteria->compare('city',$this->city,true);

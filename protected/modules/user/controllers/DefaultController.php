@@ -42,34 +42,17 @@ class DefaultController extends Controller {
     }
 
     public function actionRegister() {
+        $this->layout =  '//layouts/register_main';
         if (!isFrontUserLoggedIn()) {
             $model = new Registration;
             if (isset($_POST['Registration'])) {
                 $model->attributes = $_POST['Registration'];
+                $model->country = "USA";
                 if ($model->validate()) {
-                    $model->password = UserModule::encrypting($model->password);
+                    $model->password = md5($model->password);
                     $model->confirm_password = $model->password;
-                    $model->activation_key = create_guid();
-
-                    $role = Roles::model()->findByAttributes(array('role' => 'property owner'));
-                    $model->role_id = $role->id;
-                    $model->status = 0;
                     $model->save();
-                    // mail sending
-                    $route = 'activate';
-                    $params = array('activation_key' => $model->activation_key);
-                    $url = $this->createUrl($route, $params);
-                    $url = $_SERVER['SERVER_NAME'] . $url;
-                    $to = $model->email;
-                    $subject = 'Account Activation Link';
-                    $message = ' <a href="' . $url . '">Click on the link</a>';
-                    mailsend($to, "arommatech@gmail.com", $subject, $message);
-                    // $this->afterRegister = true;
                     $this->redirect(base_url() . '/user/success');
-                    // end of mail sending
-                    //Yii::app()->session['user_id'] = $model->id;
-                    //Yii::app()->session['user_name'] = $model->username;
-                    //$this->redirect(array("myaccount"));
                 }
             }
             $this->render('register', array('model' => $model));
