@@ -51,8 +51,12 @@ class SolicitorController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$visits = new Visits('solicitors');
+		$payments = new SolicitorCredit('payment');
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			'visits' => $visits,
+			'payments' => $payments
 		));
 	}
 
@@ -172,4 +176,10 @@ class SolicitorController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function gridVisit($data, $row) {
+        $visit = $data->visit_id;
+        $code = Visits::model()->findByPk($visit)->visit_code;
+        return $code;
+    }
 }

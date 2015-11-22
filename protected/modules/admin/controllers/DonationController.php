@@ -32,11 +32,11 @@ class DonationController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','manage'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('manage','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -51,8 +51,11 @@ class DonationController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model = $this->loadModel($id);
+		$solicitor = Solicitor::model()->findByPk($model->solicitor_id);
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
+			'solicitor'=>$solicitor
 		));
 	}
 
@@ -62,20 +65,26 @@ class DonationController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new UserDonation;
-
+		$model=new Donation;
+		$users = CHtml::listData(BaseModel::getAll('Users'),'id','username');
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'),'id','solicitor_code');;
+		$visits = CHtml::listData(BaseModel::getAll('Visits'),'id','visit_code');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['UserDonation']))
+		if(isset($_POST['Donation']))
 		{
-			$model->attributes=$_POST['UserDonation'];
+			$model->attributes=$_POST['Donation'];
+			$model->reference_number = getToken(8);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+			'users'=>$users,
+			'solicitors'=>$solicitors,
+			'visits'=>$visits
 		));
 	}
 
@@ -87,19 +96,24 @@ class DonationController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$users = CHtml::listData(BaseModel::getAll('Users'),'id','username');
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'),'id','solicitor_code');;
+		$visits = CHtml::listData(BaseModel::getAll('Visits'),'id','visit_code');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['UserDonation']))
+		if(isset($_POST['Donation']))
 		{
-			$model->attributes=$_POST['UserDonation'];
+			$model->attributes=$_POST['Donation'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('update',array(
+		$this->render('create',array(
 			'model'=>$model,
+			'users'=>$users,
+			'solicitors'=>$solicitors,
+			'visits'=>$visits
 		));
 	}
 
@@ -114,7 +128,7 @@ class DonationController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('manage'));
 	}
 
 	/**
@@ -122,24 +136,27 @@ class DonationController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('UserDonation');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->redirect(array('manage'));
 	}
 
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+	public function actionManage()
 	{
-		$model=new UserDonation('search');
+		$model=new Donation('search');
+		$users = CHtml::listData(BaseModel::getAll('Users'),'id','username');
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'),'id','solicitor_code');;
+		$visits = CHtml::listData(BaseModel::getAll('Visits'),'id','visit_code');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['UserDonation']))
-			$model->attributes=$_GET['UserDonation'];
+		if(isset($_GET['Donation']))
+			$model->attributes=$_GET['Donation'];
 
 		$this->render('admin',array(
 			'model'=>$model,
+			'users'=>$users,
+			'solicitors'=>$solicitors,
+			'visits'=>$visits
 		));
 	}
 
@@ -147,12 +164,12 @@ class DonationController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return UserDonation the loaded model
+	 * @return Donation the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=UserDonation::model()->findByPk($id);
+		$model=Donation::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,7 +177,7 @@ class DonationController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param UserDonation $model the model to be validated
+	 * @param Donation $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
@@ -170,4 +187,32 @@ class DonationController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function actionLoadvisits(){
+		$solicitor = $_POST['solicitor'];
+		$visits = BaseModel::getAll("Visits",array("condition" => "solicitor_id = '$solicitor'"));
+		// pre($visits,true);
+		echo "<option value=''>Select Visit</option>";
+        foreach ($visits as $visit)
+            echo CHtml::tag('option', array('value' => $visit->id), CHtml::encode($visit->visit_code), true);
+		
+	}
+
+	public function gridVisit($data, $row) {
+        $visit = $data->visit_id;
+        $code = Visits::model()->findByPk($visit)->visit_code;
+        return $code;
+    }
+
+    public function gridSolicitor($data, $row) {
+        $solicitor = $data->solicitor_id;
+        $code = Solicitor::model()->findByPk($solicitor);
+        return $code->first_name.' '.$code->last_name.'('.$code->solicitor_code.')';
+    }
+
+    public function gridUser($data, $row) {
+        $solicitor = $data->user_id;
+        $code = Users::model()->findByPk($solicitor);
+        return $code->first_name.' '.$code->last_name.'('.$code->username.')';
+    }
 }

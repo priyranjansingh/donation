@@ -1,38 +1,42 @@
-<?php
-/* @var $this VisitsController */
-/* @var $model Visits */
-
-$this->breadcrumbs=array(
-	'Visits'=>array('index'),
-	$model->id,
-);
-
-$this->menu=array(
-	array('label'=>'List Visits', 'url'=>array('index')),
-	array('label'=>'Create Visits', 'url'=>array('create')),
-	array('label'=>'Update Visits', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Visits', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Visits', 'url'=>array('admin')),
-);
-?>
-
-<h1>View Visits #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'visit_code',
-		'reason',
-		'description',
-		'solicitor_id',
-		'start_date',
-		'end_date',
-		'status',
-		'deleted',
-		'created_by',
-		'modified_by',
-		'date_entered',
-		'date_modified',
-	),
-)); ?>
+<section class="content-header">
+  <h1>
+    Solicitor Visit
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="<?php echo base_url().'/admin'; ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="<?php echo base_url().'/admin/visits'; ?>"><i class="fa fa-dashboard"></i> Visits</a></li>
+    <li class="active">View</li>
+  </ol>
+</section>
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box box-info">
+				<div class="box-header with-border">
+					<h3 class="box-title"><?php echo $model->visit_code; ?> <small><a href="<?php echo base_url().'/admin/visits/update?id='.$model->id; ?>">EDIT</a></small></h3>
+				</div>
+				<div class="box-body">
+					<div class="col-xs-12 table-responsive">
+						<?php $this->widget('zii.widgets.CDetailView', array(
+								// 'itemsCssClass' => 'table table-bordered table-hover dataTable',
+								'htmlOptions' => array("class" => "table table-bordered table-hover dataTable"),
+								'data'=>$model,
+								'attributes'=>array(
+									'visit_code',
+									'reason',
+									'description',
+									array(
+							            'label'=>'Solicitor',
+							            'type'=>'raw',
+							            'value'=>$model->solicitorName($model->solicitor_id),
+							        ),
+									'start_date',
+									'end_date'
+								),
+							)); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -32,11 +32,11 @@ class SolicitorCreditController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','manage','loadvisits'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('manage','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -51,8 +51,11 @@ class SolicitorCreditController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model = $this->loadModel($id);
+		$solicitor = Solicitor::model()->findByPk($model->solicitor_id);
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
+			'solicitor'=>$solicitor
 		));
 	}
 
@@ -63,6 +66,7 @@ class SolicitorCreditController extends Controller
 	public function actionCreate()
 	{
 		$model=new SolicitorCredit;
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -76,6 +80,7 @@ class SolicitorCreditController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'solicitors'=>$solicitors
 		));
 	}
 
@@ -87,7 +92,8 @@ class SolicitorCreditController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$solicitor = Solicitor::model()->findByPk($model->solicitor_id);
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -100,6 +106,8 @@ class SolicitorCreditController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'solicitor'=>$solicitor,
+			'solicitors'=>$solicitors
 		));
 	}
 
@@ -114,7 +122,7 @@ class SolicitorCreditController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('manage'));
 	}
 
 	/**
@@ -122,25 +130,36 @@ class SolicitorCreditController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('SolicitorCredit');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->redirect(array('manage'));
 	}
 
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+	public function actionManage()
 	{
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
+
 		$model=new SolicitorCredit('search');
 		$model->unsetAttributes();  // clear any default values
+
 		if(isset($_GET['SolicitorCredit']))
 			$model->attributes=$_GET['SolicitorCredit'];
 
 		$this->render('admin',array(
 			'model'=>$model,
+			'solicitors'=>$solicitors
 		));
+	}
+
+	public function actionLoadvisits(){
+		$solicitor = $_POST['solicitor'];
+		$visits = BaseModel::getAll("Visits",array("condition" => "solicitor_id = '$solicitor'"));
+		// pre($visits,true);
+		echo "<option value=''>Select Visit</option>";
+        foreach ($visits as $visit)
+            echo CHtml::tag('option', array('value' => $visit->id), CHtml::encode($visit->visit_code), true);
+		
 	}
 
 	/**
@@ -170,4 +189,16 @@ class SolicitorCreditController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function gridVisit($data, $row) {
+        $visit = $data->visit_id;
+        $code = Visits::model()->findByPk($visit)->visit_code;
+        return $code;
+    }
+
+    public function gridSolicitor($data, $row) {
+        $solicitor = $data->solicitor_id;
+        $code = Solicitor::model()->findByPk($solicitor);
+        return $code->first_name.' '.$code->last_name.'('.$code->solicitor_code.')';
+    }
 }

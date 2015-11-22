@@ -4738,3 +4738,6 @@ table.text-center th {
 label.error, span.required{
   color: red;
 }
+.input-group.dateholder {
+    width: 100%;
+}

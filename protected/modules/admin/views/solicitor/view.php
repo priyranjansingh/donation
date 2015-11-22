@@ -39,6 +39,35 @@
 									'freezed'
 								),
 							)); ?>
+						<h3 class="box-title">Visit List</h3>
+						<?php $this->widget('zii.widgets.grid.CGridView', array(
+												'id'=>'visits-grid',
+												'itemsCssClass' => 'table table-bordered table-hover dataTable',
+												'dataProvider'=>$visits->solicitors($model->id),
+												// 'filter'=>$visits,
+												'columns'=>array(
+													'visit_code',
+													'reason',
+													'start_date',
+												),
+											)); ?>
+						<h3 class="box-title">Payment List</h3>
+						<?php $this->widget('zii.widgets.grid.CGridView', array(
+												'id'=>'solicitor-credit-grid',
+												'itemsCssClass' => 'table table-bordered table-hover dataTable',
+												'dataProvider'=>$payments->payment($model->id),
+												// 'filter'=>$visits,
+												'columns'=>array(
+													array(
+												            'name' => 'visit',
+												            'type' => 'raw',
+												            'value' => array($this, 'gridVisit'),
+												        ),
+													'amount',
+													'mode',
+													'date_entered'
+												),
+											)); ?>
 					</div>
 				</div>
 			</div>
