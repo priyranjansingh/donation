@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/donation/protected/models/FrontBaseModel.php</file>
             <file>file:/C:/xampp/htdocs/donation/protected/modules/user/models/Registration.php</file>
-            <file>file:/C:/xampp/htdocs/donation/themes/user/views/layouts/login_main.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/views/layouts/main.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/models/BaseModel.php</file>
             <file>file:/C:/xampp/htdocs/donation/protected/modules/user/controllers/DefaultController.php</file>
             <file>file:/C:/xampp/htdocs/donation/protected/modules/user/views/default/register.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/user/models/FrontUserLogin.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/components/helpers.php</file>
         </group>
     </open-files>
 </project-private>
