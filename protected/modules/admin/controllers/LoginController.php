@@ -14,14 +14,14 @@ class LoginController extends Controller {
             if (isset($_POST['UserLogin'])) {
                 $model->attributes = $_POST['UserLogin'];
                 if ($model->validate()) {
-                    $this->redirect(array("/admin/profile"));
+                    $this->redirect(array("/admin/dashboard"));
                 }
             }
             $this->render('index', array('model' => $model));
         } else {
             $user_id = Yii::app()->user->id;
             if ($user_id != '') {
-                $this->redirect(array("/admin/profile"));
+                $this->redirect(array("/admin/dashboard"));
             } else
                 $this->redirect(Yii::app()->controller->module->returnUrl);
         }

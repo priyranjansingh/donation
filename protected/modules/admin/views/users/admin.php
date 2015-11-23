@@ -43,7 +43,8 @@
 										'id'=>'users-grid',
 										'itemsCssClass' => 'table table-bordered table-hover dataTable',
 										'dataProvider'=>$model->search(),
-										'filter'=>$model,
+										'enablePagination'=>false,
+										// 'filter'=>$model,
 										'columns'=>array(
 											'username',
 											'first_name',

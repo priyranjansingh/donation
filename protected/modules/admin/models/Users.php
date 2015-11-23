@@ -156,6 +156,9 @@ class Users extends BaseModel
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+                'defaultOrder'=>'date_entered DESC',
+            ),
 		));
 	}
 
