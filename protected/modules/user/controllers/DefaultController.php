@@ -2,7 +2,7 @@
 
 class DefaultController extends Controller {
 
-    public $layout = '//layouts/login_main';
+    public $layout = '//layouts/main';
     public $defaultAction = "login";
 
     public function actionIndex() {
@@ -10,6 +10,7 @@ class DefaultController extends Controller {
     }
 
     public function actionLogin() {
+         $this->layout =  '//layouts/login_main';
         if (!isFrontUserLoggedIn()) {
             $model = new FrontUserLogin;
             $mail_sent_message = '';
@@ -20,7 +21,7 @@ class DefaultController extends Controller {
                 if ($model->validate()) {
 
                     $user_id = $_SESSION['user_id'];
-                    $this->redirect(array("myaccount"));
+                    $this->redirect(array("accountsummary"));
                 }
             }
             // display the login form
@@ -28,7 +29,7 @@ class DefaultController extends Controller {
         } else {
             $user_id = Yii::app()->session['user_id'];
             if ($user_id != '') {
-                $this->redirect(array("myaccount"));
+                $this->redirect(array("accountsummary"));
             } else
                 $this->redirect(Yii::app()->controller->module->returnUrl);
         }
@@ -60,5 +61,17 @@ class DefaultController extends Controller {
             $this->redirect(array("myaccount"));
         }
     }
+    
+    public function actionAccountSummary()
+    {
+        $this->render('account_summary');
+    } 
+    
+         
+    
+    
+    
+    
+    
 
 }

@@ -16658,3 +16658,8 @@ html.outlookWrap {
   border-radius: 0 5px 5px 0;
   background-position: -27px -3486px;
 }
+
+.errorMessage
+{
+    color:red;
+}

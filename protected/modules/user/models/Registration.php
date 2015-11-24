@@ -54,6 +54,8 @@ class Registration extends FrontBaseModel
 		return array(
 			array('id, username, password,confirm_password, first_name, last_name,spouse_name, address, city, state, country, zip, email, mobile, created_by, date_entered, ', 'required'),
                         array('confirm_password', 'compare', 'compareAttribute'=>'password'),
+                        array('username','unique','message'=>'This username already exists.'),
+                        array('email','email'),
 			array('notify_solicitor, is_active, is_admin, mobile_verified, phone_verified, status, deleted', 'numerical', 'integerOnly'=>true),
 			array('id, created_by, modified_by', 'length', 'max'=>36),
 			array('username, password, address, city, state, country, email, email2', 'length', 'max'=>255),

@@ -1,0 +1,2 @@
+Alteration: ALTER TABLE `solicitor` CHANGE `children` `children` INT(2) NOT NULL;
+
