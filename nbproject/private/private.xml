@@ -5,9 +5,10 @@
         <group>
             <file>file:/C:/xampp/htdocs/donation/protected/modules/user/controllers/DonateController.php</file>
             <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/models/Visits.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/models/Donation.php</file>
             <file>file:/C:/xampp/htdocs/donation/protected/modules/user/controllers/DefaultController.php</file>
             <file>file:/C:/xampp/htdocs/donation/protected/modules/user/views/donate/step2.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/user/models/Step1.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/components/helpers.php</file>
         </group>
     </open-files>
 </project-private>
