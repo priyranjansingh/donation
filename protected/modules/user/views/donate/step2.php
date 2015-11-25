@@ -33,28 +33,31 @@ $baseUrl = Yii::app()->theme->baseUrl;
 <div id="js_transactionCollection">
 
 <section class="activityModule js_completedModule nemo_completedModule" aria-labelledby="activityModuleHeaderCompleted">
-<h3 id="activityModuleHeaderCompleted" class="vx_h5 moduleHeader withStatements nemo_activityModuleHeaderCompleted">Previous Donations to ->Solicitor Name Here<- (layout below is exactly the same as on Activity Page)</h3>
+<h3 id="activityModuleHeaderCompleted" class="vx_h5 moduleHeader withStatements nemo_activityModuleHeaderCompleted">Previous Donations to <?php echo $visit_model->solicitor->first_name." ".$visit_model->solicitor->last_name;   ?></h3>
 
 
 <ul class="transactionList js_transactionList">
-	
+<?php   
+  foreach($prev_don_model as $donation)
+  {    
+?>
 
 <li class="transactionRow transactionRowHover js_transactionItem" data-href="">
 	<div class="transactionItem js_transactionItem nemo_transactionItem">
 		<div class="row">
 			<div class="col-xs-1">
 				<div id="txnDate" class="dateParts js_transactionDescriptionLink linkedBlock js_linkedBlock" data-href="">
-				<span class="dateMonth vx_h7">Sep</span> <span class="dateDay vx_h4">07</span> <span class="accessAid">2015</span></div>
+				<span class="dateMonth vx_h7"><?php echo date("M", strtotime($donation->date_entered)); ?> </span> <span class="dateDay vx_h4"><?php echo date("d", strtotime($donation->date_entered)); ?></span> <span class="accessAid">2015</span></div>
 			</div>
 					
 			<div class="col-xs-11 transactionDetailsContainer js_transactionDetailsContainer">
 				<a id="txnDescription" class="transactionDescriptionContainer js_transactionDescriptionContainer linkedBlock js_linkedBlock" href="?trans=transaction_hash" role="button" aria-expanded="false" aria-controls="" aria-describedby="">
-					<span class="transactionDescription">(Visit Code) Solicitor Name Here</span>
+					<span class="transactionDescription">(<?php echo $donation->visit->visit_code;  ?>) <?php  echo $donation->solicitor->first_name. " ".$donation->solicitor->last_name ;    ?></span>
 					<!--<span class="transactionType vx_small-text"> </span>-->
 				</a>
 						
 				<div id="txnAmountAndCurrency" class="transactionAmount js_transactionDescriptionLink linkedBlock js_linkedBlock primaryCurrency " data-href="">
-					<span aria-hidden="true" class="isNegative vx_h3">-</span><span class="accessAid">negative</span> <span class="netAmount vx_h4" dir="rtl">$18.00 </span>
+					<span aria-hidden="true" class="isNegative vx_h3">-</span><span class="accessAid">negative</span> <span class="netAmount vx_h4" dir="rtl">$<?php echo $donation->amount;    ?> </span>
 				</div>
 				
 				<div class="vx_small-text action">
@@ -70,38 +73,7 @@ $baseUrl = Yii::app()->theme->baseUrl;
 	</div>
 	<div id="transactionDetails" class="js_transactionDetails highlightTransactionPanel hide" role="region" aria-busy="false" aria-labelledby=""></div>
 </li>
-
-
-<li class="transactionRow transactionRowHover js_transactionItem" data-href="">
-	<div class="transactionItem js_transactionItem nemo_transactionItem">
-		<div class="row">
-			<div class="col-xs-1">
-				<div id="txnDate" class="dateParts js_transactionDescriptionLink linkedBlock js_linkedBlock" data-href="">
-				<span class="dateMonth vx_h7">Sep</span> <span class="dateDay vx_h4">18</span> <span class="accessAid">2015</span></div>
-			</div>
-					
-			<div class="col-xs-11 transactionDetailsContainer js_transactionDetailsContainer">
-				<a id="txnDescription" class="transactionDescriptionContainer js_transactionDescriptionContainer linkedBlock js_linkedBlock" href="?trans=transaction_hash" role="button" aria-expanded="false" aria-controls="" aria-describedby="">
-					<span class="transactionDescription">(Visit Code) Solicitor Name Here</span>
-					<!--<span class="transactionType vx_small-text"> </span>--></a>
-						
-				<div id="txnAmountAndCurrency" class="transactionAmount js_transactionDescriptionLink linkedBlock js_linkedBlock primaryCurrency " data-href="">
-					<span aria-hidden="true" class="isNegative vx_h3">-</span><span class="accessAid">negative</span> <span class="netAmount vx_h4" dir="rtl">$32.00 </span>
-				</div>
-				
-				<div class="vx_small-text action">
-					<span class="icon icon-small icon-action-arrow-half-small" aria-hidden="true"></span>
-					<span class="message">Donation</span>
-					
-					<!--<a href="" target="_blank" class="nemo_actions-track">Cancel</a>
-					<a href="addTracking" class="nemo_actions-addTracking">Add tracking info</a>-->
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<div id="transactionDetails" class="js_transactionDetails highlightTransactionPanel hide" role="region" aria-busy="false" aria-labelledby=""></div>
-</li>
+ <?php  }  ?>
 
 
 </ul>

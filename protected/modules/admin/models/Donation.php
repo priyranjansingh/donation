@@ -58,6 +58,8 @@ class Donation extends BaseModel
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'solicitor'=>array(self::BELONGS_TO, 'Solicitor', 'solicitor_id'),
+                    'visit'=>array(self::BELONGS_TO, 'Visits', 'visit_id'),
 		);
 	}
 
