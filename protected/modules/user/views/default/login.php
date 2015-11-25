@@ -45,7 +45,6 @@
                     <iframe id="pwdIframe" data-src="PasswordRecovery.html" scrolling="no" data-auto-reload="true" data-tabindex="0"></iframe>
                 </div>
             </div>
-            </form>
             <?php $this->endWidget(); ?>
             <a href="<?php echo base_url(); ?>/user/register" class="button secondary" id="createAccount">Sign Up</a>
         </section>

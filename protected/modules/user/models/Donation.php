@@ -20,7 +20,7 @@
  * @property string $date_entered
  * @property string $date_modified
  */
-class Donation extends BaseModel
+class Donation extends FrontBaseModel
 {
 	/**
 	 * @return string the associated database table name

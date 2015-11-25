@@ -1,5 +1,6 @@
 <?php
-Yii::import("application.modules.admin.models.*", true);
+Yii::import("application.modules.admin.models.visits", true);
+Yii::import("application.modules.admin.models.solicitor", true);
 class DonateController extends Controller {
 
     public $layout = '//layouts/main';
@@ -13,7 +14,8 @@ class DonateController extends Controller {
                 // validate user input and redirect to previous page if valid
                 if ($model->validate()) {
                     $visit_code = $model->visit_code;
-                    $this->redirect(array("step2",'visit_code'=> $visit_code));
+                     Yii::app()->session['visit_code'] = $visit_code;
+                    $this->redirect(array("step2"));
                 }
             }
             
@@ -23,9 +25,10 @@ class DonateController extends Controller {
         }
     }
     
-    public function actionStep2($visit_code)
+    public function actionStep2()
     {
         if (isFrontUserLoggedIn()) {
+            $visit_code = Yii::app()->session['visit_code'];
             $visit_model = Visits::model()->find(array('condition' => 'visit_code = "' . $visit_code . '" '));
             // finding out all the previous donations
             $user_id = Yii::app()->session['user_id'];
@@ -40,7 +43,31 @@ class DonateController extends Controller {
     public function actionStep3()
     {
         if (isFrontUserLoggedIn()) {
-            $this->render('step3');
+            $visit_code = Yii::app()->session['visit_code'];
+            $visit_model = Visits::model()->find(array('condition' => 'visit_code = "' . $visit_code . '" '));
+             if($_POST)
+             {
+                 
+                 $donation_model = new Donation; 
+                
+                 $donation_model->user_id =  Yii::app()->session['user_id'];
+                 $donation_model->visit_id =  $visit_model->id;
+                 $donation_model->mobile = '123456789';
+                 $donation_model->solicitor_id = $visit_model->solicitor->id;
+                 $donation_model->amount = $_POST['amount'];
+                 $donation_model->mode = 'web';
+                 $donation_model->short_note = $_POST['message'];
+                 $donation_model->payment_status = 'pending';
+                
+                 $donation_model->reference_number =  getToken(8);
+                
+                 $donation_model->validate();
+                 $donation_model->save();
+                 $this->redirect(array("/user/default/accountSummary"));
+                 
+                 
+             }    
+            $this->render('step3',array('visit_model' => $visit_model));
         } else {
             $this->redirect(array("/user"));
         }

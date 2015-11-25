@@ -1,2 +1,6 @@
 Alteration: ALTER TABLE `solicitor` CHANGE `children` `children` INT(2) NOT NULL;
 
+
+--------------25/11/2015-------------------------------
+
+ALTER TABLE `user_donation` ADD `short_note` TEXT NULL AFTER `reference_number`;
