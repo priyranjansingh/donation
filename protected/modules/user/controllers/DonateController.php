@@ -44,7 +44,9 @@ class DonateController extends Controller {
     {
         if (isFrontUserLoggedIn()) {
             $visit_code = Yii::app()->session['visit_code'];
+           
             $visit_model = Visits::model()->find(array('condition' => 'visit_code = "' . $visit_code . '" '));
+             
              if($_POST)
              {
                  
@@ -63,8 +65,8 @@ class DonateController extends Controller {
                 
                  $donation_model->validate();
                  $donation_model->save();
+                 unset(Yii::app()->session['visit_code']);
                  $this->redirect(array("/user/default/accountSummary"));
-                 
                  
              }    
             $this->render('step3',array('visit_model' => $visit_model));

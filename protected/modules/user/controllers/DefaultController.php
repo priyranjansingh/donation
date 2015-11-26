@@ -64,7 +64,9 @@ class DefaultController extends Controller {
     
     public function actionAccountSummary()
     {
-        $this->render('account_summary');
+         $user_id = Yii::app()->session['user_id'];
+         $prev_don_model = Donation::model()->findAll(array('condition' => 'user_id = "'.$user_id.'" '));
+         $this->render('account_summary',array('prev_don_model' => $prev_don_model));
     } 
     
          

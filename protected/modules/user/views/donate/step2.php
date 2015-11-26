@@ -17,12 +17,14 @@ $baseUrl = Yii::app()->theme->baseUrl;
 <div>
 	<section id="js_filterView" class="filters-container" data-preset-custom-startdate="" data-preset-custom-enddate="" data-preset-search-term="">
 		<section class="filters-section js_filters-section show-phone">
-			<form name="filtersForm" method="POST" class="filters-form" id="js_filters-form" action="<?php echo base_url()."/user/donate/step3"       ?>">
+			<form name="filtersForm"  class="filters-form" id="js_filters-form" action="<?php echo base_url()."/user/donate/step3"       ?>">
 				<p><span>.</span></p>
 				<p><span>.</span></p>
 				<input name="VisitCode" type="hidden" value="VisitCode">
-				<input name="continueButton" class="vx_btn vx_btn-secondary vx_btn-small filters-searchBtn js_filters-searchBtn nemo_filters-searchBtn validateBeforeSubmit" type="submit" role="button" aria-selected="false" value="Continue">
 			</form>
+                    <a href="<?php echo base_url()."/user/donate/step3"?>">
+                    <input name="continueButton" class="vx_btn vx_btn-secondary vx_btn-small filters-searchBtn js_filters-searchBtn nemo_filters-searchBtn validateBeforeSubmit" type="submit" role="button" aria-selected="false" value="Continue">
+                    </a>
 		</section>
 	</section>
 </div>
