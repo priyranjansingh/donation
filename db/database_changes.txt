@@ -4,3 +4,23 @@ Alteration: ALTER TABLE `solicitor` CHANGE `children` `children` INT(2) NOT NULL
 --------------25/11/2015-------------------------------
 
 ALTER TABLE `user_donation` ADD `short_note` TEXT NULL AFTER `reference_number`;
+
+
+-------------27-11-2015--------------------------------
+
+CREATE TABLE IF NOT EXISTS `user_trans` (
+  `id` char(36) NOT NULL,
+  `user_id` char(36) NOT NULL,
+  `debit` double DEFAULT NULL,
+  `credit` double DEFAULT NULL,
+  `credit_id` char(36) DEFAULT NULL,
+  `donation_id` char(36) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  `deleted` tinyint(1) DEFAULT NULL,
+  `created_by` char(36) NOT NULL,
+  `modified_by` char(36) DEFAULT NULL,
+  `date_entered` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
