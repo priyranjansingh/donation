@@ -46,6 +46,7 @@ class DefaultController extends Controller {
         $this->layout =  '//layouts/register_main';
         if (!isFrontUserLoggedIn()) {
             $model = new Registration;
+            
             if (isset($_POST['Registration'])) {
                 $model->attributes = $_POST['Registration'];
                 $model->country = "USA";

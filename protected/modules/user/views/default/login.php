@@ -46,7 +46,7 @@
                 </div>
             </div>
             <?php $this->endWidget(); ?>
-            <a href="<?php echo base_url(); ?>/user/register" class="button secondary" id="createAccount">Sign Up</a>
+            <a href="<?php echo base_url(); ?>/user/default/register" class="button secondary" id="createAccount">Sign Up</a>
         </section>
     </div>
 </div>
