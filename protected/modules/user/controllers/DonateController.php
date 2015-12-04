@@ -1,6 +1,4 @@
 <?php
-Yii::import("application.modules.admin.models.visits", true);
-Yii::import("application.modules.admin.models.solicitor", true);
 class DonateController extends Controller {
 
     public $layout = '//layouts/main';
@@ -65,6 +63,17 @@ class DonateController extends Controller {
                 
                  $donation_model->validate();
                  $donation_model->save();
+                 
+                 // for storing in the user_trans table
+                 $user_trans = new UserTrans;
+                 $user_trans->user_id = $donation_model->user_id;
+                 $user_trans->debit = $donation_model->user_id;
+                 
+                 
+                 
+                 
+                 
+                 
                  unset(Yii::app()->session['visit_code']);
                  $this->redirect(array("/user/default/accountSummary"));
                  

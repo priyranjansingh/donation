@@ -24,3 +24,6 @@ CREATE TABLE IF NOT EXISTS `user_trans` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-------------28-11-2015----------------------------------
+ALTER TABLE  `users` ADD  `spouse_name` VARCHAR( 256 ) NULL AFTER  `last_name` ;
+

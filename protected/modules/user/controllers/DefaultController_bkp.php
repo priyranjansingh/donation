@@ -66,8 +66,19 @@ class DefaultController extends Controller {
     public function actionAccountSummary()
     {
          $user_id = Yii::app()->session['user_id'];
+         $prev_don_model = Donation::model()->findAll(array('condition' => 'user_id = "'.$user_id.'" '));
+         
          $user_trans = UserTrans::model()->findAll(array('condition' => 'user_id = "'.$user_id.'" '));
-         $this->render('account_summary',array('user_trans' => $user_trans));
+         foreach($user_trans as $trans)
+         {
+             pre($trans->Donation);
+             pre($trans->Usercredit);
+         }
+         die("here");
+         pre($user_trans,true);
+         
+         
+         $this->render('account_summary',array('prev_don_model' => $prev_don_model));
     } 
     
          

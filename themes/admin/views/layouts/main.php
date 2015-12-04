@@ -109,7 +109,7 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active treeview">
+            <li class="treeview">
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>Manage</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -133,6 +133,7 @@
                 <li><a href="<?php echo base_url().'/admin/visits/create'; ?>"><i class="fa fa-circle-o"></i> Add Solicitor Visit</a></li>
               </ul>
             </li>
+            <li><a href="<?php echo base_url()."/admin/users"; ?>"><i class="fa fa-users"></i> <span>Users</span></a></li>
           </ul>
         </section>
         <!-- /.sidebar -->

@@ -173,86 +173,78 @@ $baseUrl = Yii::app()->theme->baseUrl;
 
 
                                     <?php
-                                    foreach ($user_trans as $trans) {
-                                        if ($trans->Donation) {
-                                            ?>    
-                                            <li class="transactionRow transactionRowHover js_transactionItem" data-href="">
-                                                <div class="transactionItem js_transactionItem nemo_transactionItem">
-                                                    <div class="row">
-                                                        <div class="col-xs-1">
-                                                            <h4 class="accessAid">
-                                                                <span class="transactionDescription">() Solicitor Name </span>
-                                                                <span class="transactionType vx_small-text">Donation </span>
-                                                            </h4>
-                                                            <div id="txnDate" class="dateParts js_transactionDescriptionLink linkedBlock js_linkedBlock" data-href="">
-                                                                <span class="dateMonth vx_h7"><?php echo date("M", strtotime($trans->date_entered)); ?></span>
-                                                                <span class="dateDay vx_h4"><?php echo date("d", strtotime($trans->date_entered)); ?></span>
-                                                                <span class="accessAid">2015</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-11 transactionDetailsContainer js_transactionDetailsContainer">
-                                                            <a id="txnDescription" class="transactionDescriptionContainer js_transactionDescriptionContainer linkedBlock js_linkedBlock" href="?trans=transaction_hash" role="button" aria-expanded="false" aria-controls="" aria-describedby="">
-                                                                <span class="transactionDescription">(<?php echo $trans->Donation->visit->visit_code; ?>) 
-                                                                    <?php echo $trans->Donation->solicitor->first_name . " " . $trans->Donation->solicitor->last_name; ?></span>
-                                                            </a>
-                                                            <div id="txnAmountAndCurrency" class="transactionAmount js_transactionDescriptionLink linkedBlock js_linkedBlock primaryCurrency " data-href="">
-                                                                <span aria-hidden="true" class="isNegative vx_h3">-</span>
-                                                                <span class="accessAid">negative</span>
-                                                                <span class="netAmount vx_h4" dir="rtl">$<?php echo $trans->debit; ?> </span>
-                                                            </div>
+                                    foreach ($prev_don_model as $donation) {
+                                        ?>    
 
-                                                            <div class="vx_small-text action">
-                                                                <span class="icon icon-small icon-action-arrow-half-small" aria-hidden="true"></span>
-                                                                <span class="message">Transaction Type - Donation</span> <!--<a href="" target="_blank" class="nemo_actions-track">Cancel</a>-->
-                                                            </div>
+                                        <li class="transactionRow transactionRowHover js_transactionItem" data-href="">
+                                            <div class="transactionItem js_transactionItem nemo_transactionItem">
+                                                <div class="row">
+                                                    <div class="col-xs-1">
+                                                        <h4 class="accessAid">
+                                                            <span class="transactionDescription">(<?php echo $donation->visit->visit_code; ?>) Solicitor Name </span>
+                                                            <span class="transactionType vx_small-text">Donation </span>
+                                                        </h4>
+                                                        <div id="txnDate" class="dateParts js_transactionDescriptionLink linkedBlock js_linkedBlock" data-href="">
+                                                            <span class="dateMonth vx_h7"><?php echo date("M", strtotime($donation->date_entered)); ?></span>
+                                                            <span class="dateDay vx_h4"><?php echo date("d", strtotime($donation->date_entered)); ?></span>
+                                                            <span class="accessAid">2015</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-11 transactionDetailsContainer js_transactionDetailsContainer">
+                                                        <a id="txnDescription" class="transactionDescriptionContainer js_transactionDescriptionContainer linkedBlock js_linkedBlock" href="?trans=transaction_hash" role="button" aria-expanded="false" aria-controls="" aria-describedby="">
+                                                            <span class="transactionDescription">(<?php echo $donation->visit->visit_code; ?>) <?php echo $donation->solicitor->first_name . " " . $donation->solicitor->last_name; ?></span>
+                                                        </a>
+                                                        <div id="txnAmountAndCurrency" class="transactionAmount js_transactionDescriptionLink linkedBlock js_linkedBlock primaryCurrency " data-href="">
+                                                            <span aria-hidden="true" class="isNegative vx_h3">-</span>
+                                                            <span class="accessAid">negative</span>
+                                                            <span class="netAmount vx_h4" dir="rtl">$<?php echo $donation->amount; ?> </span>
+                                                        </div>
+
+                                                        <div class="vx_small-text action">
+                                                            <span class="icon icon-small icon-action-arrow-half-small" aria-hidden="true"></span>
+                                                            <span class="message">Transaction Type - Donation</span> <!--<a href="" target="_blank" class="nemo_actions-track">Cancel</a>-->
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div id="transactionDetails" class="js_transactionDetails highlightTransactionPanel hide" role="region" aria-busy="false" aria-labelledby="txnDescription"></div>
-                                            </li>
+                                            </div>
+                                            <div id="transactionDetails" class="js_transactionDetails highlightTransactionPanel hide" role="region" aria-busy="false" aria-labelledby="txnDescription"></div>
+                                        </li>
 
-                                            <?php
-                                        } else if ($trans->Usercredit) {
-                                            ?> 
-                                            <li class="transactionRow transactionRowHover js_transactionItem" data-href="">
-                                                <div class="transactionItem js_transactionItem nemo_transactionItem">
-                                                    <div class="row">
-                                                        <div class="col-xs-1">
-                                                            <h4 class="accessAid">
-                                                                <span class="transactionDescription">Payment</span>
-                                                                <span class="transactionType vx_small-text">Payment </span>
-                                                            </h4>
-                                                            <div id="txnDate" class="dateParts js_transactionDescriptionLink linkedBlock js_linkedBlock" data-href="">
-                                                                <span class="dateMonth vx_h7"><?php echo date("M", strtotime($trans->date_entered)); ?></span>
-                                                                <span class="dateDay vx_h4"><?php echo date("d", strtotime($trans->date_entered)); ?></span>
-                                                                <span class="accessAid">2015</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-11 transactionDetailsContainer js_transactionDetailsContainer">
-                                                            <a id="txnDescription" class="transactionDescriptionContainer js_transactionDescriptionContainer linkedBlock js_linkedBlock" href="?trans=transaction_hash" role="button" aria-expanded="false" aria-controls="" aria-describedby="">
-                                                                <span class="transactionDescription">Payment - Thank You</span>
-                                                                <!--<span class="transactionType vx_small-text"> </span>-->
-                                                            </a>
-                                                            <div id="txnAmountAndCurrency" class="transactionAmount js_transactionDescriptionLink linkedBlock js_linkedBlock primaryCurrency " data-href="">
-                                                                <span aria-hidden="true" class="isPositive vx_h3">+</span>
-                                                                <span class="accessAid">positive</span>
-                                                                <span class="netAmount vx_h4" dir="rtl">$<?php echo $trans->credit; ?> </span>
-                                                            </div>
-
-                                                            <div class="vx_small-text action">
-                                                                <span class="icon icon-small icon-action-arrow-half-small" aria-hidden="true"></span>
-                                                                <span class="message">Payment</span> <a href="" target="_blank" class="nemo_actions-track">Print Receipt</a>
-                                                            </div>
-                                                        </div>
+                                    <?php } ?>
+                                    <li class="transactionRow transactionRowHover js_transactionItem" data-href="">
+                                        <div class="transactionItem js_transactionItem nemo_transactionItem">
+                                            <div class="row">
+                                                <div class="col-xs-1">
+                                                    <h4 class="accessAid">
+                                                        <span class="transactionDescription">Payment</span>
+                                                        <span class="transactionType vx_small-text">Payment </span>
+                                                    </h4>
+                                                    <div id="txnDate" class="dateParts js_transactionDescriptionLink linkedBlock js_linkedBlock" data-href="">
+                                                        <span class="dateMonth vx_h7">Nov</span>
+                                                        <span class="dateDay vx_h4">04</span>
+                                                        <span class="accessAid">2015</span>
                                                     </div>
                                                 </div>
-                                                <div id="transactionDetails" class="js_transactionDetails highlightTransactionPanel hide" role="region" aria-busy="false" aria-labelledby="txnDescription"></div>
-                                            </li>
-                                            <?php
-                                        }
-                                    }
-                                    ?>
+                                                <div class="col-xs-11 transactionDetailsContainer js_transactionDetailsContainer">
+                                                    <a id="txnDescription" class="transactionDescriptionContainer js_transactionDescriptionContainer linkedBlock js_linkedBlock" href="?trans=transaction_hash" role="button" aria-expanded="false" aria-controls="" aria-describedby="">
+                                                        <span class="transactionDescription">Payment - Thank You</span>
+                                                        <!--<span class="transactionType vx_small-text"> </span>-->
+                                                    </a>
+                                                    <div id="txnAmountAndCurrency" class="transactionAmount js_transactionDescriptionLink linkedBlock js_linkedBlock primaryCurrency " data-href="">
+                                                        <span aria-hidden="true" class="isPositive vx_h3">+</span>
+                                                        <span class="accessAid">positive</span>
+                                                        <span class="netAmount vx_h4" dir="rtl">$72.00 </span>
+                                                    </div>
 
+                                                    <div class="vx_small-text action">
+                                                        <span class="icon icon-small icon-action-arrow-half-small" aria-hidden="true"></span>
+                                                        <span class="message">Payment</span> <a href="" target="_blank" class="nemo_actions-track">Print Receipt</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="transactionDetails" class="js_transactionDetails highlightTransactionPanel hide" role="region" aria-busy="false" aria-labelledby="txnDescription"></div>
+                                    </li>
 
 
                                 </ul>
