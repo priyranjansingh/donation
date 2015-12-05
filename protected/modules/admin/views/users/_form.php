@@ -1,8 +1,3 @@
-<?php
-/* @var $this UsersController */
-/* @var $model Users */
-/* @var $form CActiveForm */
-?>
 <?php 
 	$form=$this->beginWidget('CActiveForm', array(
 		'id'=>'solicitor-form',
@@ -136,6 +131,8 @@
 	</div>
 </div>
 <div class="box-footer">
-	<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array("class" => 'btn btn-info pull-right')); ?>
+    <?php echo CHtml::link('Back',array('/admin/users'),array("class" => 'btn btn-info pull-right',"style"=>"margin-left:10px;")); ?>
+    <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array("class" => 'btn btn-info pull-right')); ?>
 </div>
+
 <?php $this->endWidget(); ?>

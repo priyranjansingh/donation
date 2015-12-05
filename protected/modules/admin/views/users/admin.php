@@ -33,11 +33,25 @@
             </div>
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Users List</h3>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h3 class="box-title">Users List</h3>
+                        </div>
+                        <div class="col-sm-2">
+                            <a href="<?php echo base_url() . '/admin/users/create'; ?>">
+                                <button class="btn btn-block btn-primary">Add User</button>
+                            </a>
+                        </div>
+                        <div class="col-sm-2">
+                            <a href="<?php echo base_url() . '/admin/usercredit/create'; ?>">
+                                <button class="btn btn-block btn-primary">Add Payment</button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="box-body">
                     <div class="dataTables_wrapper form-inline dt-bootstrap">
-                        <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div>
+
                         <div class="row">
                             <div class="col-sm-12 table-responsive">
                                 <?php
@@ -68,13 +82,11 @@
                                                     'label' => 'View Transaction',
                                                     'url' => 'Yii::app()->createUrl("admin/users/transaction", array("id"=>$data->id))',
                                                 ),
-                                                
                                             ),
                                         ),
                                         array(
                                             'class' => 'CButtonColumn',
                                         ),
-                                        
                                     ),
                                 ));
                                 ?>

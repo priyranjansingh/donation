@@ -65,14 +65,11 @@ class DonateController extends Controller {
                  $donation_model->save();
                  
                  // for storing in the user_trans table
-                 $user_trans = new UserTrans;
-                 $user_trans->user_id = $donation_model->user_id;
-                 $user_trans->debit = $donation_model->user_id;
-                 
-                 
-                 
-                 
-                 
+                   $trans_model = new UserTrans;
+                   $trans_model->user_id = $donation_model->user_id;
+                   $trans_model->debit = $donation_model->amount;
+                   $trans_model->donation_id = $donation_model->id;
+                   $trans_model->save();
                  
                  unset(Yii::app()->session['visit_code']);
                  $this->redirect(array("/user/default/accountSummary"));

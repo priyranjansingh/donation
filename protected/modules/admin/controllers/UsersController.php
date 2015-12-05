@@ -65,6 +65,7 @@ class UsersController extends Controller {
 
         if (isset($_POST['Users'])) {
             $model->attributes = $_POST['Users'];
+            $model->password = md5($model->password);
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
@@ -121,11 +122,6 @@ class UsersController extends Controller {
      */
     public function actionManage() {
         $model = new Users('search');
-//        $user_data_provider = new CActiveDataProvider('Users', array(
-//            'criteria' => array(
-//                'condition' => 'is_admin=0',
-//            ),
-//        ));
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['Users']))
             $model->attributes = $_GET['Users'];
@@ -146,7 +142,7 @@ class UsersController extends Controller {
     
 
     protected function gridDataColumn($data, $row) {
-        $sql = "SELECT id, SUM(credit)-SUM(debit) AS balance from user_trans where user_id = '" . $data->id . "'";
+        $sql = "SELECT id, COALESCE(SUM(credit),0) - COALESCE(SUM(debit),0) AS balance from user_trans where user_id = '" . $data->id . "'";
         $result = BaseModel::executeSimpleQueryFirstRow($sql);
         if(!empty($result['balance']))
         {    

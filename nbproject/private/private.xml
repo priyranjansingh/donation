@@ -3,12 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/users/admin.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/controllers/LoginController.php</file>
-            <file>file:/C:/xampp/htdocs/donation/themes/admin/views/layouts/main.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/user/models/Users.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/controllers/DashboardController.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/controllers/UsersController.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/controllers/SolicitorCreditController.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/config/global.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/userCredit/create.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/models/BaseModel.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/solicitorCredit/_form.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/config/main.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/solicitorCredit/create.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/userCredit/_form.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/components/helpers.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/controllers/UserCreditController.php</file>
         </group>
     </open-files>
 </project-private>

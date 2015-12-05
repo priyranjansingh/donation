@@ -22,7 +22,7 @@
 			<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>255,'class' => 'form-control')); ?>
 		</div>
 	</div>
-	<div class="form-group">
+<!--	<div class="form-group">
 		<div class="col-xs-3">
 			<?php echo $form->label($model,'city'); ?>
 			<?php echo $form->textField($model,'city',array('size'=>60,'maxlength'=>255,'class' => 'form-control')); ?>
@@ -39,8 +39,8 @@
 			<?php echo $form->label($model,'zip'); ?>
 			<?php echo $form->textField($model,'zip',array('size'=>60,'maxlength'=>255,'class' => 'form-control')); ?>
 		</div>
-	</div>
-	<div class="form-group">
+	</div>-->
+<!--	<div class="form-group">
 		<div class="col-xs-6">
 			<?php echo $form->label($model,'credit_limits'); ?>
 			<?php echo $form->textField($model,'credit_limits',array('size'=>60,'maxlength'=>255,'class' => 'form-control')); ?>
@@ -49,7 +49,7 @@
 			<?php echo $form->label($model,'is_admin'); ?>
 			<?php echo $form->dropDownList($model,'is_admin',getParam('boolean'),array('empty'=>'Have Admin Access','class' => 'form-control')); ?>
 		</div>
-	</div>
+	</div>-->
 </div>
 <div class="box-footer">
 	<?php echo CHtml::submitButton('Search',array("class" => 'btn btn-info search-button')); ?>

@@ -35,8 +35,8 @@ class UserTrans extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, donation_id, created_by, date_entered', 'required'),
-			array('user_id, credit_id, donation_id, status, deleted', 'numerical', 'integerOnly'=>true),
+			array('user_id, created_by, date_entered', 'required'),
+			array('status, deleted', 'numerical', 'integerOnly'=>true),
 			array('debit, credit', 'numerical'),
 			array('created_by, modified_by', 'length', 'max'=>36),
 			array('date_modified', 'safe'),
