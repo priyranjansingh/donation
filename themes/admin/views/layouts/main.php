@@ -109,7 +109,7 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="treeview">
+<!--            <li class="treeview">
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>Manage</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -119,8 +119,8 @@
                 <li><a href="<?php echo base_url().'/admin/donation'; ?>"><i class="fa fa-circle-o"></i> Payments</a></li>
                 <li><a href="<?php echo base_url().'/admin/visits'; ?>"><i class="fa fa-circle-o"></i> Visits</a></li>
               </ul>
-            </li>
-            <li class="treeview">
+            </li>-->
+<!--            <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>
                 <span>Add</span><i class="fa fa-angle-left pull-right"></i>
@@ -132,8 +132,9 @@
                 <li><a href="<?php echo base_url().'/admin/donation/create'; ?>"><i class="fa fa-circle-o"></i> Add Payment</a></li>
                 <li><a href="<?php echo base_url().'/admin/visits/create'; ?>"><i class="fa fa-circle-o"></i> Add Solicitor Visit</a></li>
               </ul>
-            </li>
+            </li>-->
             <li><a href="<?php echo base_url()."/admin/users"; ?>"><i class="fa fa-users"></i> <span>Users</span></a></li>
+            <li><a href="<?php echo base_url()."/admin/solicitor"; ?>"><i class="fa fa-university"></i> <span>Solicitors</span></a></li>
           </ul>
         </section>
         <!-- /.sidebar -->

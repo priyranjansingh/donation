@@ -3,16 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/controllers/SolicitorCreditController.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/config/global.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/userCredit/create.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/models/BaseModel.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/solicitorCredit/_form.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/config/main.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/solicitorCredit/create.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/userCredit/_form.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/components/helpers.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/controllers/UserCreditController.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/users/admin.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/users/create.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/solicitor/_form.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/controllers/SolicitorController.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/visits/view.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/users/_form.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/visits/_form.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/solicitor/view.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/solicitor/admin.php</file>
         </group>
     </open-files>
 </project-private>
