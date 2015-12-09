@@ -66,8 +66,10 @@ class DefaultController extends Controller {
     public function actionAccountSummary()
     {
          $user_id = Yii::app()->session['user_id'];
+         $user_balance = Users::model()->getUserBalance($user_id);
+         $user_model = Users::model()->findByPk($user_id);
          $user_trans = UserTrans::model()->findAll(array('condition' => 'user_id = "'.$user_id.'" '));
-         $this->render('account_summary',array('user_trans' => $user_trans));
+         $this->render('account_summary',array('user_trans' => $user_trans,'user_model'=>$user_model,'user_balance'=>$user_balance));
     } 
     
          
