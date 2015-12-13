@@ -80,7 +80,7 @@
                                                 'visits' => array
                                                     (
                                                     'label' => 'Visits',
-                                                    'url' => 'Yii::app()->createUrl("admin/visits", array("id"=>$data->id))',
+                                                    'url' => 'Yii::app()->createUrl("admin/solicitor/donations", array("id"=>$data->id))',
                                                 ),
                                             ),
                                         ),

@@ -131,6 +131,31 @@ class Donation extends BaseModel
 		));
 	}
 
+	public function users($id,$visit=null)
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('user_id',$this->user_id,$id);
+		
+		if($visit != null)
+			$criteria->compare('visit_id',$this->visit_id,$visit);
+		else
+			$criteria->compare('visit_id',$this->visit_id,true);
+
+		$criteria->compare('solicitor_id',$this->solicitor_id,true);
+		$criteria->compare('amount',$this->amount,true);
+		$criteria->compare('date_entered',$this->date_entered,true);
+		
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+			'sort'=>array(
+                'defaultOrder'=>'date_entered DESC',
+            ),
+		));
+	}
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
