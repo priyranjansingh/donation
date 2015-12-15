@@ -32,7 +32,7 @@ class SolicitorController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','manage'),
+				'actions'=>array('create','update','manage','donations'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -149,6 +149,19 @@ class SolicitorController extends Controller
 		));
 	}
 
+	public function actionDonations($id){
+		$visit_sql = "SELECT d.user_id,d.visit_id,s.first_name,s.last_name,v.visit_code, CASE WHEN v.status = 1 THEN 'Yes' ELSE 'No' END AS visit_active, v.start_date,v.end_date,d.amount FROM `user_donation` d LEFT JOIN visits v ON d.visit_id = v.id LEFT JOIN solicitor s ON d.solicitor_id = s.id WHERE d.solicitor_id = '$id'";
+        $visits = BaseModel::executeSimpleQuery($visit_sql);
+        
+        $donation = new Donation('users'); 
+        $donation->unsetAttributes();
+        
+        $this->render('donations', array(
+            'visits' => $visits,
+            'donation' => $donation
+        ));
+	}
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -181,5 +194,10 @@ class SolicitorController extends Controller
         $visit = $data->visit_id;
         $code = Visits::model()->findByPk($visit)->visit_code;
         return $code;
+    }
+
+    public function gridUser($data, $row) {
+        $code = Users::model()->findByPk($data->user_id);
+        return $code->first_name.' '.$code->last_name.'('.$code->username.')';
     }
 }

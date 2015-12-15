@@ -1,11 +1,12 @@
 <section class="content-header">
     <h1>
-        Transaction
-        <small>List</small>
+        User
+        <small>Detail</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="<?php echo base_url() . '/admin'; ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li><a href="<?php echo base_url() . '/admin/users'; ?>"><i class="fa fa-dashboard"></i> Users</a></li>
+        <li><a href="<?php echo base_url() . '/admin/donation'; ?>"><i class="fa fa-dashboard"></i> Donation</a></li>
         <li class="active">Manage</li>
     </ol>
 </section>
@@ -16,7 +17,7 @@
 
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Transaction List</h3>
+                    <h3 class="box-title"><?php echo $user->first_name.' '.$user->last_name.'('.$user->username.')'; ?></h3>
                 </div>
                 <div class="box-body">
                     <div class="dataTables_wrapper form-inline dt-bootstrap">
@@ -25,39 +26,151 @@
                             <div class="col-sm-12 table-responsive">
                                 <table class="table table-hover">
                                     <tr>
-                                        <th>Date</th>
-                                        <th>Type</th>
-                                        <th>Solicitor Info</th>
-                                        <th>Amount</th>
+                                        <th>User</th>
+                                        <td><?php echo $user->first_name.' '.$user->last_name; ?></th>
                                     </tr>
-                                    <?php
-                                    foreach ($user_trans as $trans) {
-                                        if ($trans->Donation) {
-                                            ?>
-                                            <tr>
-                                                <td><?php echo date("d-m-Y", strtotime($trans->date_entered)); ?></td>
-                                                <td>Donation</td>
-                                                <td>
-                                                    (<?php echo $trans->Donation->visit->visit_code; ?>)
-                                                    <?php echo $trans->Donation->solicitor->first_name . " " . $trans->Donation->solicitor->last_name; ?>
-                                                </td>
-                                                <td>$<?php echo $trans->debit; ?></td>
-                                            </tr>
-                                            <?php
-                                        } else if ($trans->Usercredit) {
-                                            ?>      
-                                            <tr>
-                                                <td><?php echo date("d-m-Y", strtotime($trans->date_entered)); ?></td>
-                                                <td>Payment</td>
-                                                <td></td>
-                                                <td>$<?php echo $trans->credit; ?></td>
-                                            </tr> 
-                                            <?php
-                                        }
-                                    }
-                                    ?>   
-
+                                    <tr>
+                                        <th>Available Funds</th>
+                                        <td>$<?php echo $balance; ?></th>
+                                    </tr>
+                                    <tr>
+                                        <th>Total Donated</th>
+                                        <td>$<?php echo $debit; ?></th>
+                                    </tr>
+                                    <tr>
+                                        <th>Total Credited</th>
+                                        <td>$<?php echo $credit; ?></th>
+                                    </tr>
                                 </table>
+                            </div>
+                        </div>
+                        <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">
+                        Donations
+                    </h3>
+                    <div class="row">
+                        <div class="col-xs-4" style="float:right;">
+                            <a href="<?php echo base_url().'/admin/donation/create'; ?>" class="btn btn-info" style="float:right;">Add Donation</a>
+                        </div>    
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="dataTables_wrapper form-inline dt-bootstrap">
+                        <div class="row">
+                            <div class="col-sm-12 table-responsive">
+                                <?php
+                                $this->widget('zii.widgets.grid.CGridView', array(
+                                    'id' => 'donation-grid',
+                                    'itemsCssClass' => 'table table-bordered table-hover dataTable',
+                                    'dataProvider' => $donations->users($user->id),
+                                    'enablePagination' => true,
+                                    'columns' => array(
+                                        array(
+                                              'name' => 'user_id',
+                                              'value' => array($this, 'gridUser'),
+                                          ),
+                                        'amount',
+                                        'date_entered',
+                                        array
+                                            (
+                                            'class' => 'CButtonColumn',
+                                            'template' => '{edit}',
+                                            'buttons' => array
+                                                (
+                                                'edit' => array
+                                                    (
+                                                    'label' => 'EDIT',
+                                                    'url' => 'Yii::app()->createUrl("admin/donation/update", array("id"=>$data->id))',
+                                                ),
+                                            ),
+                                        ),
+                                    ),
+                                ));
+                                ?>
+                            </div>
+                        </div>
+                        <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">
+                        Payments
+                    </h3>
+                    <div class="row">
+                        <div class="col-xs-4" style="float:right;">
+                            <a href="<?php echo base_url().'/admin/usercredit/create'; ?>" class="btn btn-info" style="float:right;">Add Credits</a>
+                        </div>    
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="dataTables_wrapper form-inline dt-bootstrap">
+                        <div class="row">
+                            <div class="col-sm-12 table-responsive">
+                                <?php
+                                $this->widget('zii.widgets.grid.CGridView', array(
+                                    'id' => 'payments-grid',
+                                    'itemsCssClass' => 'table table-bordered table-hover dataTable',
+                                    'dataProvider' => $payments->users($user->id),
+                                    'enablePagination' => true,
+                                    'columns' => array(
+                                        'amount',
+                                        'mode',
+                                        'date_entered',
+                                        array
+                                            (
+                                            'class' => 'CButtonColumn',
+                                            'template' => '{edit}',
+                                            'buttons' => array
+                                                (
+                                                'edit' => array
+                                                    (
+                                                    'label' => 'EDIT',
+                                                    'url' => 'Yii::app()->createUrl("admin/usercredit/update", array("id"=>$data->id))',
+                                                ),
+                                            ),
+                                        ),
+                                    ),
+                                ));
+                                ?>
+                            </div>
+                        </div>
+                        <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">
+                        Logins
+                    </h3>
+                </div>
+                <div class="box-body">
+                    <div class="dataTables_wrapper form-inline dt-bootstrap">
+                        <div class="row">
+                            <div class="col-sm-12 table-responsive">
+                                <?php
+                                $this->widget('zii.widgets.grid.CGridView', array(
+                                    'id' => 'logs-grid',
+                                    'itemsCssClass' => 'table table-bordered table-hover dataTable',
+                                    'dataProvider' => $logs->users($user->id),
+                                    // 'enablePagination' => true,
+                                    'columns' => array(
+                                        'ip',
+                                        'browser',
+                                        'os',
+                                        'platform',
+                                        'user_agent',
+                                        'date_entered',
+                                    ),
+                                ));
+                                ?>
                             </div>
                         </div>
                         <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div>

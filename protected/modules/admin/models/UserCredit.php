@@ -111,6 +111,31 @@ class UserCredit extends BaseModel
 		));
 	}
 
+	public function users($id)
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('user_id',$this->user_id,$id);
+		$criteria->compare('amount',$this->amount,true);
+		$criteria->compare('mode',$this->mode,true);
+		$criteria->compare('status',$this->status);
+		$criteria->compare('deleted',$this->deleted);
+		$criteria->compare('created_by',$this->created_by,true);
+		$criteria->compare('modified_by',$this->modified_by,true);
+		$criteria->compare('date_entered',$this->date_entered,true);
+		$criteria->compare('date_modified',$this->date_modified,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+			'sort'=>array(
+                'defaultOrder'=>'date_entered DESC',
+            ),
+		));
+	}
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

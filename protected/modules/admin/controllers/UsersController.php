@@ -132,11 +132,52 @@ class UsersController extends Controller {
     }
     
      public function actionTransaction($id) {
-         $user_id = $id;
-         $user_trans = UserTrans::model()->findAll(array('condition' => 'user_id = "'.$user_id.'" '));
-         
+        $user_id = $id;
+        $user = Users::model()->findByPk($id);
+        
+        $sql = "SELECT id, COALESCE(SUM(credit),0) - COALESCE(SUM(debit),0) AS balance from user_trans where user_id = '" . $id . "'";
+        $result = BaseModel::executeSimpleQueryFirstRow($sql);
+        if(!empty($result['balance']))
+        {    
+            $balance = $result['balance'];
+        }
+        else
+        {
+            $balance = 0;
+        }
+
+        $c_sql = "SELECT SUM(credit) AS credited FROM user_trans WHERE credit IS NOT NULL AND user_id = '$id'";
+        $c_result = BaseModel::executeSimpleQueryFirstRow($c_sql);
+        if(empty($c_result['credited'])){
+            $credit = 0;
+        } else {
+            $credit = $c_result['credited'];
+        }
+        $d_sql = "SELECT SUM(debit) AS debited FROM user_trans WHERE debit IS NOT NULL AND user_id = '$id'";
+        $d_result = BaseModel::executeSimpleQueryFirstRow($d_sql);
+        if(empty($d_result['debited'])){
+            $debit = 0;
+        } else {
+            $debit = $d_result['debited'];
+        }
+        
+        $donations = new Donation('users');
+        $donations->unsetAttributes();
+
+        $payments = new UserCredit('users');
+        $payments->unsetAttributes();
+
+        $logs = new Log('users');
+        $logs->unsetAttributes();
+
         $this->render('transaction', array(
-            'user_trans' => $user_trans,
+            'user' => $user,
+            'balance' => $balance,
+            'credit' => $credit,
+            'debit' => $debit,
+            'donations' => $donations,
+            'payments' => $payments,
+            'logs' => $logs
         ));
     }
     
@@ -177,6 +218,11 @@ class UsersController extends Controller {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    public function gridUser($data, $row) {
+        $code = Users::model()->findByPk($data->user_id);
+        return $code->first_name.' '.$code->last_name.'('.$code->username.')';
     }
 
 }
