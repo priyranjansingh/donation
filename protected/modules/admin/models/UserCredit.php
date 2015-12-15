@@ -8,6 +8,9 @@
  * @property string $user_id
  * @property string $amount
  * @property string $mode
+ * @property string $payment_status
+ * @property string $cheque_no
+ * @property string $bank_name
  * @property integer $status
  * @property integer $deleted
  * @property string $created_by
@@ -33,14 +36,16 @@ class UserCredit extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, user_id, amount, mode, created_by, modified_by, date_entered, date_modified', 'required'),
+			array('id, user_id,payment_status,cheque_no,bank_name, amount, mode, created_by, modified_by, date_entered, date_modified', 'required'),
 			array('status, deleted', 'numerical', 'integerOnly'=>true),
 			array('id, user_id, created_by, modified_by', 'length', 'max'=>36),
+			array('cheque_no', 'length', 'max'=>64),
+			array('bank_name', 'length', 'max'=>256),
 			array('amount', 'length', 'max'=>16),
 			array('mode', 'length', 'max'=>6),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, amount, mode, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on'=>'search'),
+			array('id, user_id, amount, mode,payment_status,cheque_no,bank_name, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +70,9 @@ class UserCredit extends BaseModel
 			'user_id' => 'User',
 			'amount' => 'Amount',
 			'mode' => 'Mode',
+                        'payment_status' => 'Payment Status',
+                        'cheque_no' => 'Cheque Number',
+                        'bank_name' => 'Bank Name',
 			'status' => 'Status',
 			'deleted' => 'Deleted',
 			'created_by' => 'Created By',
@@ -96,6 +104,9 @@ class UserCredit extends BaseModel
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('amount',$this->amount,true);
 		$criteria->compare('mode',$this->mode,true);
+		$criteria->compare('payment_status',$this->payment_status,true);
+		$criteria->compare('cheque_no',$this->cheque_no,true);
+		$criteria->compare('bank_name',$this->bank_name,true);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('deleted',$this->deleted);
 		$criteria->compare('created_by',$this->created_by,true);
@@ -121,6 +132,9 @@ class UserCredit extends BaseModel
 		$criteria->compare('user_id',$this->user_id,$id);
 		$criteria->compare('amount',$this->amount,true);
 		$criteria->compare('mode',$this->mode,true);
+                $criteria->compare('payment_status',$this->payment_status,true);
+		$criteria->compare('cheque_no',$this->cheque_no,true);
+		$criteria->compare('bank_name',$this->bank_name,true);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('deleted',$this->deleted);
 		$criteria->compare('created_by',$this->created_by,true);

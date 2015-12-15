@@ -15,10 +15,13 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->dropDownList($model,'user_id',$users,array('class' => 'form-control','empty' => 'Select User')); ?>
 	    <?php echo $form->error($model,'user_id'); ?>
         </div>
+        <div class="col-xs-6">
+            <?php echo $form->labelEx($model,'payment_status'); ?>
+            <?php echo $form->dropDownList($model,'payment_status',getParam('user_payment_status'),array('empty' => 'Select Payment Status','class' => 'form-control')); ?>
+	    <?php echo $form->error($model,'payment_status'); ?>
+        </div>
     </div>
 </div>
-
-
 
 <div class="box-body">
     <div class="form-group">
@@ -31,6 +34,21 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->labelEx($model, 'amount'); ?>
             <?php echo $form->textField($model, 'amount', array('size' => 60, 'maxlength' => 36,'class' => 'form-control')); ?>
             <?php echo $form->error($model, 'amount'); ?>
+        </div>
+    </div>
+</div>
+
+<div class="box-body">
+    <div class="form-group">
+         <div class="col-xs-6">
+            <?php echo $form->labelEx($model,'cheque_no'); ?>
+            <?php echo $form->textField($model,'cheque_no', array('size' => 60, 'maxlength' => 64,'class' => 'form-control')); ?>
+	    <?php echo $form->error($model,'cheque_no'); ?>
+        </div>
+        <div class="col-xs-6">
+            <?php echo $form->labelEx($model, 'bank_name'); ?>
+            <?php echo $form->textField($model, 'bank_name', array('size' => 60, 'maxlength' => 256,'class' => 'form-control')); ?>
+            <?php echo $form->error($model, 'bank_name'); ?>
         </div>
     </div>
 </div>

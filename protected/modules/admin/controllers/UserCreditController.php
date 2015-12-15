@@ -66,11 +66,13 @@ class UsercreditController extends Controller {
         if (isset($_POST['UserCredit'])) {
             $model->attributes = $_POST['UserCredit'];
             if ($model->save()) {
-                $trans_model = new UserTrans;
-                $trans_model->user_id = $model->user_id;
-                $trans_model->credit = $model->amount;
-                $trans_model->credit_id = $model->id;
-                $trans_model->save();
+                if($model->payment_status == 'a'){
+                    $trans_model = new UserTrans;
+                    $trans_model->user_id = $model->user_id;
+                    $trans_model->credit = $model->amount;
+                    $trans_model->credit_id = $model->id;
+                    $trans_model->save();
+                }
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
@@ -88,18 +90,27 @@ class UsercreditController extends Controller {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
-
+        $users = CHtml::listData(BaseModel::getAll('Users', array("condition" => "is_admin = 0 ")), 'id', 'username');
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['UserCredit'])) {
             $model->attributes = $_POST['UserCredit'];
-            if ($model->save())
+            if ($model->save()){
+                if($model->payment_status == 'a'){
+                    $trans_model = new UserTrans;
+                    $trans_model->user_id = $model->user_id;
+                    $trans_model->credit = $model->amount;
+                    $trans_model->credit_id = $model->id;
+                    $trans_model->save();
+                }
                 $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('update', array(
             'model' => $model,
+            'users' => $users
         ));
     }
 
