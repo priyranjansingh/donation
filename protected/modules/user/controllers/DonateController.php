@@ -44,9 +44,11 @@ class DonateController extends Controller {
             $visit_code = Yii::app()->session['visit_code'];
            
             $visit_model = Visits::model()->find(array('condition' => 'visit_code = "' . $visit_code . '" '));
-             
-             if($_POST)
-             {
+            $step3_model = new Step3; 
+               if (isset($_POST['Step3'])) 
+               {
+                 $step3_model->attributes = $_POST['Step3'];
+                 if ($model->validate()) {
                  
                  $donation_model = new Donation; 
                 
@@ -74,8 +76,10 @@ class DonateController extends Controller {
                  unset(Yii::app()->session['visit_code']);
                  $this->redirect(array("/user/default/accountSummary"));
                  
+                 }
+                 
              }    
-            $this->render('step3',array('visit_model' => $visit_model));
+            $this->render('step3',array('visit_model' => $visit_model,'step3_model' => $step3_model ));
         } else {
             $this->redirect(array("/user"));
         }

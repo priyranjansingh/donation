@@ -7,7 +7,27 @@ $baseUrl = Yii::app()->theme->baseUrl;
 <div class="container-fluid contents flexify" id="contents" role="main" aria-labelledby="heading1">
     <section class="mainContents row transfer  funnelPage_experiment_3 pageName-funnelPage pageName-recipientPage pageName-previewPage" id="transfer">
         <div id="transfer-page" class="fadeInUp">
-            <form name="sendMoney" method="POST" action="<?php echo base_url()."/user/donate/step3"; ?>" novalidate="false" class="transferPage send previewPage">
+<!--            <form name="sendMoney" method="POST" action="<?php echo base_url()."/user/donate/step3"; ?>" novalidate="false" class="transferPage send previewPage">-->
+                
+                <?php
+            $form = $this->beginWidget('CActiveForm', array(
+                'id' => 'step3-form',
+                'enableClientValidation' => true,
+                //'enableAjaxValidation'=>true,
+                'clientOptions' => array(
+                    'validateOnSubmit' => true,
+                ),
+                'htmlOptions' => array(
+                    'autcomplete' => "off",
+                    'class' => "transferPage send previewPage",
+                ),
+            ));
+            ?>
+                
+                
+                
+                
+                
                 <div class="alertInfo negative-balance hide fade in" style="display: block;">
                     <p>You have an outstanding balance. The negative balance has been added to this transaction.</p>
                 </div>
@@ -24,8 +44,12 @@ $baseUrl = Yii::app()->theme->baseUrl;
                                     <span class="amountSymbolWrapper-currencySymbol">$</span>
                                     <div id="hiddenInputMirror" class="amountWrapper_hiddenInputMirror" style="font-size: 60px;">0.00</div>
                                     <div class="textInput amount amountSymbolWrapper-textInput amount amount lap" style="width: 126px;">
-                                        <label for="amount" class="accessAid"></label>
-                                        <input id="amount" name="amount" type="text" class="hasHelp validate amountSymbolWrapper-input " required="required" aria-required="true" value="" autocomplete="off" dir="ltr" pattern="[^\d]{0,}(\d+)[\.|\.]?(\d{0,})?" min="0" data-decimal-separator="/" style="font-size: 60px;">
+                                         <?php echo $form->error($step3_model, 'amount'); ?>
+                                         <?php echo $form->textField($step3_model, 'amount', array('placeholder' => '','class'=>'hasHelp validate amountSymbolWrapper-input')); ?>
+                                        
+                                        
+                                        <!--<label for="amount" class="accessAid"></label>-->
+                                        <!--<input id="amount" name="amount" type="text" class="hasHelp validate amountSymbolWrapper-input " required="required" aria-required="true" value="" autocomplete="off" dir="ltr" pattern="[^\d]{0,}(\d+)[\.|\.]?(\d{0,})?" min="0" data-decimal-separator="/" style="font-size: 60px;">-->
                                         <p class="help-error" id="amount-help-error">Please enter an amount.</p>
 
                                         <div class="clearInput icon-close-small hide" data-clear="amount">
@@ -59,7 +83,8 @@ $baseUrl = Yii::app()->theme->baseUrl;
                 <div class="preview-cancel-wrapper x-small txtCenter fade in" style="display: block;">
                     <a href="AccountSummary.html">Cancel</a>
                 </div>
-            </form>
+                
+                  <?php $this->endWidget(); ?>
         </div>
     </section>
 </div>
