@@ -10,7 +10,7 @@ class DefaultController extends Controller {
     }
 
     public function actionLogin() {
-         $this->layout =  '//layouts/login_main';
+        $this->layout = '//layouts/login_main';
         if (!isFrontUserLoggedIn()) {
             $model = new FrontUserLogin;
             $mail_sent_message = '';
@@ -34,7 +34,7 @@ class DefaultController extends Controller {
                 $this->redirect(Yii::app()->controller->module->returnUrl);
         }
     }
-    
+
     public function actionLogout() {
         unset(Yii::app()->session['user_id']);
         unset(Yii::app()->session['user_name']);
@@ -43,10 +43,10 @@ class DefaultController extends Controller {
     }
 
     public function actionRegister() {
-        $this->layout =  '//layouts/register_main';
+        $this->layout = '//layouts/register_main';
         if (!isFrontUserLoggedIn()) {
             $model = new Registration;
-            
+
             if (isset($_POST['Registration'])) {
                 $model->attributes = $_POST['Registration'];
                 $model->country = "USA";
@@ -62,21 +62,17 @@ class DefaultController extends Controller {
             $this->redirect(array("myaccount"));
         }
     }
-    
-    public function actionAccountSummary()
-    {
-         $user_id = Yii::app()->session['user_id'];
-         $user_balance = Users::model()->getUserBalance($user_id);
-         $user_model = Users::model()->findByPk($user_id);
-         $user_trans = UserTrans::model()->findAll(array('condition' => 'user_id = "'.$user_id.'" '));
-         $this->render('account_summary',array('user_trans' => $user_trans,'user_model'=>$user_model,'user_balance'=>$user_balance));
-    } 
-    
-         
-    
-    
-    
-    
-    
+
+    public function actionAccountSummary() {
+        $user_id = Yii::app()->session['user_id'];
+        $user_balance = Users::model()->getUserBalance($user_id);
+        $user_model = Users::model()->findByPk($user_id);
+        $criteria = new CDbCriteria;
+        $criteria->condition = 'user_id=:user_id';
+        $criteria->order = 'date_entered DESC';
+        $criteria->params = array(':user_id' => $user_id);
+        $user_trans = UserTrans::model()->findAll($criteria);
+        $this->render('account_summary', array('user_trans' => $user_trans, 'user_model' => $user_model, 'user_balance' => $user_balance));
+    }
 
 }

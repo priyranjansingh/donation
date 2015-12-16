@@ -23,11 +23,6 @@ $baseUrl = Yii::app()->theme->baseUrl;
                 ),
             ));
             ?>
-                
-                
-                
-                
-                
                 <div class="alertInfo negative-balance hide fade in" style="display: block;">
                     <p>You have an outstanding balance. The negative balance has been added to this transaction.</p>
                 </div>
@@ -46,10 +41,6 @@ $baseUrl = Yii::app()->theme->baseUrl;
                                     <div class="textInput amount amountSymbolWrapper-textInput amount amount lap" style="width: 126px;">
                                          <?php echo $form->error($step3_model, 'amount'); ?>
                                          <?php echo $form->textField($step3_model, 'amount', array('placeholder' => '','class'=>'hasHelp validate amountSymbolWrapper-input')); ?>
-                                        
-                                        
-                                        <!--<label for="amount" class="accessAid"></label>-->
-                                        <!--<input id="amount" name="amount" type="text" class="hasHelp validate amountSymbolWrapper-input " required="required" aria-required="true" value="" autocomplete="off" dir="ltr" pattern="[^\d]{0,}(\d+)[\.|\.]?(\d{0,})?" min="0" data-decimal-separator="/" style="font-size: 60px;">-->
                                         <p class="help-error" id="amount-help-error">Please enter an amount.</p>
 
                                         <div class="clearInput icon-close-small hide" data-clear="amount">
@@ -64,8 +55,8 @@ $baseUrl = Yii::app()->theme->baseUrl;
                             <div id="transfer_note_container" class="preview-note-container">
                                 <div data-reactid=".0">
                                     <div class="textArea lap note preview-message-textarea-wrap" data-reactid=".0.0">
-                                        <label for="message" data-reactid=".0.0.0">Write a note (Optional)</label>
-                                        <textarea id="message" name="message" class="hasHelp validate preview-message-textArea" maxlength="1000" aria-required="false" data-reactid=".0.0.1"></textarea>
+                                        <?php echo $form->labelEx($step3_model,'message'); ?>
+                                        <?php echo $form->textArea($step3_model, 'message', array('placeholder' => '','id' => 'message','class'=>'hasHelp validate preview-message-textArea')); ?>
                                     </div>
                                 </div>
                             </div>

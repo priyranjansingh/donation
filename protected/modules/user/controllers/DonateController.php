@@ -48,7 +48,7 @@ class DonateController extends Controller {
                if (isset($_POST['Step3'])) 
                {
                  $step3_model->attributes = $_POST['Step3'];
-                 if ($model->validate()) {
+                 if ($step3_model->validate()) {
                  
                  $donation_model = new Donation; 
                 
@@ -56,10 +56,10 @@ class DonateController extends Controller {
                  $donation_model->visit_id =  $visit_model->id;
                  $donation_model->mobile = '123456789';
                  $donation_model->solicitor_id = $visit_model->solicitor->id;
-                 $donation_model->amount = $_POST['amount'];
+                 $donation_model->amount = $step3_model->amount;
                  $donation_model->mode = 'web';
-                 $donation_model->short_note = $_POST['message'];
-                 $donation_model->payment_status = 'pending';
+                 $donation_model->short_note = $step3_model->message;
+                 $donation_model->payment_status = 'transferred';
                 
                  $donation_model->reference_number =  getToken(8);
                 
