@@ -82,12 +82,14 @@ class UsersController extends Controller {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
-
+        $password = $model->password;
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['Users'])) {
             $model->attributes = $_POST['Users'];
+            $model->password = $password;
+            $model->verifyPassword = $password;
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }

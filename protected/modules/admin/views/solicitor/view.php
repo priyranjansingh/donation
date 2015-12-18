@@ -39,38 +39,100 @@
 									'freezed'
 								),
 							)); ?>
-						<h3 class="box-title">Visit List</h3>
-						<?php $this->widget('zii.widgets.grid.CGridView', array(
-												'id'=>'visits-grid',
-												'itemsCssClass' => 'table table-bordered table-hover dataTable',
-												'dataProvider'=>$visits->solicitors($model->id),
-												// 'filter'=>$visits,
-												'columns'=>array(
-													'visit_code',
-													'reason',
-													'start_date',
-												),
-											)); ?>
-						<h3 class="box-title">Payment List</h3>
-						<?php $this->widget('zii.widgets.grid.CGridView', array(
-												'id'=>'solicitor-credit-grid',
-												'itemsCssClass' => 'table table-bordered table-hover dataTable',
-												'dataProvider'=>$payments->payment($model->id),
-												// 'filter'=>$visits,
-												'columns'=>array(
-													array(
-												            'name' => 'visit',
-												            'type' => 'raw',
-												            'value' => array($this, 'gridVisit'),
-												        ),
-													'amount',
-													'mode',
-													'date_entered'
-												),
-											)); ?>
 					</div>
-                                    <?php echo CHtml::link('Back',array('/admin/solicitor'),array("class" => 'btn btn-info pull-right')); ?>
+				<?php echo CHtml::link('Back',array('/admin/solicitor'),array("class" => 'btn btn-info pull-right')); ?>
 				</div>
+				<?php if(count($visits)): ?>
+            <?php $i = 1; foreach($visits as $visit): ?>
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">
+                            Visit: <?php echo $visit['visit_code']; ?> | 
+                            <?php echo $visit['start_date'].' - '.$visit['end_date']; ?> | 
+                            Active: <?php echo $visit['visit_active']; ?> | 
+                            Total: <?php echo $visit['amount']; ?>
+                            <a href="<?php echo base_url().'/admin/visits/update?id='.$visit['visit_id']; ?>" class="btn btn-info">EDIT</a>
+                            <a href="<?php echo base_url().'/admin/solicitorcredit/create?solicitor='.$model->id.'&visit='.$visit['visit_id']; ?>" class="btn btn-info">Make Payment</a>
+                        </h3>
+                    </div>
+                    <div class="box-body">
+                    	<h3 class="box-title">Donations</h3> 
+                        <div class="dataTables_wrapper form-inline dt-bootstrap">
+                            <div class="row">
+                                <div class="col-sm-12 table-responsive">
+                                    <?php
+                                    $this->widget('zii.widgets.grid.CGridView', array(
+                                        'id' => 'donation-grid-'.$i,
+                                        'itemsCssClass' => 'table table-bordered table-hover dataTable',
+                                        'dataProvider' => $donation->solicitor($model->id,$visit['visit_id']),
+                                        'enablePagination' => true,
+                                        'columns' => array(
+                                            array(
+                                                  'name' => 'user_id',
+                                                  'value' => array($this, 'gridUser'),
+                                              ),
+                                            'amount',
+                                            'date_entered',
+                                            array
+                                                (
+                                                'class' => 'CButtonColumn',
+                                                'template' => '{edit}',
+                                                'buttons' => array
+                                                    (
+                                                    'edit' => array
+                                                        (
+                                                        'label' => 'EDIT',
+                                                        'url' => 'Yii::app()->createUrl("admin/donation/update", array("id"=>$data->id))',
+                                                    ),
+                                                ),
+                                            ),
+                                        ),
+                                    ));
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div>
+                        </div>
+                        <h3 class="box-title">Payments</h3> 
+                        <div class="dataTables_wrapper form-inline dt-bootstrap">
+                            <div class="row">
+                                <div class="col-sm-12 table-responsive">
+                                    <?php
+                                    $this->widget('zii.widgets.grid.CGridView', array(
+                                        'id' => 'donation-grid-'.$i,
+                                        'itemsCssClass' => 'table table-bordered table-hover dataTable',
+                                        'dataProvider' => $payments->solicitor($model->id,$visit['visit_id']),
+                                        'enablePagination' => true,
+                                        'columns' => array(
+                                            'amount',
+                                            'mode',
+                                            'date_entered',
+                                            array
+                                                (
+                                                'class' => 'CButtonColumn',
+                                                'template' => '{edit}',
+                                                'buttons' => array
+                                                    (
+                                                    'edit' => array
+                                                        (
+                                                        'label' => 'EDIT',
+                                                        'url' => 'Yii::app()->createUrl("admin/solicitorcredit/update", array("id"=>$data->id))',
+                                                    ),
+                                                ),
+                                            ),
+                                        ),
+                                    ));
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div>
+                        </div>
+                    </div>
+                </div>
+            <?php $i++; endforeach; ?>
+            <?php else : ?>
+                No Donation History For this solicitor
+            <?php endif; ?>
 			</div>
 		</div>
 	</div>

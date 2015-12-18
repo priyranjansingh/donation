@@ -67,10 +67,15 @@ class SolicitorCreditController extends Controller
 	{
 		$model=new SolicitorCredit;
 		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
-
+		$visits = CHtml::listData(BaseModel::getAll('Visits'), 'id', 'visit_code');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		if(isset($_GET['solicitor'])){
+			$model->solicitor_id = $_GET['solicitor'];
+		}
+		if(isset($_GET['visit'])){
+			$model->visit_id = $_GET['visit'];
+		}
 		if(isset($_POST['SolicitorCredit']))
 		{
 			$model->attributes=$_POST['SolicitorCredit'];
@@ -80,7 +85,8 @@ class SolicitorCreditController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
-			'solicitors'=>$solicitors
+			'solicitors'=>$solicitors,
+			'visits'=>$visits
 		));
 	}
 
@@ -94,6 +100,7 @@ class SolicitorCreditController extends Controller
 		$model=$this->loadModel($id);
 		$solicitor = Solicitor::model()->findByPk($model->solicitor_id);
 		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
+		$visits = CHtml::listData(BaseModel::getAll('Visits'), 'id', 'visit_code');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -107,7 +114,8 @@ class SolicitorCreditController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 			'solicitor'=>$solicitor,
-			'solicitors'=>$solicitors
+			'solicitors'=>$solicitors,
+			'visits'=>$visits
 		));
 	}
 

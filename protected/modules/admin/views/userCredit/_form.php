@@ -42,12 +42,12 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="form-group">
          <div class="col-xs-6">
             <?php echo $form->labelEx($model,'cheque_no'); ?>
-            <?php echo $form->textField($model,'cheque_no', array('size' => 60, 'maxlength' => 64,'class' => 'form-control')); ?>
+            <?php echo $form->textField($model,'cheque_no', array('size' => 60, 'maxlength' => 64,'class' => 'form-control','value' => 'NA')); ?>
 	    <?php echo $form->error($model,'cheque_no'); ?>
         </div>
         <div class="col-xs-6">
             <?php echo $form->labelEx($model, 'bank_name'); ?>
-            <?php echo $form->textField($model, 'bank_name', array('size' => 60, 'maxlength' => 256,'class' => 'form-control')); ?>
+            <?php echo $form->textField($model, 'bank_name', array('size' => 60, 'maxlength' => 256,'class' => 'form-control','value' => 'NA')); ?>
             <?php echo $form->error($model, 'bank_name'); ?>
         </div>
     </div>

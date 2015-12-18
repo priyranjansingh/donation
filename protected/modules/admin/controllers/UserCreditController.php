@@ -59,6 +59,9 @@ class UsercreditController extends Controller {
      */
     public function actionCreate() {
         $model = new UserCredit;
+        if(isset($_GET['user'])){
+            $model->user_id = $_GET['user'];
+        }
         $users = CHtml::listData(BaseModel::getAll('Users', array("condition" => "is_admin = 0 ")), 'id', 'username');
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);

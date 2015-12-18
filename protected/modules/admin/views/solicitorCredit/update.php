@@ -15,9 +15,9 @@
 		<div class="col-xs-12">
 			<div class="box box-info">
 				<div class="box-header with-border">
-					<h3 class="box-title">Update Payment For Solicitor <?php echo $model->first_name.' '.$model->last_name; ?></h3>
+					<h3 class="box-title">Update Payment For Solicitor <?php echo $solicitor->first_name.' '.$solicitor->last_name; ?></h3>
 				</div>
-				<?php $this->renderPartial('_form', array('model'=>$model,'solicitors'=>$solicitors)); ?>
+				<?php $this->renderPartial('_form', array('model'=>$model,'solicitors'=>$solicitors,'visits'=>$visits)); ?>
 			</div>
 		</div>
 	</div>

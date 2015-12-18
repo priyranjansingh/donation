@@ -27,7 +27,7 @@
 		</div>
 		<div class="col-xs-6">
 			<?php echo $form->labelEx($model,'visit_id'); ?>
-			<?php echo $form->dropDownList($model,'visit_id',array(),array('empty'=> 'Select Visit Code','class' => 'form-control')); ?>
+			<?php echo $form->dropDownList($model,'visit_id',$visits,array('empty'=> 'Select Visit Code','class' => 'form-control')); ?>
 			<?php echo $form->error($model,'visit_id'); ?>
 		</div>
 	</div>

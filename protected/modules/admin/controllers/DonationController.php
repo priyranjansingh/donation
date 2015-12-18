@@ -65,7 +65,10 @@ class DonationController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Donation;
+		$model = new Donation;
+		if(isset($_GET['user'])){
+			$model->user_id = $_GET['user'];
+		}
 		$users = CHtml::listData(BaseModel::getAll('Users'),'id','username');
 		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'),'id','solicitor_code');;
 		$visits = CHtml::listData(BaseModel::getAll('Visits'),'id','visit_code');

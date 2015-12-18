@@ -55,7 +55,7 @@
                     </h3>
                     <div class="row">
                         <div class="col-xs-4" style="float:right;">
-                            <a href="<?php echo base_url().'/admin/donation/create'; ?>" class="btn btn-info" style="float:right;">Add Donation</a>
+                            <a href="<?php echo base_url().'/admin/donation/create?user='.$user->id; ?>" class="btn btn-info" style="float:right;">Add Donation</a>
                         </div>    
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     </h3>
                     <div class="row">
                         <div class="col-xs-4" style="float:right;">
-                            <a href="<?php echo base_url().'/admin/usercredit/create'; ?>" class="btn btn-info" style="float:right;">Add Credits</a>
+                            <a href="<?php echo base_url().'/admin/usercredit/create?user='.$user->id; ?>" class="btn btn-info" style="float:right;">Add Credits</a>
                         </div>    
                     </div>
                 </div>

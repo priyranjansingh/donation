@@ -16,7 +16,7 @@
 				<div class="box-header with-border">
 					<h3 class="box-title">Solicitor Payment</h3>
 				</div>
-				<?php $this->renderPartial('_form', array('model'=>$model,'solicitors'=>$solicitors)); ?>
+				<?php $this->renderPartial('_form', array('model'=>$model,'solicitors'=>$solicitors,'visits'=>$visits)); ?>
 			</div>
 		</div>
 	</div>

@@ -23,18 +23,6 @@
 	</div>
 	<div class="form-group">
 		<div class="col-xs-6">
-			<?php echo $form->labelEx($model,'password'); ?>
-			<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>255,'class' => 'form-control')); ?>
-			<?php echo $form->error($model,'password'); ?>
-		</div>
-		<div class="col-xs-6">
-			<?php echo $form->labelEx($model,'verifyPassword'); ?>
-			<?php echo $form->passwordField($model,'verifyPassword',array('size'=>60,'maxlength'=>255,'class' => 'form-control')); ?>
-			<?php echo $form->error($model,'verifyPassword'); ?>
-		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-xs-6">
 			<?php echo $form->labelEx($model,'first_name'); ?>
 			<?php echo $form->textField($model,'first_name',array('size'=>60,'maxlength'=>255,'class' => 'form-control')); ?>
 			<?php echo $form->error($model,'first_name'); ?>

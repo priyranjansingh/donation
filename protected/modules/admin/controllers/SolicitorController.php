@@ -51,12 +51,21 @@ class SolicitorController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$visits = new Visits('solicitors');
-		$payments = new SolicitorCredit('payment');
+		$sol_vis_query = "SELECT s.first_name,s.last_name,v.visit_code,c.visit_id, CASE WHEN v.status = 1 THEN 'Yes' ELSE 'No' END AS visit_active, v.start_date,v.end_date,c.amount FROM `solicitor_credit` c LEFT JOIN visits v ON c.visit_id = v.id LEFT JOIN solicitor s ON c.solicitor_id = s.id WHERE c.solicitor_id = '$id'";
+		
+		$visits = BaseModel::executeSimpleQuery($sol_vis_query);
+        
+        $donation = new Donation('solicitor'); 
+        $donation->unsetAttributes();
+
+        $payments = new SolicitorCredit('solicitor');
+        $payments->unsetAttributes();
+
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
-			'visits' => $visits,
-			'payments' => $payments
+			'donation' => $donation,
+			'payments' => $payments,
+			'visits' => $visits
 		));
 	}
 
@@ -95,7 +104,7 @@ class SolicitorController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		$solicitor = Solicitor::model()->findByPk($model->solicitor_id);
 		if(isset($_POST['Solicitor']))
 		{
 			$model->attributes=$_POST['Solicitor'];
@@ -105,6 +114,7 @@ class SolicitorController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'solicitor'=>$solicitor
 		));
 	}
 
