@@ -70,7 +70,7 @@ $baseUrl = Yii::app()->theme->baseUrl;
                             <section class="walletModule nemo_balanceModule" aria-labelledby="walletModuleHeader">
                                 <div class="balanceModule">
                                     <h3 class="vx_h5 moduleHeader"><a href="" class=" moduleHeaderLink" name="balanceDetails" data-pagename="main:walletweb:wallet:balance:details" data-pagename2="main:walletweb:wallet:balance:details:::" data-track-type="link">Account Balance</a></h3>
-                                    <div class="balanceNumeral nemo_balanceNumeral"><span class="vx_h2"><?php  echo $user_balance;  ?></span>
+                                    <div class="balanceNumeral nemo_balanceNumeral"><span class="vx_h2"><?php  echo "$".$user_balance;  ?></span>
                                         <span class="vx_small-text numeralLabel">Available Credit: <?php echo "$".$user_model->credit_limits;   ?></span>
                                     </div>
                                     <!--
