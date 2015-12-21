@@ -23628,3 +23628,1163 @@ Stack trace:
 REQUEST_URI=/donation/user/default/assets/js/pa.js
 HTTP_REFERER=http://localhost/donation/user/default/accountsummary
 ---
+2015/12/19 04:38:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/19 04:38:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/19 04:38:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/19 04:39:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "MeshulachSearch".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('MeshulachSearch')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('MeshulachSearch')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/Me...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/MeshulachSearch
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/19 04:39:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/MeshulachSearch
+---
+2015/12/19 04:47:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "MeshulachSearch".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('MeshulachSearch')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('MeshulachSearch')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/Me...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/MeshulachSearch
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/19 04:47:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/MeshulachSearch
+---
+2015/12/20 18:02:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2015/12/20 18:02:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2015/12/20 18:02:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2015/12/20 18:02:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/default/user/assets/icons/pp32.png".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/default/...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/themes/user/assets/icons/pp32.png
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2015/12/20 18:03:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "MeshulachSearch".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('MeshulachSearch')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('MeshulachSearch')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/Me...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/MeshulachSearch
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2015/12/20 18:03:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/index.php/user/default/MeshulachSearch
+---
+2015/12/20 18:05:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/donate/ass...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/donate/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/donate/step1
+---
+2015/12/20 18:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Website".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('Website')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('Website')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/donate/Web...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/donate/Website
+HTTP_REFERER=http://localhost/donation/user/donate/step1
+---
+2015/12/20 18:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/donate/ass...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/donate/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/donate/Website
+---
+2015/12/20 18:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:09:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/donate/ass...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/donate/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/donate/step1
+---
+2015/12/20 18:09:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:09:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:09:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:09:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/donate/ass...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/donate/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/donate/step1
+---
+2015/12/20 18:10:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:10:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:10:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:11:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/donate/ass...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/donate/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/donate/step1
+---
+2015/12/20 18:23:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:23:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:23:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:33:56 [error] [exception.CException] exception 'CException' with message 'Alias "application.modules.solicitor.solicitor" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\donation\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\gii\generators\crud\CrudCode.php(59): YiiBase::import('application.mod...', true)
+#1 C:\xampp\htdocs\donation\framework\validators\CInlineValidator.php(42): CrudCode->validateModel('model', Array)
+#2 C:\xampp\htdocs\donation\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(CrudCode), 'model')
+#3 C:\xampp\htdocs\donation\framework\base\CModel.php(159): CValidator->validate(Object(CrudCode), NULL)
+#4 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\donation\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\donation\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/crud/index')
+#12 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/donation/index.php/gii/crud/index
+HTTP_REFERER=http://localhost/donation/index.php/gii/crud/index
+---
+2015/12/20 18:35:16 [error] [exception.CException] exception 'CException' with message 'Alias "solicitor.solicitor" is invalid. Make sure it points to an existing directory or file.' in C:\xampp\htdocs\donation\framework\YiiBase.php:348
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\gii\generators\crud\CrudCode.php(59): YiiBase::import('solicitor.solic...', true)
+#1 C:\xampp\htdocs\donation\framework\validators\CInlineValidator.php(42): CrudCode->validateModel('model', Array)
+#2 C:\xampp\htdocs\donation\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(CrudCode), 'model')
+#3 C:\xampp\htdocs\donation\framework\base\CModel.php(159): CValidator->validate(Object(CrudCode), NULL)
+#4 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\donation\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\donation\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/crud/index')
+#12 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/donation/index.php/gii/crud/index
+HTTP_REFERER=http://localhost/donation/index.php/gii/crud/index
+---
+2015/12/20 18:36:36 [error] [exception.CException] exception 'CException' with message 'Alias "application.modules.solicitor.solicitor" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\donation\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\gii\generators\crud\CrudCode.php(59): YiiBase::import('application.mod...', true)
+#1 C:\xampp\htdocs\donation\framework\validators\CInlineValidator.php(42): CrudCode->validateModel('model', Array)
+#2 C:\xampp\htdocs\donation\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(CrudCode), 'model')
+#3 C:\xampp\htdocs\donation\framework\base\CModel.php(159): CValidator->validate(Object(CrudCode), NULL)
+#4 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\donation\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\donation\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/crud/index')
+#12 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/donation/index.php/gii/crud/index
+HTTP_REFERER=http://localhost/donation/index.php/gii/crud/index
+---
+2015/12/20 18:37:16 [error] [exception.CException] exception 'CException' with message 'Alias "application.module.solicitor" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\donation\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\gii\generators\crud\CrudCode.php(59): YiiBase::import('application.mod...', true)
+#1 C:\xampp\htdocs\donation\framework\validators\CInlineValidator.php(42): CrudCode->validateModel('model', Array)
+#2 C:\xampp\htdocs\donation\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(CrudCode), 'model')
+#3 C:\xampp\htdocs\donation\framework\base\CModel.php(159): CValidator->validate(Object(CrudCode), NULL)
+#4 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\donation\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\donation\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/crud/index')
+#12 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/donation/index.php/gii/crud/index
+HTTP_REFERER=http://localhost/donation/index.php/gii/crud/index
+---
+2015/12/20 18:37:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/default/images/logo_212x56.png".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/default/...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor
+---
+2015/12/20 18:38:35 [error] [exception.CException] exception 'CException' with message 'Alias "application.modules.solicitor.Solicitor" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\donation\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\gii\generators\crud\CrudCode.php(59): YiiBase::import('application.mod...', true)
+#1 C:\xampp\htdocs\donation\framework\validators\CInlineValidator.php(42): CrudCode->validateModel('model', Array)
+#2 C:\xampp\htdocs\donation\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(CrudCode), 'model')
+#3 C:\xampp\htdocs\donation\framework\base\CModel.php(159): CValidator->validate(Object(CrudCode), NULL)
+#4 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\donation\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\donation\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/crud/index')
+#12 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/donation/index.php/gii/crud/index
+HTTP_REFERER=http://localhost/donation/index.php/gii/crud/index
+---
+2015/12/20 18:38:45 [error] [exception.CException] exception 'CException' with message 'Alias "application.modules.Solicitor" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\donation\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\gii\generators\crud\CrudCode.php(59): YiiBase::import('application.mod...', true)
+#1 C:\xampp\htdocs\donation\framework\validators\CInlineValidator.php(42): CrudCode->validateModel('model', Array)
+#2 C:\xampp\htdocs\donation\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(CrudCode), 'model')
+#3 C:\xampp\htdocs\donation\framework\base\CModel.php(159): CValidator->validate(Object(CrudCode), NULL)
+#4 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\donation\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\donation\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\donation\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/crud/index')
+#12 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/donation/index.php/gii/crud/index
+HTTP_REFERER=http://localhost/donation/index.php/gii/crud/index
+---
+2015/12/20 18:43:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/default/images/logo_212x56.png".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/default/...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor
+---
+2015/12/20 18:44:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('admin')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/defau...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/admin
+---
+2015/12/20 18:44:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/defau...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/admin
+---
+2015/12/20 18:45:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "solicitor".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('solicitor')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('solicitor')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/defau...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/solicitor/admin
+---
+2015/12/20 18:45:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "solicitor".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('solicitor')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('solicitor')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/defau...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/solicitor/admin
+---
+2015/12/20 18:45:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/default/user/assets/js/4.4.js.map".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/default/...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/themes/user/assets/js/4.4.js.map
+---
+2015/12/20 18:45:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('admin')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/defau...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/solicitor/admin
+---
+2015/12/20 18:45:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/defau...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/index.php/solicitor/admin
+---
+2015/12/20 18:45:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/default/user/assets/js/4.4.js.map".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/default/...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/themes/user/assets/js/4.4.js.map
+---
+2015/12/20 18:45:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:45:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:45:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/20 18:48:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "solicitor".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('solicitor')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('solicitor')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/defau...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/solicitor
+---
+2015/12/20 18:48:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/defau...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/solicitor
+---
+2015/12/20 18:49:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('default')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('default')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('site/default/lo...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/site/login
+---
+2015/12/20 18:49:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('default')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('default')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('site/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/site/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/index.php/site/login
+---
+2015/12/20 18:51:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/solic...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/solicitor/admin
+---
+2015/12/20 18:51:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/default/user/assets/js/4.4.js.map".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/default/...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/themes/user/assets/js/4.4.js.map
+---
+2015/12/20 18:52:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "solicitor/admin".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/admin')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/solicitor/admin
+---
+2015/12/20 18:52:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "solicitor/assets/images/logo_212x56.png".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/asset...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/admin
+---
+2015/12/20 18:53:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/solic...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/solicitor/admin
+---
+2015/12/20 18:53:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/solic...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/solicitor/admin
+---
+2015/12/20 18:53:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/solic...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/solicitor/admin
+---
+2015/12/20 18:53:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/solic...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/solicitor/admin
+---
+2015/12/20 18:53:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/solic...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/solicitor/admin
+---
+2015/12/20 18:54:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/solic...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/solicitor/admin
+---
+2015/12/20 18:56:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/solic...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/solicitor/
+---
+2015/12/20 18:56:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "solicitor/assets/images/logo_212x56.png".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/asset...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/
+---
+2015/12/20 18:57:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "solicitor/assets/images/logo_212x56.png".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/asset...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/
+---
+2015/12/20 18:57:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "solicitor/test".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/test')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/solicitor/test
+---
+2015/12/20 18:57:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "solicitor/assets/images/logo_212x56.png".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/asset...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/solicitor/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/test
+---
+2015/12/21 02:54:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2015/12/21 02:54:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2015/12/21 02:54:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2015/12/21 02:54:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/default/user/assets/icons/pp32.png".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/default/...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/themes/user/assets/icons/pp32.png
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2015/12/21 02:59:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/searc...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/search/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/search/step1
+---
+2015/12/21 03:05:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:05:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:05:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:05:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:05:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:05:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:08:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:08:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:08:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:08:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/searc...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/search/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/search/step1
+---
+2015/12/21 03:08:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/searc...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/search/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/search/step1
+---
+2015/12/21 03:11:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/searc...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/search/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/search/step1
+---
+2015/12/21 03:11:21 [error] [exception.CException] exception 'CException' with message 'Property "Step1.visit_code" is not defined.' in C:\xampp\htdocs\donation\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\donation\protected\modules\solicitor\controllers\SearchController.php(17): CComponent->__get('visit_code')
+#1 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(49): SearchController->actionStep1()
+#2 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\donation\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\donation\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('step1')
+#6 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/searc...')
+#7 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/donation/solicitor/search/step1
+HTTP_REFERER=http://localhost/donation/solicitor/search/step1
+---
+2015/12/21 03:28:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:28:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:28:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:28:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/searc...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/search/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/search/step1
+---
+2015/12/21 03:28:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/searc...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/search/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/search/step1
+---
+2015/12/21 03:39:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/searc...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/search/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/search/step1
+---
+2015/12/21 03:39:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/donate/ass...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/donate/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/donate/step1
+---
+2015/12/21 03:39:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:39:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/pa.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:39:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/as...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/assets/js/app.js
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2015/12/21 03:39:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/searc...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/search/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/search/step1
+---
+2015/12/21 03:40:02 [error] [php] urlencode() expects parameter 1 to be string, object given (C:\xampp\htdocs\donation\framework\web\CUrlManager.php:440)
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CUrlManager.php(786): CUrlManager->createPathInfo()
+#1 C:\xampp\htdocs\donation\framework\web\CUrlManager.php(302): CUrlRule->createUrl()
+#2 C:\xampp\htdocs\donation\framework\base\CApplication.php(551): CUrlManager->createUrl()
+#3 C:\xampp\htdocs\donation\framework\web\CController.php(967): CWebApplication->createUrl()
+#4 C:\xampp\htdocs\donation\framework\web\CController.php(1028): SearchController->createUrl()
+#5 C:\xampp\htdocs\donation\protected\modules\solicitor\controllers\SearchController.php(23): SearchController->redirect()
+#6 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(49): SearchController->actionStep1()
+#7 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\donation\framework\web\CController.php(286): SearchController->runAction()
+#9 C:\xampp\htdocs\donation\framework\web\CController.php(265): SearchController->runActionWithFilters()
+#10 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): SearchController->run()
+#11 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\donation\index.php(13): CWebApplication->run()
+REQUEST_URI=/donation/solicitor/search/step1
+in C:\xampp\htdocs\donation\protected\modules\solicitor\controllers\SearchController.php (23)
+in C:\xampp\htdocs\donation\index.php (13)
+2015/12/21 03:40:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/searc...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/solicitor/search/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/solicitor/search/step1
+---
+2015/12/21 03:44:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/default/user/assets/js/4.4.js.map".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/default/...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/themes/user/assets/js/4.4.js.map
+---
+2015/12/21 03:44:32 [error] [php] Undefined variable: solicitor_name (C:\xampp\htdocs\donation\protected\modules\solicitor\controllers\SearchController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(286): SearchController->runAction()
+#1 C:\xampp\htdocs\donation\framework\web\CController.php(265): SearchController->runActionWithFilters()
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): SearchController->run()
+#3 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\donation\index.php(13): CWebApplication->run()
+REQUEST_URI=/donation/index.php/solicitor/search/step2
+in C:\xampp\htdocs\donation\protected\modules\solicitor\controllers\SearchController.php (33)
+in C:\xampp\htdocs\donation\index.php (13)
+2015/12/21 03:44:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('assets')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('assets')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('solicitor/searc...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/solicitor/search/assets/images/logo_212x56.png
+HTTP_REFERER=http://localhost/donation/index.php/solicitor/search/step2
+---

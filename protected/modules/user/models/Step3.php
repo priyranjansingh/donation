@@ -25,14 +25,11 @@ class Step3 extends CFormModel {
         $user_model = Users::model()->findByPk($user_id);
         $credit_limits = $user_model->credit_limits;
         $donation_amt = $this->amount;
-        if($user_balance >= 0)
-        {    
-        $total_user_limit = $user_balance + $credit_limits;
-        }
-        else
-        {
+        if ($user_balance >= 0) {
+            $total_user_limit = $user_balance + $credit_limits;
+        } else {
             $total_user_limit = $credit_limits;
-        }    
+        }
 
         if ($total_user_limit < $donation_amt) {
             $this->addError($attribute, "Sorry. You do not have sufficient balance.");
