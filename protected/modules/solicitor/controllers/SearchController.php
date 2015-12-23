@@ -34,14 +34,36 @@ class SearchController extends Controller {
             $criteria = new CDbCriteria();
             $criteria->addSearchCondition('first_name', $solicitor_name);
             $sol_list = Solicitor::model()->findAll($criteria);
-            
-            pre($sol_list,true);
-            
-            
-            $this->render('step2', array('visit_model' => $visit_model, 'prev_don_model' => $prev_don_model));
+            //pre($sol_list,true);
+            $this->render('step2', array('sol_list' => $sol_list));
         } else {
             $this->redirect(array("/user"));
         }
     }
+    
+    public function actionStep3($id) {
+        if (isFrontUserLoggedIn()) {
+            $visit_list = Visits::model()->findAll(array("condition"=>" solicitor_id=  '".$id."' "));
+            $this->render('step3', array('visit_list' => $visit_list));
+        } else {
+            $this->redirect(array("/user"));
+        }
+    }
+    
+    public function actionDonate($id)
+    {
+        if (isFrontUserLoggedIn()) {
+            $visit_code = $id;
+            Yii::app()->session['visit_code'] = $visit_code;
+            $url = base_url()."/user/donate/step2";
+            $this->redirect($url);
+        } else {
+            $this->redirect(array("/user"));
+        }
+    }        
+    
+    
+    
+    
 
 }
