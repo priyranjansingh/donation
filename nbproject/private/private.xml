@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/solicitor/views/search/step2.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/solicitor/controllers/SearchController.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/user/views/default/account_summary.php</file>
+            <file>file:/C:/xampp/htdocs/donation/themes/front/views/layouts/header.php</file>
+            <file>file:/C:/xampp/htdocs/donation/themes/user/views/layouts/header.php</file>
+            <file>file:/C:/xampp/htdocs/donation/themes/front/views/layouts/main.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/user/views/default/login.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/user/controllers/DefaultController.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/user/views/default/register.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/config/main.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/user/views/default/account_summary_old.php</file>
         </group>
     </open-files>
 </project-private>

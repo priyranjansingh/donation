@@ -43,7 +43,7 @@ class DefaultController extends Controller {
     }
 
     public function actionRegister() {
-        $this->layout = '//layouts/register_main';
+        $this->layout = '//layouts/login_main';
         if (!isFrontUserLoggedIn()) {
             $model = new Registration;
 

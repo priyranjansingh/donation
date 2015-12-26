@@ -1,52 +1,75 @@
-<div id="content" class="contentContainer">
-    <header><div class="company-logo"></div></header>
+<section>
+    <div class="ml-header relative clear" >
+        <div class="p-20" >
+            <h3 class="mdl-color-text--white m-t-20 m-b-5 t-center">Vaad HaChessed User Portal</h3>
+        </div>
+    </div>
 
-    <div id="main" class="main " role="main">
+    <div class="mdl-grid mdl-grid--no-spacing">
 
-        <section id="login" class="login" data-role="page" data-title="Log in to your Vaad HaChessed User Portal account">
-            <h1 class="headerText accessAid">Log in to your Vaad HaChessed User Portal account</h1>
-            <!--<form action="AccountSummary.html" method="post" class="proceed maskable" name="login" autocomplete="off" novalidate>-->
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-phone no-p-l ">
+            &nbsp;
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-phone no-p-l">
+            <div class="ml-card-holder ml-card-holder-first p-20">
+                <div class="mdl-card mdl-shadow--1dp back-none">
+                    <div class="panel back-none no-margin">
 
-            <?php
-            $form = $this->beginWidget('CActiveForm', array(
-                'id' => 'login-form',
-                'enableClientValidation' => true,
-                //'enableAjaxValidation'=>true,
-                'clientOptions' => array(
-                    'validateOnSubmit' => true,
-                ),
-                'htmlOptions' => array(
-                    'autcomplete' => "off",
-                    'class' => "sky-form",
-                ),
-            ));
-            ?>
-            <div id="passwordSection" class="clearfix">
-                <div class="textInput" id="login_emaildiv">
-                    <div class="fieldWrapper">
-                        <?php echo $form->textField($model, 'username', array('placeholder' => 'Username')); ?>
-                        <?php echo $form->error($model, 'username'); ?>
+                        <div class="panel-body-list  p-20">
+
+                            <div class="mdl-card__title ">
+                                <h2 class="mdl-card__title-text">
+                                    <i class="material-icons mdl-color-text--grey m-r-5 lh-13">account_circle</i>
+                                    Login
+                                </h2>
+                            </div>
+                            <div class="p-l-20 p-r-20 p-b-20">
+                                <?php
+                                $form = $this->beginWidget('CActiveForm', array(
+                                    'id' => 'login-form',
+                                    'enableClientValidation' => true,
+                                    //'enableAjaxValidation'=>true,
+                                    'clientOptions' => array(
+                                        'validateOnSubmit' => true,
+                                    ),
+                                    'htmlOptions' => array(
+                                        'autcomplete' => "off",
+                                        'class' => "sky-form",
+                                    ),
+                                ));
+                                ?>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+
+                                    <?php echo $form->textField($model, 'username', array('placeholder' => 'Username', 'class' => 'mdl-textfield__input')); ?>
+                                    <?php echo $form->error($model, 'username'); ?>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                                    <?php echo $form->passwordField($model, 'password',array('placeholder' => 'Password','class'=>'mdl-textfield__input')); ?>
+                                    <?php echo $form->error($model, 'password', array('placeholder' => 'Password')); ?>
+                                </div>
+
+                                <div class="m-t-20">
+                                    <button  type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect mdl-color--light-blue">
+                                        Login
+                                    </button>
+                                    <a href="<?php echo base_url(); ?>/user/default/register"><button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                        Register
+                                        </button></a>
+                                      
+                                </div>
+                                <?php $this->endWidget(); ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="textInput lastInputField" id="login_passworddiv">
-                    <div class="fieldWrapper">
-                     <?php echo $form->passwordField($model, 'password'); ?>
-                     <?php echo $form->error($model, 'password',array('placeholder' => 'Password')); ?>
-                    </div>
-                </div>
             </div>
-
-            <div class="actions actionsSpaced">
-                <button class="button actionContinue" type="submit" id="btnLogin" name="btnLogin" value="Login">Log In</button>
-            </div>
-            <div class="forgotLink"><a href="RecoverPassword" id="forgotPasswordModal" class="scTrack:unifiedlogin-click-forgot-password">Forgot your email or password?</a>
-                <div class="pwr-modal" id="forgot-password-modal" class="forgotPasswordModal" aria-label="Password Recovery">
-                    <iframe id="pwdIframe" data-src="PasswordRecovery.html" scrolling="no" data-auto-reload="true" data-tabindex="0"></iframe>
-                </div>
-            </div>
-            <?php $this->endWidget(); ?>
-            <a href="<?php echo base_url(); ?>/user/default/register" class="button secondary" id="createAccount">Sign Up</a>
-        </section>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-phone no-p-l">
+        &nbsp;
     </div>
 </div>
+<div class="p-30">
+    &nbsp;
+</div>
+</section>
