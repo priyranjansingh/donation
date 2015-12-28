@@ -34,7 +34,7 @@
         <?php echo $content;   ?>
         <?php require_once 'footer.php'; ?>
 
-        <script src="<?php echo $baseUrl; ?>/assets/js/jquery-1.11.1.min.js"></script>
+        <!--<script src="<?php echo $baseUrl; ?>/assets/js/jquery-1.11.1.min.js"></script>-->
         <script src="<?php echo $baseUrl; ?>/assets/js/jquery-ui.min.js"></script>
         <script src="<?php echo $baseUrl; ?>/assets/js/bootstrap.min.js"></script>
         <script src="<?php echo $baseUrl; ?>/assets/js/vendors.min.c95e87841078c8095acf.js"></script>

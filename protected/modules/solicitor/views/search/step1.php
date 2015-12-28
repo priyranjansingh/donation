@@ -1,53 +1,62 @@
-<?php
-$baseUrl = Yii::app()->theme->baseUrl;
-?>
-<link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/css/donatenow.app.ltr.css">
-<div class="container-fluid contents flexify" id="contents" role="main" aria-labelledby="heading1">
-    <section class="mainContents row transfer  funnelPage_experiment_3 pageName-funnelPage pageName-recipientPage" id="transfer">
-        <div id="transfer-page" class="fadeInUp">
-             <?php
-            $form = $this->beginWidget('CActiveForm', array(
-                'id' => 'step1-form',
-                'enableClientValidation' => true,
-                //'enableAjaxValidation'=>true,
-                'clientOptions' => array(
-                    'validateOnSubmit' => true,
-                ),
-                'htmlOptions' => array(
-                    'autcomplete' => "off",
-                    'class' => "sky-form",
-                ),
-            ));
-            ?>
-                <h2 class="txtCenter fade in" style="display: block;">Search Solicitor</h2>
-                <p class="header-copy fade in" style="display: block;">Please enter the solicitor name.</p>
-                <div class="contacts-circle-list fade in" style="display: block;">
-                    <div class="recipientView">
-                        <div class="recipient-input-row">
-                            <div class="recipient-input-form-fields clearfix">
-                                <div class="recipient-input-wrapper hideNext col-sm-9 col-xs-12">
-                                    <div class="textInput tall recipient recipient recipient lap">
-                                        <label for="recipient"></label>
-                                          <?php echo $form->error($model, 'solicitor_name'); ?>
-                                          <?php echo $form->textField($model, 'solicitor_name', array('placeholder' => 'Solicitor Name','class'=>'hasHelp validate recipientInput')); ?>
-                                        
-                                        <div class="clearInput icon-close-small hide" data-clear="recipient"><span class="accessAid">Clear input</span></div>
-                                    </div>
+<section class="todo">
+    <div class="ml-header relative clear">
+        <div class="p-20">
+            <h3 class="mdl-color-text--white m-t-20 m-b-5">Search Solicitor</h3>
+            <h4 class="mdl-color-text--indigo-100 m-b-20 no-m-t w100"></h4>
+        </div>
+    </div>
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-phone no-p-l ">
+            &nbsp;
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-phone no-p-l">
+            <div class="ml-card-holder ml-card-holder-first p-20">
+                <div class="mdl-card mdl-shadow--1dp back-none">
+                    <div class="panel back-none no-margin">
+
+                        <div class="panel-body-list  p-20">
+                            <?php
+                            $form = $this->beginWidget('CActiveForm', array(
+                                'id' => 'step1-form',
+                                'enableClientValidation' => true,
+                                //'enableAjaxValidation'=>true,
+                                'clientOptions' => array(
+                                    'validateOnSubmit' => true,
+                                ),
+                                'htmlOptions' => array(
+                                    'autcomplete' => "off",
+                                ),
+                            ));
+                            ?>
+                            <div class="form-wizard condensed" id="wizard-3">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <?php echo $form->textField($model, 'solicitor_name', array('placeholder' => 'Solicitor Name', 'class' => 'mdl-textfield__input')); ?>
+                                    <?php echo $form->error($model, 'solicitor_name'); ?>
                                 </div>
 
-                                <input type="submit" tabindex="-1" class="btn btn-primary recipient-next animated col-sm-3 col-xs-12 fadeInRight" value="Next">
-                            </div>
-
-                            <div class="contact-typeahead-wrapper col-sm-9 col-xs-12">
-                                <ul class="input-typeahead contact-typeahead"></ul>
+                                <div class="form-actions wizard mgtp-20">
+                                    <div class="row mgbt-xs-0">
+                                        <div class="col-xs-12 text-center">
+                                            <?php echo CHtml::submitButton('Submit', array("value" => "Search", "class" => "btn vd_btn next mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button-full")); ?>
+                                        </div>
+                                    </div>
+                                    <?php $this->endWidget(); ?>
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-
-                    <div class="contact-drilldown" tabindex="0">&nbsp;</div>
                 </div>
-           <?php $this->endWidget(); ?>
+            </div>
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-phone no-p-l">
+                &nbsp;
+            </div>
         </div>
-        <div class="sidepanel fundingOptions animated" tabindex="-1"></div>
-    </section>
-</div>
+        <div class="p-30">
+            &nbsp;
+        </div>
+
+
+</section>

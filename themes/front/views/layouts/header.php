@@ -30,10 +30,7 @@
 
                   
                     <ul class="main-menu">
-                        <li><a href="index.html">Summary</a></li>
-                        <li><a href="donate.html">Activity</a></li>
-                        <li><a href="profile.html">SMS</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="<?php echo base_url()."/user/default/accountsummary"; ?>">Summary</a></li>
                     </ul>
                     
                 </div>

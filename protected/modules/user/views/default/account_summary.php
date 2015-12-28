@@ -35,14 +35,16 @@ $baseUrl = Yii::app()->theme->baseUrl;
                         <h4 class="mdl-card__title-text mdl-color-text--white f20 w600">Action</h4>
                     </div>
                     <div class="p-15 text-center">
-
-                        <button ng-click="todoService.clearCompleted()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-color--amber-700">
+                        <a href="<?php echo base_url() . "/user/donate/step1"; ?>">
+                        <button  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-color--amber-700">
                             Donate Now
                         </button>
-
+                        </a>    
+                        <a href="<?php echo base_url() . "/solicitor/search/step1"; ?>">
                         <button ng-click="todoService.clearCompleted()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-color--orange-900">
                             Meshulach Search
                         </button>
+                        </a>
                     </div>
                     <div class="mdl-card__menu">
 

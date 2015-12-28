@@ -10,6 +10,7 @@ class DonateController extends Controller {
             $model = new Step1;
             if (isset($_POST['Step1'])) {
                 $model->attributes = $_POST['Step1'];
+                
                 // validate user input and redirect to previous page if valid
                 if ($model->validate()) {
                     $visit_code = $model->visit_code;
@@ -31,7 +32,7 @@ class DonateController extends Controller {
             // finding out all the previous donations
             $user_id = Yii::app()->session['user_id'];
             $solicitor_id = $visit_model->solicitor->id;
-            $prev_don_model = Donation::model()->findAll(array('condition' => 'user_id = "' . $user_id . '" and solicitor_id = "' . $solicitor_id . '" '));
+            $prev_don_model = Donation::model()->findAll(array('order'=>'date_entered DESC','condition' => 'user_id = "' . $user_id . '" and solicitor_id = "' . $solicitor_id . '" '));
             $this->render('step2', array('visit_model' => $visit_model, 'prev_don_model' => $prev_don_model));
         } else {
             $this->redirect(array("/user"));
