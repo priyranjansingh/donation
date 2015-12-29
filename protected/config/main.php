@@ -12,7 +12,7 @@ return array(
     // preloading 'log' component
     'preload' => array('log'),
     'defaultController' => 'admin/login',
-    'theme' => 'user',
+    'theme' => 'front',
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
@@ -24,6 +24,7 @@ return array(
             'defaultController' => 'login',
         ),
         'user',
+        'solicitor',
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => '123456',
@@ -47,6 +48,9 @@ return array(
                  '<module:(user)>/<controller:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/<controller>/<action>/<id>',
                  '<module:(user)>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
                  '<module:(user)>/<controller:\w+>' => '<module>/<controller>',
+                 '<module:(solicitor)>/<controller:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/<controller>/<action>/<id>',
+                 '<module:(solicitor)>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+                 '<module:(solicitor)>/<controller:\w+>' => '<module>/<controller>',
                  '<module:(gii)>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
                  '<module:(gii)>/<controller:\w+>' => '<module>/<controller>',
                  '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',

@@ -20,10 +20,20 @@ class Step3 extends CFormModel {
     }
 
     public function checkBalance($attribute) {
-//        $visit = Visits::model()->find(array('condition' => 'visit_code = ' . $this->$attribute . ' '));
-//        if (empty($visit)) {
-//            $this->addError($attribute, 'Sorry, this visit code does not exist');
-//        }
+        $user_id = Yii::app()->session['user_id'];
+        $user_balance = Users::model()->getUserBalance($user_id);
+        $user_model = Users::model()->findByPk($user_id);
+        $credit_limits = $user_model->credit_limits;
+        $donation_amt = $this->amount;
+        if ($user_balance >= 0) {
+            $total_user_limit = $user_balance + $credit_limits;
+        } else {
+            $total_user_limit = $credit_limits;
+        }
+
+        if ($total_user_limit < $donation_amt) {
+            $this->addError($attribute, "Sorry. You do not have sufficient balance.");
+        }
     }
 
 }

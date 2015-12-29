@@ -31,7 +31,7 @@
  * @property string $date_entered
  * @property string $date_modified
  */
-class Users extends BaseModel
+class Users extends FrontBaseModel
 {
 	/**
 	 * @return string the associated database table name
@@ -175,7 +175,7 @@ class Users extends BaseModel
         $result = BaseModel::executeSimpleQueryFirstRow($sql);
         if(!empty($result['balance']))
         {    
-            return "$".$result['balance'];
+            return $result['balance'];
         }
         else
         {
