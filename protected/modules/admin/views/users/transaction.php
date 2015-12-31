@@ -71,8 +71,12 @@
                                     'enablePagination' => true,
                                     'columns' => array(
                                         array(
-                                              'name' => 'user_id',
-                                              'value' => array($this, 'gridUser'),
+                                              'name' => 'solicitor_id',
+                                              'value' => array($this, 'gridSolicitor'),
+                                          ),
+                                        array(
+                                              'name' => 'visit_id',
+                                              'value' => array($this, 'gridVisit'),
                                           ),
                                         'amount',
                                         'date_entered',

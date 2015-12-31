@@ -69,6 +69,12 @@ class DonationController extends Controller
 		if(isset($_GET['user'])){
 			$model->user_id = $_GET['user'];
 		}
+
+		if(isset($_GET['visit'])){
+			$model->visit_id = $_GET['visit'];
+			$model->solicitor_id = Visits::model()->findByPk($model->visit_id)->solicitor_id;
+		}
+		
 		$users = CHtml::listData(BaseModel::getAll('Users'),'id','username');
 		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'),'id','solicitor_code');;
 		$visits = CHtml::listData(BaseModel::getAll('Visits'),'id','visit_code');

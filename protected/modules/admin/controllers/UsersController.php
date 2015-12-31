@@ -227,4 +227,13 @@ class UsersController extends Controller {
         return $code->first_name.' '.$code->last_name.'('.$code->username.')';
     }
 
+    public function gridSolicitor($data, $row) {
+        $code = Solicitor::model()->findByPk($data->solicitor_id);
+        return $code->first_name.' '.$code->last_name.'('.$code->solicitor_code.')';
+    }
+    public function gridVisit($data, $row) {
+        $code = Visits::model()->findByPk($data->visit_id);
+        return $code->visit_code;
+    }
+
 }

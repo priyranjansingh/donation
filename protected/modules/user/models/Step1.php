@@ -18,7 +18,7 @@ class Step1 extends CFormModel {
     }
 
     public function checkVisitCode($attribute) {
-        $visit = Visits::model()->find(array('condition' => 'visit_code = ' . $this->$attribute . ' '));
+        $visit = Visits::model()->find(array('condition' => "visit_code = '".$this->$attribute."'"));
         if (empty($visit)) {
             $this->addError($attribute, 'Sorry, this visit code does not exist');
         }

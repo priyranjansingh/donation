@@ -1,13 +1,12 @@
 <section class="content-header">
     <h1>
-        Solicitor
+        Visit: <?php echo $visit; ?>
         <small>Donations</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="<?php echo base_url() . '/admin'; ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li><a href="<?php echo base_url() . '/admin/solicitor'; ?>"><i class="fa fa-dashboard"></i> Solicitors</a></li>
-        <li><a href="<?php echo base_url() . '/admin/donation'; ?>"><i class="fa fa-dashboard"></i> Donation</a></li>
-        <li class="active">Manage</li>
+        <li><a href="<?php echo base_url() . '/admin/visits'; ?>"><i class="fa fa-dashboard"></i> Visits</a></li>
+        <li class="active"><?php echo $visit; ?></li>
     </ol>
 </section>
 <section class="content">
