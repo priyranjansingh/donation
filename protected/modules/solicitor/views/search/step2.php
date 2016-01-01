@@ -25,6 +25,8 @@
 
                                             <tbody>
                                                 <?php
+                                                if(!empty($sol_list))
+                                                {    
                                                 foreach ($sol_list as $sol) {
                                                     ?>
                                                     <tr>
@@ -38,7 +40,20 @@
                                                             <a href="<?php echo base_url(); ?>/solicitor/search/step3?id=<?php echo $sol->id; ?>"><span class="netAmount vx_h4" dir="rtl">Visits</span></a>
                                                         </td>
                                                     </tr>
-                                                <?php } ?>
+                                                <?php }
+                                                }
+                                                else
+                                                {
+                                                ?>   
+                                                    <tr>
+                                                        <td style="text-align: center">
+                                                            <h4 >Sorry there is not any solicitor by this name.</h4>
+                                                        </td>   
+                                                        
+                                                    </tr>    
+                                                <?php    
+                                                }    
+                                                ?>
                                             </tbody>
                                         </table>
                                     </div>

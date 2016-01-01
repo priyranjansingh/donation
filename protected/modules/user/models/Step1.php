@@ -22,6 +22,18 @@ class Step1 extends CFormModel {
         if (empty($visit)) {
             $this->addError($attribute, 'Sorry, this visit code does not exist');
         }
+        else 
+        {
+            $visit_end_date = $visit->end_date;
+            if($visit_end_date < date("Y-m-d"))
+            {
+                $this->addError($attribute, 'Sorry, you can not donate now as the timeframe for this visit has passed.');
+            } 
+            else if($visit->status != 1 || $visit->deleted ==1)
+            {
+               $this->addError($attribute, 'Sorry, you can not donate now as this visit code has been closed.');    
+            }    
+        }    
     }
 
 }

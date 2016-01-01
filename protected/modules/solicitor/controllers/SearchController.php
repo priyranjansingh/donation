@@ -32,7 +32,8 @@ class SearchController extends Controller {
             $solicitor_name = Yii::app()->session['solicitor_name'];
             
             $criteria = new CDbCriteria();
-            $criteria->addSearchCondition('first_name', $solicitor_name);
+            $criteria->addSearchCondition('first_name', $solicitor_name,true,'OR');
+            $criteria->addSearchCondition('last_name', $solicitor_name,true,'OR');
             $sol_list = Solicitor::model()->findAll($criteria);
             //pre($sol_list,true);
             $this->render('step2', array('sol_list' => $sol_list));
