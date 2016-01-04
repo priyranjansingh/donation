@@ -131,7 +131,7 @@ $baseUrl = Yii::app()->theme->baseUrl;
                                             <tr>
                                                 <td>
                                                     <div class="small">
-                                                        <?php echo date("M", strtotime($trans->date_entered)); ?>
+                                                        <?php echo date("M", strtotime($trans->date_entered))." , ".date("Y", strtotime($trans->date_entered)); ?>
                                                     </div>
                                                     <h3 class="mdl-color-text--cyan no-margin "><?php echo date("d", strtotime($trans->date_entered)); ?></h3>
                                                 </td>
@@ -158,7 +158,7 @@ $baseUrl = Yii::app()->theme->baseUrl;
                                              <tr>
                                                 <td>
                                                     <div class="small">
-                                                        <?php echo date("M", strtotime($trans->date_entered)); ?>
+                                                        <?php echo date("M", strtotime($trans->date_entered))." , ".date("Y", strtotime($trans->date_entered)); ?>
                                                     </div>
                                                     <h3 class="mdl-color-text--cyan no-margin "><?php echo date("d", strtotime($trans->date_entered)); ?></h3>
                                                 </td>

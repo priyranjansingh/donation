@@ -44,7 +44,7 @@ class SearchController extends Controller {
     
     public function actionStep3($id) {
         if (isFrontUserLoggedIn()) {
-            $visit_list = Visits::model()->findAll(array("condition"=>" solicitor_id=  '".$id."' "));
+            $visit_list = Visits::model()->findAll(array("condition"=>" solicitor_id=  '".$id."' AND end_date > '".date('Y-m-d')."' AND status = 1 "));
             $this->render('step3', array('visit_list' => $visit_list));
         } else {
             $this->redirect(array("/user"));
