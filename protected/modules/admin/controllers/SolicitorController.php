@@ -104,7 +104,7 @@ class SolicitorController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		$solicitor = Solicitor::model()->findByPk($model->solicitor_id);
+		$solicitor = Solicitor::model()->findByPk($model->id);
 		if(isset($_POST['Solicitor']))
 		{
 			$model->attributes=$_POST['Solicitor'];

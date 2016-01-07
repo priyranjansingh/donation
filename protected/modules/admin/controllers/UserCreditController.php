@@ -62,12 +62,18 @@ class UsercreditController extends Controller {
         if(isset($_GET['user'])){
             $model->user_id = $_GET['user'];
         }
-        $users = CHtml::listData(BaseModel::getAll('Users', array("condition" => "is_admin = 0 ")), 'id', 'username');
+        $users_lists = BaseModel::getAll('Users', array("condition" => "is_admin = 0 "));
+        $users = array();
+        foreach($users_lists as $user){
+            $users[$user->id] = $user->first_name.' '.$user->last_name.'('.$user->username.')';
+        }
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['UserCredit'])) {
+            $receipt = Receipt::model()->findByPk('81dc3453-b570-11e5-9a98-3c07717072c4');
             $model->attributes = $_POST['UserCredit'];
+            $model->receipt_no = $receipt->receipt;
             if ($model->save()) {
                 if($model->payment_status == 'a'){
                     $trans_model = new UserTrans;
@@ -76,6 +82,8 @@ class UsercreditController extends Controller {
                     $trans_model->credit_id = $model->id;
                     $trans_model->save();
                 }
+                $receipt->receipt = ($receipt->receipt + 1);
+                $receipt->save();
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
@@ -100,12 +108,16 @@ class UsercreditController extends Controller {
         if (isset($_POST['UserCredit'])) {
             $model->attributes = $_POST['UserCredit'];
             if ($model->save()){
-                if($model->payment_status == 'a'){
+                $trans = UserTrans::model()->find(array("condition" => "credit_id = '$model->id'"));
+                if($trans === null && $model->payment_status == 'a'){
                     $trans_model = new UserTrans;
                     $trans_model->user_id = $model->user_id;
                     $trans_model->credit = $model->amount;
                     $trans_model->credit_id = $model->id;
                     $trans_model->save();
+                } else {
+                    $trans->credit = $model->amount;
+                    $trans->save();
                 }
                 $this->redirect(array('view', 'id' => $model->id));
             }

@@ -63,6 +63,7 @@
 	</div>
 </div>
 <div class="box-footer">
+	<?php echo CHtml::link('Back',array('/admin/users'),array("class" => 'btn btn-info pull-right',"style"=>"margin-left:10px;")); ?>
 	<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array("class" => 'btn btn-info pull-right')); ?>
 </div>
 <?php $this->endWidget(); ?>

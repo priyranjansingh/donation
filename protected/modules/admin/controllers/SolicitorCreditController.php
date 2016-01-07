@@ -66,7 +66,11 @@ class SolicitorCreditController extends Controller
 	public function actionCreate()
 	{
 		$model=new SolicitorCredit;
-		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
+		$lists = BaseModel::getAll('Solicitor');
+		$solicitors = array();
+		foreach($lists as $list){
+			$solicitors[$list->id] = $list->first_name.' '.$list->last_name.'('.$list->solicitor_code.')';
+		}
 		$visits = CHtml::listData(BaseModel::getAll('Visits'), 'id', 'visit_code');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
