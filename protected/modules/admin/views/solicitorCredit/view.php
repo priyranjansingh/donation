@@ -4,7 +4,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="<?php echo base_url().'/admin'; ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="<?php echo base_url().'/admin/solicitorcredit'; ?>"><i class="fa fa-dashboard"></i> Solicitor Payment</a></li>
+    <li><a href="<?php echo base_url().'/admin/solicitorCredit'; ?>"><i class="fa fa-dashboard"></i> Solicitor Payment</a></li>
     <li class="active">View</li>
   </ol>
 </section>
@@ -13,7 +13,7 @@
 		<div class="col-xs-12">
 			<div class="box box-info">
 				<div class="box-header with-border">
-					<h3 class="box-title">Solicitor Payment For <?php echo $solicitor->first_name.' '.$solicitor->last_name.' ('.$solicitor->solicitor_code.')'; ?> <small><a href="<?php echo base_url().'/admin/solicitorcredit/update?id='.$model->id; ?>">EDIT</a></small></h3>
+					<h3 class="box-title">Solicitor Payment For <?php echo $solicitor->first_name.' '.$solicitor->last_name.' ('.$solicitor->solicitor_code.')'; ?> <small><a href="<?php echo base_url().'/admin/solicitorCredit/update?id='.$model->id; ?>">EDIT</a></small></h3>
 				</div>
 				<div class="box-body">
 					<div class="col-xs-12 table-responsive">

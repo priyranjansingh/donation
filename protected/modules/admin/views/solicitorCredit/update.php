@@ -5,8 +5,8 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="<?php echo base_url().'/admin'; ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="<?php echo base_url().'/admin/solicitorcredit'; ?>"><i class="fa fa-dashboard"></i> Solicitor Payment</a></li>
-    <li><a href="<?php echo base_url().'/admin/solicitorcredit/view?id='.$model->id; ?>"><i class="fa fa-dashboard"></i> View</a></li>
+    <li><a href="<?php echo base_url().'/admin/solicitorCredit'; ?>"><i class="fa fa-dashboard"></i> Solicitor Payment</a></li>
+    <li><a href="<?php echo base_url().'/admin/solicitorCredit/view?id='.$model->id; ?>"><i class="fa fa-dashboard"></i> View</a></li>
     <li class="active">Update</li>
   </ol>
 </section>

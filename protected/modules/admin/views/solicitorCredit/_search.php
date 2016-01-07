@@ -41,7 +41,7 @@
 		</div>
 		<div class="box-footer">
 			<?php echo CHtml::submitButton('Search',array("class" => 'btn btn-info search-button')); ?>
-			<a href="<?php echo base_url().'/admin/solicitorcredit/manage' ?>" class="btn btn-warning">Clear</a>
+			<a href="<?php echo base_url().'/admin/solicitorCredit/manage' ?>" class="btn btn-warning">Clear</a>
 		</div>
 	</div>
 <?php $this->endWidget(); ?>

@@ -52,7 +52,7 @@
                             Active: <?php echo $visit['visit_active']; ?> | 
                             Total: <?php echo $visit['amount']; ?>
                             <a href="<?php echo base_url().'/admin/visits/update?id='.$visit['visit_id']; ?>" class="btn btn-info">EDIT</a>
-                            <a href="<?php echo base_url().'/admin/solicitorcredit/create?solicitor='.$model->id.'&visit='.$visit['visit_id']; ?>" class="btn btn-info">Make Payment</a>
+                            <a href="<?php echo base_url().'/admin/solicitorCredit/create?solicitor='.$model->id.'&visit='.$visit['visit_id']; ?>" class="btn btn-info">Make Payment</a>
                         </h3>
                     </div>
                     <div class="box-body">
@@ -116,7 +116,7 @@
                                                     'edit' => array
                                                         (
                                                         'label' => 'EDIT',
-                                                        'url' => 'Yii::app()->createUrl("admin/solicitorcredit/update", array("id"=>$data->id))',
+                                                        'url' => 'Yii::app()->createUrl("admin/solicitorCredit/update", array("id"=>$data->id))',
                                                     ),
                                                 ),
                                             ),

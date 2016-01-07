@@ -109,7 +109,7 @@
                     </h3>
                     <div class="row">
                         <div class="col-xs-4" style="float:right;">
-                            <a href="<?php echo base_url().'/admin/usercredit/create?user='.$user->id; ?>" class="btn btn-info" style="float:right;">Add Credits</a>
+                            <a href="<?php echo base_url().'/admin/userCredit/create?user='.$user->id; ?>" class="btn btn-info" style="float:right;">Add Credits</a>
                         </div>    
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                                                 'edit' => array
                                                     (
                                                     'label' => 'EDIT',
-                                                    'url' => 'Yii::app()->createUrl("admin/usercredit/update", array("id"=>$data->id))',
+                                                    'url' => 'Yii::app()->createUrl("admin/userCredit/update", array("id"=>$data->id))',
                                                 ),
                                             ),
                                         ),

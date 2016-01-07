@@ -43,7 +43,7 @@
                             </a>
                         </div>
                         <div class="col-sm-2">
-                            <a href="<?php echo base_url() . '/admin/usercredit/create'; ?>">
+                            <a href="<?php echo base_url() . '/admin/userCredit/create'; ?>">
                                 <button class="btn btn-block btn-primary">Add Payment</button>
                             </a>
                         </div>

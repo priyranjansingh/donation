@@ -17,7 +17,7 @@
 				<div class="box-header with-border">
 					<h3 class="box-title"><?php echo $model->visit_code; ?></h3>
 				</div>
-				<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+				<?php $this->renderPartial('_form', array('model'=>$model,'solicitors'=>$solicitors)); ?>
 			</div>
 		</div>
 	</div>

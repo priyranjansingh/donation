@@ -5,7 +5,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="<?php echo base_url().'/admin'; ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="<?php echo base_url().'/admin/solicitorcredit'; ?>"><i class="fa fa-dashboard"></i> Solicitor Payment</a></li>
+    <li><a href="<?php echo base_url().'/admin/solicitorCredit'; ?>"><i class="fa fa-dashboard"></i> Solicitor Payment</a></li>
     <li class="active">Add</li>
   </ol>
 </section>
