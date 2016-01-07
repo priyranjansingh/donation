@@ -39,3 +39,20 @@ ALTER TABLE `user_credit` ADD `cheque_no` VARCHAR(64) NOT NULL AFTER `payment_st
 ----------------- 07-1-2015 --------------------------
 
 ALTER TABLE `user_credit` ADD `receipt_no` VARCHAR(100) NULL AFTER `amount`;
+
+----------------- 08-1-2016 ---------------------------
+
+CREATE TABLE IF NOT EXISTS `receipt` (
+  `id` char(36) NOT NULL,
+  `receipt` varchar(100) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_by` char(36) NOT NULL,
+  `modified_by` char(36) NOT NULL,
+  `date_entered` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `receipt` (`id`, `receipt`, `status`, `deleted`, `created_by`, `modified_by`, `date_entered`, `date_modified`) VALUES
+('81dc3453-b570-11e5-9a98-3c07717072c4', '5001', 1, 0, '26c0e8dc-8afa-11e5-a313-3c07717072c4', '26c0e8dc-8afa-11e5-a313-3c07717072c4', '2016-01-08 00:00:00', '2016-01-08 00:00:00');
