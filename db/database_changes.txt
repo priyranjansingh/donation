@@ -34,3 +34,8 @@ ALTER TABLE `user_trans` CHANGE `deleted` `deleted` TINYINT(1) NULL DEFAULT '1';
 ALTER TABLE `user_credit` ADD `payment_status` ENUM('a','p','c') NOT NULL DEFAULT 'p' AFTER `mode`;
 
 ALTER TABLE `user_credit` ADD `cheque_no` VARCHAR(64) NOT NULL AFTER `payment_status`, ADD `bank_name` VARCHAR(256) NOT NULL AFTER `cheque_no`;
+
+
+----------------- 07-1-2015 --------------------------
+
+ALTER TABLE `user_credit` ADD `receipt_no` VARCHAR(100) NULL AFTER `amount`;

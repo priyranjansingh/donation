@@ -25,20 +25,34 @@
 
                                             <tbody>
                                                 <?php
-                                                foreach ($visit_list as $visit) {
-                                                    ?>
-                                                    <tr>
-                                                        <td>
+                                                if (!empty($visit_list)) {
+                                                    foreach ($visit_list as $visit) {
+                                                        ?>
+                                                        <tr>
+                                                            <td>
 
-                                                        </td>
-                                                        <td class="mdl-data-table__cell--non-numeric">
-                                                            <div class="">Visit Code - <?php   echo $visit->visit_code." (". $visit->reason.")";   ?></div>
-                                                        </td>
-                                                        <td>
-                                                              <a href="<?php echo base_url(); ?>/solicitor/search/donate?id=<?php echo $visit->visit_code; ?>"><span class="netAmount vx_h4" dir="rtl">Donate</span></a>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
+                                                            </td>
+                                                            <td class="mdl-data-table__cell--non-numeric">
+                                                                <div class="">Visit Code - <?php echo $visit->visit_code . " (" . $visit->reason . ")"; ?></div>
+                                                            </td>
+                                                            <td>
+                                                                <a href="<?php echo base_url(); ?>/solicitor/search/donate?id=<?php echo $visit->visit_code; ?>"><span class="netAmount vx_h4" dir="rtl">Donate</span></a>
+                                                            </td>
+                                                        </tr>
+                                                        <?php
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                ?>    
+                                                        <tr>
+                                                            <td style="text-align: center">
+                                                                <h4>Sorry! there is not any active visits.</h4>
+                                                            </td>    
+                                                        </tr>    
+                                                <?php     
+                                                }    
+                                                ?>
                                             </tbody>
                                         </table>
                                     </div>

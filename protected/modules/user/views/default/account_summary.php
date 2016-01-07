@@ -36,14 +36,14 @@ $baseUrl = Yii::app()->theme->baseUrl;
                     </div>
                     <div class="p-15 text-center">
                         <a href="<?php echo base_url() . "/user/donate/step1"; ?>">
-                        <button  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-color--amber-700">
-                            Donate Now
-                        </button>
+                            <button  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-color--amber-700">
+                                Donate Now
+                            </button>
                         </a>    
                         <a href="<?php echo base_url() . "/solicitor/search/step1"; ?>">
-                        <button ng-click="todoService.clearCompleted()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-color--orange-900">
-                            Meshulach Search
-                        </button>
+                            <button ng-click="todoService.clearCompleted()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-color--orange-900">
+                                Meshulach Search
+                            </button>
                         </a>
                     </div>
                     <div class="mdl-card__menu">
@@ -115,57 +115,78 @@ $baseUrl = Yii::app()->theme->baseUrl;
                 <div class="block-content-outer">
                     <div class="block-content-inner">
                         <div class="table-responsive">
-                            <table class="table table-condensed table-striped table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th class="col-xs-1">Date</th>
-                                        <th class="col-xs-2">Detail</th>
-                                        <th class="col-xs-2">Amount</th>
-                                    </tr>
-                                </thead>
+
+                            <table class="mdl-data-table mdl-js-data-table ml-data-table">
+                                <colgroup>
+                                    <col class="auto-cell-size">
+                                </colgroup>
+
                                 <tbody>
                                     <?php
-                                    foreach ($user_trans as $trans) {
-                                        if ($trans->Donation) {
-                                            ?>    
-                                            <tr>
-                                                <td>
-                                                    <?php echo date("M", strtotime($trans->date_entered)); ?>
-                                                    <?php echo date("d", strtotime($trans->date_entered)); ?>
-                                                    <?php echo date("Y", strtotime($trans->date_entered)); ?>
-                                                <td>
-                                                    (<?php echo $trans->Donation->visit->visit_code; ?>) 
-                                                    <?php echo $trans->Donation->solicitor->first_name . " " . $trans->Donation->solicitor->last_name; ?>
-                                                </td>
-                                                <td>
-                                                    - $<?php echo $trans->debit; ?>
-                                                    Transaction Type - Donation
-                                                </td>
-                                            </tr>
-                                            <?php
-                                        } else {
-                                            ?>     
-                                            <tr>
-                                                <td>
-        <?php echo date("M", strtotime($trans->date_entered)); ?>
-                                                    <?php echo date("d", strtotime($trans->date_entered)); ?>
-                                                    <?php echo date("Y", strtotime($trans->date_entered)); ?>
-
-                                                <td>
-                                                    Payment - Thank You
-                                                </td>
-                                                <td>
-                                                    + $<?php echo $trans->credit; ?>
-                                                    Payment <a href="" target="_blank">Print Receipt</a>
-                                                </td>
-                                            </tr>
-        <?php
-    }
-}
-?>
-
+                                    if (!empty($user_trans)) {
+                                        foreach ($user_trans as $trans) {
+                                            if ($trans->Donation) {
+                                                ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="small">
+                                                            <?php echo date("M", strtotime($trans->date_entered)) . " , " . date("Y", strtotime($trans->date_entered)); ?>
+                                                        </div>
+                                                        <h3 class="mdl-color-text--cyan no-margin "><?php echo date("d", strtotime($trans->date_entered)); ?></h3>
+                                                    </td>
+                                                    <td class="mdl-data-table__cell--non-numeric">
+                                                        <div class="">
+                                                            (<?php echo $trans->Donation->visit->visit_code; ?>) 
+                                                            <?php echo $trans->Donation->solicitor->first_name . " " . $trans->Donation->solicitor->last_name; ?>
+                                                        </div>
+                                                        <ul class="list-unstyled f12">
+                                                            <li>
+                                                                <i class="material-icons f14">check_circle</i>
+                                                                Transaction Type - Donation
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>- $<?php echo $trans->debit; ?>  </td>
+                                                    <td>Donation  </td>
+                                                </tr>
+                                                <?php
+                                            } else {
+                                                ?>    
+                                                <tr>
+                                                    <td>
+                                                        <div class="small">
+                                                            <?php echo date("M", strtotime($trans->date_entered)) . " , " . date("Y", strtotime($trans->date_entered)); ?>
+                                                        </div>
+                                                        <h3 class="mdl-color-text--cyan no-margin "><?php echo date("d", strtotime($trans->date_entered)); ?></h3>
+                                                    </td>
+                                                    <td class="mdl-data-table__cell--non-numeric">
+                                                        Payment - Thank You
+                                                        <ul class="list-unstyled f12">
+                                                            <li>
+                                                                 <i class="material-icons f14">check_circle</i>
+                                                                <a href="<?php echo base_url();?>/user/default/download?flag=<?php  echo $trans->Usercredit->id; ?>">Download Receipt</a> 
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>+ $<?php echo $trans->credit; ?>  </td>
+                                                    <td>Payment</td>
+                                                </tr>
+                                                <?php
+                                            }
+                                        }
+                                    } else {
+                                        ?> 
+                                        <tr >
+                                            <td style="text-align: center;">
+                                                <h4>There is not any previous donations.</h4>
+                                            </td>   
+                                        </tr>   
+                                        <?php
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
+
                         </div>
                     </div>
                 </div>

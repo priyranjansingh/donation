@@ -13,7 +13,7 @@
             <div class="ml-card-holder ml-card-holder-first p-20">
                 <div class="mdl-card mdl-shadow--1dp back-none">
                     <div class="panel back-none no-margin">
-                        <?php echo CHtml::link('Continue', base_url() . "/user/donate/step3", array("value" => "Next", "class" => "btn vd_btn next mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button-full")); ?>
+                        <?php echo CHtml::link('Continue', base_url() . "/user/donate/step3", array("value" => "Next", "class" => "btn vd_btn next mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent ")); ?>
                         <div class="panel-body-list  p-20">
                             <form role="form" action="#" class="form-horizontal">
                                 <div class="form-wizard condensed" id="wizard-3">
@@ -26,12 +26,14 @@
 
                                             <tbody>
                                                 <?php
+                                                if(!empty($prev_don_model))
+                                                {    
                                                 foreach ($prev_don_model as $donation) {
                                                     ?>
                                                     <tr>
                                                         <td>
                                                             <div class="small">
-                                                                <?php echo date("M", strtotime($donation->date_entered)); ?>
+                                                                <?php echo date("M", strtotime($donation->date_entered))." , ".date("Y", strtotime($donation->date_entered));; ?>
                                                             </div>
                                                             <h3 class="mdl-color-text--cyan no-margin "><?php echo date("d", strtotime($donation->date_entered)); ?></h3>
                                                         </td>
@@ -46,7 +48,19 @@
                                                         </td>
                                                         <td>- $<?php echo $donation->amount; ?>  </td>
                                                     </tr>
-                                                <?php } ?>
+                                                <?php } 
+                                                }
+                                                else 
+                                                {
+                                                ?> 
+                                                    <tr >
+                                                        <td style="text-align: center;">
+                                                            <h4>There is not any previous donations.</h4>
+                                                        </td>   
+                                                    </tr>   
+                                                <?php    
+                                                }    
+                                                ?>
                                             </tbody>
                                         </table>
                                     </div>
