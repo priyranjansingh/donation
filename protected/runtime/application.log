@@ -21,3 +21,14 @@ Stack trace:
 REQUEST_URI=/donation/index.php/admin/solicitor/update?id=cc78c057-efca-b886-1f5b-564a2cdbae78
 HTTP_REFERER=http://localhost/donation/index.php/admin/solicitor/manage
 ---
+2016/01/08 03:43:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---

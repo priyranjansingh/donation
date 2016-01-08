@@ -1,11 +1,37 @@
 <html>
     <head>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+
+            }
+            th, td {
+                padding: 15px;
+            }
+            td
+            {
+                font-size: 18px;
+            }
+            table tr:nth-child(even) {
+                background-color: #eee;
+            }
+            table tr:nth-child(odd) {
+                background-color:#fff;
+            }
+            table th	{
+                background-color: black;
+                color: white;
+                font-size: 20px;
+            }
+        </style>    
+
 
     </head>
     <body>
-        <table>
+        <table  align="center" style="width:100%">
             <tr>
-                <td colspan="2"><h4>Payment Receipt</h4></td>
+                <th colspan="2">Payment Receipt</th>
             </tr>
             <tr>
                 <td>Receipt Number : </td>
@@ -17,7 +43,7 @@
             </tr>
             <tr>
                 <td>Amount : </td>
-                <td><?php echo $model->amount; ?></td>
+                <td>$<?php echo $model->amount; ?></td>
             </tr>
             <tr>
                 <td>Date :</td>
