@@ -160,7 +160,7 @@ class SolicitorController extends Controller
 	}
 
 	public function actionDonations($id){
-		$visit_sql = "SELECT d.user_id,d.visit_id,s.first_name,s.last_name,v.visit_code, CASE WHEN v.status = 1 THEN 'Yes' ELSE 'No' END AS visit_active, v.start_date,v.end_date,d.amount FROM `user_donation` d LEFT JOIN visits v ON d.visit_id = v.id LEFT JOIN solicitor s ON d.solicitor_id = s.id WHERE d.solicitor_id = '$id'";
+		$visit_sql = "SELECT d.user_id,d.visit_id,s.first_name,s.last_name,v.visit_code, CASE WHEN v.status = 1 THEN 'Yes' ELSE 'No' END AS visit_active, v.start_date,v.end_date,d.amount FROM `user_donation` d LEFT JOIN visits v ON d.visit_id = v.id LEFT JOIN solicitor s ON d.solicitor_id = s.id WHERE d.solicitor_id = '$id' GROUP BY d.visit_id";
         $visits = BaseModel::executeSimpleQuery($visit_sql);
         
         $donation = new Donation('users'); 

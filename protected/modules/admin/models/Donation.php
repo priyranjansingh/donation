@@ -131,16 +131,21 @@ class Donation extends BaseModel
 		));
 	}
 
-	public function users($id,$visit=null)
+	public function users($id=null,$visit=null)
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('user_id',$this->user_id,$id);
+		
+		if($id != null)
+			$criteria->compare('user_id',$id);
+		else
+			$criteria->compare('user_id',$this->user_id,true);
+		
 		
 		if($visit != null)
-			$criteria->compare('visit_id',$this->visit_id,$visit);
+			$criteria->compare('visit_id',$visit);
 		else
 			$criteria->compare('visit_id',$this->visit_id,true);
 

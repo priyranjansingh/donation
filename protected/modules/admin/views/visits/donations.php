@@ -41,7 +41,7 @@
                                     $this->widget('zii.widgets.grid.CGridView', array(
                                         'id' => 'donation-grid-'.$i,
                                         'itemsCssClass' => 'table table-bordered table-hover dataTable',
-                                        'dataProvider' => $donation->users($visit['user_id'],$visit['visit_id']),
+                                        'dataProvider' => $donation->users(null,$visit['visit_id']),
                                         'enablePagination' => true,
                                         'columns' => array(
                                             array(

@@ -40,7 +40,7 @@
 			<?php echo $form->labelEx($model,'start_date'); ?>
 			<?php // echo $form->textField($model,'start_date',array('class' => 'form-control calendar')); ?>
 			<div class="input-group dateholder">
-				<input type="text" class="form-control" name="Visits[start_date]">
+				<input type="text" class="form-control" name="Visits[start_date]" value="<?php echo $model->start_date; ?>">
             </div>
 			<?php echo $form->error($model,'start_date'); ?>
 		</div>
@@ -48,7 +48,7 @@
 			<?php echo $form->labelEx($model,'end_date'); ?>
 			<?php //echo $form->textField($model,'end_date',array('class' => 'form-control calendar')); ?>
 			<div class="input-group dateholder">
-				<input type="text" class="form-control" name="Visits[end_date]">
+				<input type="text" class="form-control" name="Visits[end_date]" value="<?php echo $model->end_date; ?>">
             </div>
 			<?php echo $form->error($model,'end_date'); ?>
 		</div>

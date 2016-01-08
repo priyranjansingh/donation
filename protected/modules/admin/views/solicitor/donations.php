@@ -31,7 +31,7 @@
                             Total: <?php echo $visit['amount']; ?>
                             <a href="<?php echo base_url().'/admin/visits/close?id='.$visit['visit_id']; ?>" class="btn btn-info">Close Visit</a>
                             <a href="<?php echo base_url().'/admin/visits/update?id='.$visit['visit_id']; ?>" class="btn btn-info">EDIT</a>
-                            <a href="<?php echo base_url().'/admin/donation/create?visit='.$visit['visit_id']; ?>" class="btn btn-info">Make Payment</a>
+                            <a href="<?php echo base_url().'/admin/solicitorCredit/create?visit='.$visit['visit_id']; ?>" class="btn btn-info">Make Payment</a>
                         </h3>
                     </div>
                     <div class="box-body">
@@ -42,7 +42,7 @@
                                     $this->widget('zii.widgets.grid.CGridView', array(
                                         'id' => 'donation-grid-'.$i,
                                         'itemsCssClass' => 'table table-bordered table-hover dataTable',
-                                        'dataProvider' => $donation->users($visit['user_id'],$visit['visit_id']),
+                                        'dataProvider' => $donation->users(null,$visit['visit_id']),
                                         'enablePagination' => true,
                                         'columns' => array(
                                             array(
