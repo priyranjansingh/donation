@@ -30,7 +30,7 @@
                             Total: <?php echo $visit['amount']; ?>
                             <a href="<?php echo base_url().'/admin/visits/close?id='.$visit['visit_id']; ?>" class="btn btn-info">Close Visit</a>
                             <a href="<?php echo base_url().'/admin/visits/update?id='.$visit['visit_id']; ?>" class="btn btn-info">EDIT</a>
-                            <a href="<?php echo base_url().'/admin/donation/create?visit='.$visit['visit_id']; ?>" class="btn btn-info">Make Payment</a>
+                            <a href="<?php echo base_url().'/admin/solicitorCredit/create?visit='.$visit['visit_id']; ?>" class="btn btn-info">Make Payment</a>
                         </h3>
                     </div>
                     <div class="box-body">
