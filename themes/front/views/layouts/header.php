@@ -31,6 +31,7 @@
                   
                     <ul class="main-menu">
                         <li><a href="<?php echo base_url()."/user/default/accountsummary"; ?>">Summary</a></li>
+                        <li><a href="<?php echo base_url()."/user/activity"; ?>">Activity</a></li>
                     </ul>
                     
                 </div>

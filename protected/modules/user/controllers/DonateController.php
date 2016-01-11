@@ -88,6 +88,7 @@ class DonateController extends Controller {
 
                     // for storing in the user_trans table
                     $trans_model = new UserTrans;
+                    $trans_model->tran_type = 'DONATION';
                     $trans_model->user_id = $donation_model->user_id;
                     $trans_model->debit = $actual_don_amt;
                     $trans_model->donation_id = $donation_model->id;

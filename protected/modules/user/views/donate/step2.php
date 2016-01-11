@@ -26,41 +26,45 @@
 
                                             <tbody>
                                                 <?php
-                                                if(!empty($prev_don_model))
-                                                {    
-                                                foreach ($prev_don_model as $donation) {
-                                                    ?>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="small">
-                                                                <?php echo date("M", strtotime($donation->date_entered))." , ".date("Y", strtotime($donation->date_entered));; ?>
-                                                            </div>
-                                                            <h3 class="mdl-color-text--cyan no-margin "><?php echo date("d", strtotime($donation->date_entered)); ?></h3>
-                                                        </td>
-                                                        <td class="mdl-data-table__cell--non-numeric">
-                                                            <div class="">(<?php echo $donation->visit->visit_code; ?>) <?php echo $donation->solicitor->first_name . " " . $donation->solicitor->last_name; ?></div>
-                                                            <ul class="list-unstyled f12">
-                                                                <li>
-                                                                    <i class="material-icons f14">check_circle</i>
-                                                                    Transaction Type - Donation
-                                                                </li>
-                                                            </ul>
-                                                        </td>
-                                                        <td>- $<?php echo $donation->amount; ?>  </td>
-                                                    </tr>
-                                                <?php } 
-                                                }
-                                                else 
-                                                {
-                                                ?> 
+                                                if (!empty($prev_don_model)) {
+                                                    foreach ($prev_don_model as $donation) {
+                                                        ?>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="small">
+                                                                    <?php echo date("M", strtotime($donation->date_entered)) ; ?>
+                                                                    <?php
+                                                                    if (date("Y", strtotime($donation->date_entered)) != date('Y')) {
+                                                                        echo " , " . date("Y", strtotime($donation->date_entered));
+                                                                    }
+                                                                    ?>
+
+                                                                </div>
+                                                                <h3 class="mdl-color-text--cyan no-margin "><?php echo date("d", strtotime($donation->date_entered)); ?></h3>
+                                                            </td>
+                                                            <td class="mdl-data-table__cell--non-numeric">
+                                                                <div class="">(<?php echo $donation->visit->visit_code; ?>) <?php echo $donation->solicitor->first_name . " " . $donation->solicitor->last_name; ?></div>
+                                                                <ul class="list-unstyled f12">
+                                                                    <li>
+                                                                        <i class="material-icons f14">check_circle</i>
+                                                                        Transaction Type - Donation
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>- $<?php echo $donation->amount; ?>  </td>
+                                                        </tr>
+    <?php
+    }
+} else {
+    ?> 
                                                     <tr >
                                                         <td style="text-align: center;">
                                                             <h4>There is not any previous donations.</h4>
                                                         </td>   
                                                     </tr>   
-                                                <?php    
-                                                }    
-                                                ?>
+    <?php
+}
+?>
                                             </tbody>
                                         </table>
                                     </div>

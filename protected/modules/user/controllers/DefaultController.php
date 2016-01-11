@@ -80,7 +80,6 @@ class DefaultController extends Controller {
         $mPDF1 = Yii::app()->ePdf->mpdf();
         $mPDF1->WriteHTML($this->renderPartial('receipt', array('model'=>$user_credit_model), true));
         $mPDF1->Output('receipt.pdf','D');
-        $this->renderPartial('receipt',array('model'=>$user_credit_model));
     }
 
 }
