@@ -3038,3 +3038,50 @@ Stack trace:
 REQUEST_URI=/donation/user/default/tpl/demo/dashboard.html
 HTTP_REFERER=http://localhost/donation/user/default/accountsummary
 ---
+2016/01/11 03:44:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/tpl/demo/dashboard.html".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/tpl/demo/d...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/user/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user/activity
+---
+2016/01/11 03:44:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2016/01/11 03:44:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/tpl/demo/dashboard.html".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/tpl/demo/d...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/user/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user/activity
+---
+2016/01/11 03:52:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/tpl/demo/dashboard.html".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/tpl/demo/d...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/user/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user/activity
+---
+2016/01/11 03:57:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/tpl/demo/dashboard.html".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/tpl/demo/d...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/user/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user/activity
+---

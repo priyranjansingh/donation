@@ -35,14 +35,14 @@ class UserTrans extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, created_by, date_entered', 'required'),
+			array('user_id,tran_type,created_by, date_entered', 'required'),
 			array('status, deleted', 'numerical', 'integerOnly'=>true),
 			array('debit, credit', 'numerical'),
 			array('created_by, modified_by', 'length', 'max'=>36),
 			array('date_modified', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, debit, credit, credit_id, donation_id, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on'=>'search'),
+			array('id,tran_type, user_id, debit, credit, credit_id, donation_id, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +67,7 @@ class UserTrans extends BaseModel
 	{
 		return array(
 			'id' => 'ID',
+                        'tran_type' => 'Transaction Type',
 			'user_id' => 'User',
 			'debit' => 'Debit',
 			'credit' => 'Credit',
@@ -100,6 +101,7 @@ class UserTrans extends BaseModel
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+                $criteria->compare('tran_type',$this->tran_type);
 		$criteria->compare('user_id',$this->user_id);
 		$criteria->compare('debit',$this->debit);
 		$criteria->compare('credit',$this->credit);

@@ -77,6 +77,7 @@ class UsercreditController extends Controller {
             if ($model->save()) {
                 if($model->payment_status == 'a'){
                     $trans_model = new UserTrans;
+                    $trans_model->tran_type = 'PAYMENT_RECEIVED';
                     $trans_model->user_id = $model->user_id;
                     $trans_model->credit = $model->amount;
                     $trans_model->credit_id = $model->id;
@@ -111,6 +112,7 @@ class UsercreditController extends Controller {
                 $trans = UserTrans::model()->find(array("condition" => "credit_id = '$model->id'"));
                 if($trans === null && $model->payment_status == 'a'){
                     $trans_model = new UserTrans;
+                    $trans_model->tran_type = 'PAYMENT_RECEIVED';
                     $trans_model->user_id = $model->user_id;
                     $trans_model->credit = $model->amount;
                     $trans_model->credit_id = $model->id;
