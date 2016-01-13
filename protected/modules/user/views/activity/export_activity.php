@@ -7,7 +7,7 @@
 
             }
             th, td {
-                padding: 15px;
+                padding: 5px;
             }
             td
             {

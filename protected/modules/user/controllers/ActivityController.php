@@ -59,8 +59,7 @@ class ActivityController extends Controller {
             $criteria->order = 'date_entered DESC';
             $user_trans = UserTrans::model()->findAll($criteria);
         }
-
-
+         
         $mPDF1 = Yii::app()->ePdf->mpdf();
         $mPDF1->WriteHTML($this->renderPartial('export_activity', array('user_trans' => $user_trans), true));
         $mPDF1->Output('activity.pdf', 'D');

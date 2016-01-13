@@ -93,6 +93,7 @@ class DefaultController extends Controller {
 
     public function actionDownload($flag) {
         $user_credit_model = UserCredit::model()->find(array("condition" => "id ='".$flag."' "));
+        //$this->renderPartial('receipt', array('model' => $user_credit_model));
         $mPDF1 = Yii::app()->ePdf->mpdf();
         $mPDF1->WriteHTML($this->renderPartial('receipt', array('model'=>$user_credit_model), true));
         $mPDF1->Output('receipt.pdf','D');
