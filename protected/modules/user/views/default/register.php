@@ -79,7 +79,7 @@
                                     <?php echo $form->error($model, 'city'); ?>
                                 </div>
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-                                    <?php echo $form->dropDownList($model, 'state', array("" => "State", "WY" => "WY"), array("placeholder" => "State", 'class' => "width-12   select2-chosen  width-100")); ?>
+                                    <?php echo $form->dropDownList($model, 'state',Yii::app()->params['state'], array("placeholder" => "State", 'class' => "width-12   select2-chosen  width-100")); ?>
                                     <?php echo $form->error($model, 'state'); ?>
                                 </div>
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
