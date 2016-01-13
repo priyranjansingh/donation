@@ -9,7 +9,10 @@
             <file>file:/C:/xampp/htdocs/donation/themes/front/views/layouts/main.php</file>
             <file>file:/C:/xampp/htdocs/donation/protected/modules/user/views/activity/activity.php</file>
             <file>file:/C:/xampp/htdocs/donation/protected/modules/user/controllers/DefaultController.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/config/main.php</file>
+            <file>file:/C:/xampp/htdocs/donation/db/database_changes.txt</file>
             <file>file:/C:/xampp/htdocs/donation/protected/modules/user/models/UserTrans.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/controllers/UserCreditController.php</file>
         </group>
     </open-files>
 </project-private>

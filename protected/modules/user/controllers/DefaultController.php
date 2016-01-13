@@ -21,6 +21,7 @@ class DefaultController extends Controller {
                 if ($model->validate()) {
 
                     $user_id = $_SESSION['user_id'];
+                    $this->logEntry($user_id);
                     $this->redirect(array("accountsummary"));
                 }
             }
@@ -34,6 +35,21 @@ class DefaultController extends Controller {
                 $this->redirect(Yii::app()->controller->module->returnUrl);
         }
     }
+    
+    
+    public function logEntry($id)
+    {
+        $browser_info = getBrowser();
+        $model = new Log;
+        $model->user_id = $id;
+        $model->ip_address = $_SERVER['REMOTE_ADDR'];
+        $model->browser = $browser_info['name']; 
+        $model->platform = $browser_info['platform']; 
+        $model->os = $browser_info['platform'];
+        $model->user_agent = $browser_info['userAgent'];
+        $model->save();
+    }        
+    
 
     public function actionLogout() {
         unset(Yii::app()->session['user_id']);

@@ -3085,3 +3085,230 @@ Stack trace:
 REQUEST_URI=/donation/user/tpl/demo/dashboard.html
 HTTP_REFERER=http://localhost/donation/user/activity
 ---
+2016/01/13 03:02:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tpl/default/demo/dashboard.html".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('tpl/default/dem...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user
+---
+2016/01/13 03:02:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2016/01/13 03:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2016/01/13 03:17:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/tpl/demo/dashboard.html".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/tpl/demo/d...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/user/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user/activity
+---
+2016/01/13 03:31:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/tpl/demo/dashboard.html".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/tpl/demo/d...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/user/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user/activity
+---
+2016/01/13 03:41:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2016/01/13 03:41:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user/default/accountsummary
+---
+2016/01/13 03:46:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2016/01/13 03:46:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/donate/tpl...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/user/donate/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user/donate/step1
+---
+2016/01/13 03:46:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/login
+---
+2016/01/13 03:46:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2016/01/13 03:47:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/login
+---
+2016/01/13 03:47:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2016/01/13 03:50:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/login
+---
+2016/01/13 03:50:38 [error] [php] Undefined variable: SERVER (C:\xampp\htdocs\donation\protected\modules\user\controllers\DefaultController.php:45)
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\donation\framework\web\CController.php(286): DefaultController->runAction()
+#2 C:\xampp\htdocs\donation\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#3 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): DefaultController->run()
+#4 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\donation\index.php(13): CWebApplication->run()
+REQUEST_URI=/donation/index.php/user/default/login
+in C:\xampp\htdocs\donation\protected\modules\user\controllers\DefaultController.php (45)
+in C:\xampp\htdocs\donation\protected\modules\user\controllers\DefaultController.php (24)
+in C:\xampp\htdocs\donation\index.php (13)
+2016/01/13 03:50:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/login
+---
+2016/01/13 03:50:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2016/01/13 03:50:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/login
+---
+2016/01/13 03:51:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
+2016/01/13 03:52:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/login
+---
+2016/01/13 03:52:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tpl".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('tpl')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('tpl')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('user/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
+---
