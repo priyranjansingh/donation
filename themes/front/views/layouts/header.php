@@ -46,7 +46,7 @@
                     <div class="dropdown pull-right">
                         <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" class="profile-dropdown-toggle">
                             <span class="thumbnail-wrapper d32 circular inline m-t-5">
-                                <img width="32" height="32" data-src-retina="<?php echo $baseUrl; ?>/assets/img/profiles/avatar_small2x.jpg" data-src="<?php echo $baseUrl; ?>/assets/img/profiles/avatar.jpg" alt="" src="<?php echo $baseUrl; ?>/assets/img/profiles/avatar.jpg">
+                                <img width="32" height="32" data-src-retina="<?php echo $baseUrl; ?>/assets/img/profiles/avatar_small2x.jpg" data-src="<?php echo $baseUrl; ?>/assets/img/profiles/avatar.jpg" alt="" src="<?php echo $baseUrl; ?>/assets/img/profiles/avatar3.jpg">
                             </span>
                         </button>
                         <ul role="menu" class="dropdown-menu profile-dropdown">
