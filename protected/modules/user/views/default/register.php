@@ -90,10 +90,11 @@
                                 <div class="m-t-20">
                                     <?php echo CHtml::submitButton('Register', array("class" => "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect mdl-color--light-green")); ?>
 
-
-                                    <button type="reset" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                    <a href="<?php echo base_url(); ?>/user/default/login">
+                                        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
                                         Cancel
-                                    </button>
+                                        <span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 202.82px; height: 202.82px; transform: translate(-50%, -50%) translate(54px, 15px);"></span></span></button>
+                                    </a>    
                                 </div>
                                 <?php $this->endWidget(); ?>     
                             </div>      
