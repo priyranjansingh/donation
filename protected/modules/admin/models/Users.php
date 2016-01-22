@@ -144,7 +144,7 @@ class Users extends BaseModel
 		$criteria->compare('notify_solicitor',$this->notify_solicitor);
 		$criteria->compare('credit_limits',$this->credit_limits,true);
 		$criteria->compare('is_active',$this->is_active);
-		$criteria->compare('is_admin',0);
+		$criteria->compare('is_admin',$this->is_admin);
 		$criteria->compare('mobile_verified',$this->mobile_verified);
 		$criteria->compare('phone_verified',$this->phone_verified);
 		$criteria->compare('status',$this->status);

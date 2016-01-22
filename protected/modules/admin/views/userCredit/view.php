@@ -1,35 +1,35 @@
-<?php
-/* @var $this UserCreditController */
-/* @var $model UserCredit */
-
-$this->breadcrumbs=array(
-	'User Credits'=>array('index'),
-	$model->id,
-);
-
-$this->menu=array(
-	array('label'=>'List UserCredit', 'url'=>array('index')),
-	array('label'=>'Create UserCredit', 'url'=>array('create')),
-	array('label'=>'Update UserCredit', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete UserCredit', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage UserCredit', 'url'=>array('admin')),
-);
-?>
-
-<h1>View UserCredit #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'user_id',
-		'amount',
-		'mode',
-		'status',
-		'deleted',
-		'created_by',
-		'modified_by',
-		'date_entered',
-		'date_modified',
-	),
-)); ?>
+<section class="content-header">
+  <h1>
+    Solicitor Visit
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="<?php echo base_url().'/admin'; ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="<?php echo base_url().'/admin/users'; ?>"><i class="fa fa-dashboard"></i> Users</a></li>
+    <li class="active">View</li>
+  </ol>
+</section>
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box box-info">
+				<div class="box-header with-border">
+					<h3 class="box-title"><?php echo $user->first_name.' '.$user->last_name; ?> <small><a href="<?php echo base_url().'/admin/userCredit/update?id='.$model->id; ?>">EDIT</a></small></h3>
+				</div>
+				<div class="box-body">
+					<div class="col-xs-12 table-responsive">
+						<?php $this->widget('zii.widgets.CDetailView', array(
+								// 'itemsCssClass' => 'table table-bordered table-hover dataTable',
+								'htmlOptions' => array("class" => "table table-bordered table-hover dataTable"),
+								'data'=>$model,
+								'attributes'=>array(
+									'amount',
+									'mode',
+								),
+							)); ?>
+                        <?php echo CHtml::link('Back',array('/admin/users'),array("class" => 'btn btn-info pull-right')); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

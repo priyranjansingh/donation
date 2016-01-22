@@ -132,7 +132,7 @@ class UserCredit extends BaseModel
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('user_id',$this->user_id,$id);
+		$criteria->compare('user_id',$id);
 		$criteria->compare('amount',$this->amount,true);
 		$criteria->compare('receipt_no',$this->receipt_no,true);
 		$criteria->compare('mode',$this->mode,true);

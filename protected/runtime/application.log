@@ -3858,3 +3858,189 @@ Stack trace:
 REQUEST_URI=/donation/index.php/user/default/tpl/demo/dashboard.html
 HTTP_REFERER=http://localhost/donation/index.php/user/default/accountsummary
 ---
+2016/01/18 19:39:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "manage".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('manage')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('manage')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/userCredi...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/admin/userCredit/manage
+---
+2016/01/18 19:40:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "manage".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('manage')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('manage')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/userCredi...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/admin/userCredit/manage
+---
+2016/01/18 19:43:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "manage".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('manage')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('manage')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/userCredi...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/admin/userCredit/manage
+---
+2016/01/19 20:34:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "changepassword".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('changepassword')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('changepassword')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/users/cha...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/admin/users/changepassword?id=30c53b25-8e19-bee7-80d6-566d8319572a
+HTTP_REFERER=http://localhost/donation/index.php/admin/users/manage
+---
+2016/01/22 18:44:58 [error] [php] Undefined variable: visit (C:\xampp\htdocs\donation\protected\modules\admin\controllers\VisitsController.php:110)
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(133): VisitsController->runAction()
+#3 C:\xampp\htdocs\donation\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\donation\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\donation\framework\web\filters\CInlineFilter.php(58): VisitsController->filterAccessControl()
+#6 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\donation\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\donation\framework\web\CController.php(265): VisitsController->runActionWithFilters()
+#9 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): VisitsController->run()
+#10 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\donation\index.php(13): CWebApplication->run()
+REQUEST_URI=/donation/index.php/admin/visits/details?id=ea8a71f5-03ab-9074-60b3-564c3862dd6f
+in C:\xampp\htdocs\donation\protected\modules\admin\controllers\VisitsController.php (110)
+in C:\xampp\htdocs\donation\index.php (13)
+2016/01/22 19:06:44 [error] [php] Undefined index: id (C:\xampp\htdocs\donation\protected\modules\admin\views\solicitor\donations.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(869): SolicitorController->renderFile()
+#1 C:\xampp\htdocs\donation\framework\web\CController.php(782): SolicitorController->renderPartial()
+#2 C:\xampp\htdocs\donation\protected\modules\admin\controllers\SolicitorController.php(172): SolicitorController->render()
+#3 unknown(0): SolicitorController->actionDonations()
+#4 C:\xampp\htdocs\donation\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(133): SolicitorController->runAction()
+#8 C:\xampp\htdocs\donation\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\donation\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\donation\framework\web\filters\CInlineFilter.php(58): SolicitorController->filterAccessControl()
+#11 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\donation\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\donation\framework\web\CController.php(265): SolicitorController->runActionWithFilters()
+#14 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): SolicitorController->run()
+#15 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\donation\index.php(13): CWebApplication->run()
+REQUEST_URI=/donation/index.php/admin/solicitor/donations?id=cc78c057-efca-b886-1f5b-564a2cdbae78
+in C:\xampp\htdocs\donation\protected\modules\admin\views\solicitor\donations.php (33)
+in C:\xampp\htdocs\donation\protected\modules\admin\controllers\SolicitorController.php (172)
+in C:\xampp\htdocs\donation\index.php (13)
+2016/01/22 19:07:43 [error] [php] Undefined index: id (C:\xampp\htdocs\donation\protected\modules\admin\views\solicitor\donations.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(869): SolicitorController->renderFile()
+#1 C:\xampp\htdocs\donation\framework\web\CController.php(782): SolicitorController->renderPartial()
+#2 C:\xampp\htdocs\donation\protected\modules\admin\controllers\SolicitorController.php(172): SolicitorController->render()
+#3 unknown(0): SolicitorController->actionDonations()
+#4 C:\xampp\htdocs\donation\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(133): SolicitorController->runAction()
+#8 C:\xampp\htdocs\donation\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\donation\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\donation\framework\web\filters\CInlineFilter.php(58): SolicitorController->filterAccessControl()
+#11 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\donation\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\donation\framework\web\CController.php(265): SolicitorController->runActionWithFilters()
+#14 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): SolicitorController->run()
+#15 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\donation\index.php(13): CWebApplication->run()
+REQUEST_URI=/donation/index.php/admin/solicitor/donations?id=cc78c057-efca-b886-1f5b-564a2cdbae78
+in C:\xampp\htdocs\donation\protected\modules\admin\views\solicitor\donations.php (33)
+in C:\xampp\htdocs\donation\protected\modules\admin\controllers\SolicitorController.php (172)
+in C:\xampp\htdocs\donation\index.php (13)
+2016/01/22 19:34:38 [error] [php] Undefined variable: damount (C:\xampp\htdocs\donation\protected\modules\admin\views\solicitor\donations.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(869): SolicitorController->renderFile()
+#1 C:\xampp\htdocs\donation\framework\web\CController.php(782): SolicitorController->renderPartial()
+#2 C:\xampp\htdocs\donation\protected\modules\admin\controllers\SolicitorController.php(190): SolicitorController->render()
+#3 unknown(0): SolicitorController->actionDonations()
+#4 C:\xampp\htdocs\donation\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(133): SolicitorController->runAction()
+#8 C:\xampp\htdocs\donation\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\donation\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\donation\framework\web\filters\CInlineFilter.php(58): SolicitorController->filterAccessControl()
+#11 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\donation\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\donation\framework\web\CController.php(265): SolicitorController->runActionWithFilters()
+#14 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): SolicitorController->run()
+#15 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\donation\index.php(13): CWebApplication->run()
+REQUEST_URI=/donation/index.php/admin/solicitor/donations?id=cc78c057-efca-b886-1f5b-564a2cdbae78
+in C:\xampp\htdocs\donation\protected\modules\admin\views\solicitor\donations.php (33)
+in C:\xampp\htdocs\donation\protected\modules\admin\controllers\SolicitorController.php (190)
+in C:\xampp\htdocs\donation\index.php (13)
+2016/01/22 19:53:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\donation\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\donation\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\donation\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\donation\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\donation\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\donation\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/solicitor...')
+#10 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/donation/admin/solicitorCredit/view?visit=ea8a71f5-03ab-9074-60b3-564c3862dd6f
+---
+2016/01/22 19:53:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\donation\protected\modules\admin\controllers\SolicitorCreditController.php:193
+Stack trace:
+#0 C:\xampp\htdocs\donation\protected\modules\admin\controllers\SolicitorCreditController.php(54): SolicitorCreditController->loadModel('ea8a71f5-03ab-9...')
+#1 [internal function]: SolicitorCreditController->actionView('ea8a71f5-03ab-9...')
+#2 C:\xampp\htdocs\donation\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SolicitorCreditController), Array)
+#3 C:\xampp\htdocs\donation\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SolicitorCreditController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\donation\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\donation\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\donation\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\donation\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\donation\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\donation\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/solicitor...')
+#14 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/donation/admin/solicitorCredit/view?id=ea8a71f5-03ab-9074-60b3-564c3862dd6f
+---
+2016/01/22 19:55:06 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\donation\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\donation\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\donation\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\donation\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\donation\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\donation\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\donation\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/solicitor...')
+#10 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/donation/admin/solicitorCredit/view?visit=ea8a71f5-03ab-9074-60b3-564c3862dd6f
+---

@@ -37,6 +37,9 @@
 									'date_entered'
 								),
 							)); ?>
+						<div class="col-xs-12">
+                             <?php echo CHtml::link('Back', array('/admin/solicitor/donations','id'=>$model->solicitor_id), array("class" => 'btn btn-info pull-right', "style" => "margin-left:10px;")); ?>
+                        </div>
 					</div>
 				</div>
 			</div>

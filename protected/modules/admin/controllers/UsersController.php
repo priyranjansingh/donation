@@ -30,7 +30,7 @@ class UsersController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'manage','transaction'),
+                'actions' => array('create', 'update', 'manage','transaction','changepassword'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -50,6 +50,26 @@ class UsersController extends Controller {
     public function actionView($id) {
         $this->render('view', array(
             'model' => $this->loadModel($id),
+        ));
+    }
+
+    public function actionChangepassword($id){
+        $model = new UserChangePassword;
+        $user = $this->loadModel($id);
+        if(isset($_POST['UserChangePassword'])){
+            $model->attributes = $_POST['UserChangePassword'];
+            if ($model->validate()) {
+                $password = md5($model->password);
+                $user->password = $password;
+                $user->verifyPassword = $password;
+                if($user->save()){
+                    $this->redirect(array('manage'));
+                }
+            }
+        }
+        $this->render('change-password', array(
+            'model' => $model,
+            'user' => $user
         ));
     }
 

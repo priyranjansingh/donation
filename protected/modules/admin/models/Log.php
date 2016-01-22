@@ -124,7 +124,7 @@ class Log extends BaseModel
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('user_id',$this->user_id,$id);
+		$criteria->compare('user_id',$id);
 		$criteria->compare('ip_address',$this->ip_address,true);
 		$criteria->compare('browser',$this->browser,true);
 		$criteria->compare('platform',$this->platform,true);

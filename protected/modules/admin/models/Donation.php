@@ -141,13 +141,13 @@ class Donation extends BaseModel
 		if($id != null)
 			$criteria->compare('user_id',$id);
 		else
-			$criteria->compare('user_id',$this->user_id,true);
+			$criteria->compare('user_id',$this->user_id);
 		
 		
 		if($visit != null)
 			$criteria->compare('visit_id',$visit);
 		else
-			$criteria->compare('visit_id',$this->visit_id,true);
+			$criteria->compare('visit_id',$this->visit_id);
 
 		$criteria->compare('solicitor_id',$this->solicitor_id,true);
 		$criteria->compare('amount',$this->amount,true);

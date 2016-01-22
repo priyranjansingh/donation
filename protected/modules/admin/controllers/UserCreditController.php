@@ -48,8 +48,11 @@ class UsercreditController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+        $model = $this->loadModel($id);
+        $user = Users::model()->findByPk($model->user_id);
         $this->render('view', array(
-            'model' => $this->loadModel($id),
+            'model' => $model,
+            'user' => $user
         ));
     }
 

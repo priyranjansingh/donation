@@ -28,9 +28,15 @@
                             <?php echo $visit['start_date'].' - '.$visit['end_date']; ?> | 
                             Active: <?php echo $visit['visit_active']; ?> | 
                             Total: <?php echo $visit['amount']; ?>
-                            <a href="<?php echo base_url().'/admin/visits/close?id='.$visit['visit_id']; ?>" class="btn btn-info">Close Visit</a>
+                            <?php if($visit['visit_active'] == "Yes"): ?>
+                                <a href="<?php echo base_url().'/admin/visits/close?id='.$visit['visit_id']; ?>" class="btn btn-info">Close Visit</a>
+                            <?php else: ?>
+                                <a href="<?php echo base_url().'/admin/visits/close?id='.$visit['visit_id']; ?>" class="btn btn-info">Open Visit</a>
+                            <?php endif; ?>
                             <a href="<?php echo base_url().'/admin/visits/update?id='.$visit['visit_id']; ?>" class="btn btn-info">EDIT</a>
-                            <a href="<?php echo base_url().'/admin/solicitorCredit/create?visit='.$visit['visit_id']; ?>" class="btn btn-info">Make Payment</a>
+                            <?php if($visit['visit_active'] == "Yes"): ?>
+                                <a href="<?php echo base_url().'/admin/solicitorCredit/create?visit='.$visit['visit_id']; ?>" class="btn btn-info">Make Payment</a>
+                            <?php endif; ?>
                         </h3>
                     </div>
                     <div class="box-body">

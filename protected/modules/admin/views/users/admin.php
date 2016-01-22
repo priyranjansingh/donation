@@ -84,6 +84,19 @@
                                                 ),
                                             ),
                                         ),
+                                        array
+                                            (
+                                            'class' => 'CButtonColumn',
+                                            'template' => '{transaction}',
+                                            'buttons' => array
+                                                (
+                                                'transaction' => array
+                                                    (
+                                                    'label' => 'Change Password',
+                                                    'url' => 'Yii::app()->createUrl("admin/users/changepassword", array("id"=>$data->id))',
+                                                ),
+                                            ),
+                                        ),
                                         array(
                                             'class' => 'CButtonColumn',
                                         ),

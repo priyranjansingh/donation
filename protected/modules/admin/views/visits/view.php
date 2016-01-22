@@ -34,7 +34,7 @@
 									'end_date'
 								),
 							)); ?>
-                                                                                <?php echo CHtml::link('Back',array('/admin/solicitor'),array("class" => 'btn btn-info pull-right')); ?>
+                        <?php echo CHtml::link('Back',array('/admin/solicitor'),array("class" => 'btn btn-info pull-right')); ?>
 					</div>
 				</div>
 			</div>
