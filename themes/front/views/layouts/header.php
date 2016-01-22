@@ -30,7 +30,7 @@
 
                   
                     <ul class="main-menu">
-                        <li><a href="<?php echo base_url()."/user/default/accountsummary"; ?>">Summary</a></li>
+                        <li style="border-right:solid 1px #e6e6e6"><a href="<?php echo base_url()."/user/default/accountsummary"; ?>">Summary</a></li>
                         <li><a href="<?php echo base_url()."/user/activity"; ?>">Activity</a></li>
                     </ul>
                     
@@ -50,7 +50,7 @@
                             </span>
                         </button>
                         <ul role="menu" class="dropdown-menu profile-dropdown">
-                            <li><a href="#"><i class="pg-settings_small"></i> Settings</a>
+                            <li><a href="<?php echo base_url()."/user/settings"?>"><i class="pg-settings_small"></i> Settings</a>
                             </li>
                             
                             <li class="bg-master-lighter">
