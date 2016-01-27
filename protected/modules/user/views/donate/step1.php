@@ -33,8 +33,10 @@
                             ?>
                             <div class="form-wizard condensed" id="wizard-3">
 
+
+
                                 <div class="mdl-textfield mdl-js-textfield">
-                                    <?php echo $form->numberField($model, 'visit_code', array('placeholder' => 'Visit Code','class' => 'mdl-textfield__input')); ?>
+                                    <?php echo $form->numberField($model, 'visit_code', array('placeholder' => 'Visit Code', 'class' => 'mdl-textfield__input')); ?>
                                     <?php echo $form->error($model, 'visit_code'); ?>
                                 </div>
 
