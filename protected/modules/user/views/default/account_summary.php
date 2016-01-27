@@ -29,7 +29,7 @@ $baseUrl = Yii::app()->theme->baseUrl;
 
                 </div>
             </div>
-            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet full-desktop">
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet p-l-10-tablet full-desktop">
                 <div class="mdl-card mdl-shadow--0dp  mdl-color--amber">
                     <div class="mdl-card__title block">
                         <h4 class="mdl-card__title-text mdl-color-text--white f20 w600">Action</h4>
@@ -57,7 +57,7 @@ $baseUrl = Yii::app()->theme->baseUrl;
 
 
 
-            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet p-l-10-tablet full-desktop">
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet full-desktop">
                 <div class="mdl-card mdl-shadow--0dp  mdl-color--pink-300">
                     <div class="mdl-card__title block">
                         <h4 class="mdl-card__title-text mdl-color-text--white f20 w600">Linked Phone Numbers</h4>
@@ -71,12 +71,11 @@ $baseUrl = Yii::app()->theme->baseUrl;
                         <tbody>
                             <tr>
                                 <td><img src="<?php echo $baseUrl; ?>/assets/img/icons/ballicons/visa.png"></td>
-                                <td class="mdl-data-table__cell--non-numeric">212-555-4545</td>
+                                <td class="mdl-data-table__cell--non-numeric" style="font-size: 20px;">
+                                     Feature not yet available !!!
+                                </td>
                             </tr>
-                            <tr>
-                                <td><img src="<?php echo $baseUrl; ?>/assets/img/icons/ballicons/visa.png"></td>
-                                <td class="mdl-data-table__cell--non-numeric">212-555-4545</td>
-                            </tr>
+                           
                         </tbody>
                     </table>
                     <div class="mdl-card__supporting-text  mdl-color-text--white">
