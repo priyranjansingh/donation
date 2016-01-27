@@ -12,9 +12,17 @@ class ActivityController extends Controller {
             $user_id = Yii::app()->session['user_id'];
             $criteria = new CDbCriteria;
             if ($activity_type == 'ALL') {
-                $criteria->condition = "user_id= '$user_id' AND DATE(date_entered) >= '$from_date' AND  DATE(date_entered)<= '$to_date' ";
+                if (!empty($from_date)) {
+                    $criteria->condition = "user_id= '$user_id' AND DATE(date_entered) >= '$from_date' AND  DATE(date_entered)<= '$to_date' ";
+                } else {
+                    $criteria->condition = "user_id= '$user_id'";
+                }
             } else {
-                $criteria->condition = "user_id= '$user_id' AND DATE(date_entered) >= '$from_date' AND  DATE(date_entered)<= '$to_date' AND tran_type = '$activity_type' ";
+                if (!empty($from_date)) {
+                    $criteria->condition = "user_id= '$user_id' AND DATE(date_entered) >= '$from_date' AND  DATE(date_entered)<= '$to_date' AND tran_type = '$activity_type' ";
+                } else {
+                    $criteria->condition = "user_id= '$user_id' AND tran_type = '$activity_type' ";
+                }
             }
             $criteria->order = 'date_entered DESC';
             //$criteria->params = array(':user_id' => $user_id);
@@ -59,7 +67,7 @@ class ActivityController extends Controller {
             $criteria->order = 'date_entered DESC';
             $user_trans = UserTrans::model()->findAll($criteria);
         }
-         
+
         $mPDF1 = Yii::app()->ePdf->mpdf();
         $mPDF1->WriteHTML($this->renderPartial('export_activity', array('user_trans' => $user_trans), true));
         $mPDF1->Output('activity.pdf', 'D');
