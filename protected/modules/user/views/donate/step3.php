@@ -36,7 +36,7 @@
                                                     ));
                                                     ?>
                                                     <div class="mdl-textfield mdl-js-textfield">
-                                                        <?php echo $form->textField($step3_model, 'amount', array('placeholder' => 'Amount', 'class' => 'mdl-textfield__input')); ?>
+                                                        <?php echo $form->numberField($step3_model, 'amount', array('placeholder' => 'Amount', 'class' => 'mdl-textfield__input')); ?>
                                                         <?php echo $form->error($step3_model, 'amount'); ?>
                                                     </div>
                                                     <div class="mdl-textfield mdl-js-textfield">
