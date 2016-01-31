@@ -10985,6 +10985,62 @@ a.button-full{width:100%;}
 .filters-transactionType select {
     padding: 9px 27px;
 }
+.filters-transactionType input[type=text], .hasDatepicker {
+    padding: 6px 25px;
+}
+
+
+
+#ui-datepicker-div .ui-datepicker-title {
+	background-color: #ff4081;
+	margin-left: -8px;
+	margin-right: -8px;
+	height: 40px
+}
+#ui-datepicker-div .ui-datepicker-title {
+	color: #fff;
+	background-color: #ff4081;
+	line-height: 30px;
+	position: relative;
+    text-align: center;
+}
+
+#ui-datepicker-div .ui-datepicker-prev, #ui-datepicker-div .ui-datepicker-next {
+	height: 40px
+}
+#ui-datepicker-div .ui-datepicker-prev {
+	margin-left: 8px
+}
+#ui-datepicker-div .ui-datepicker-next {
+	margin-right: 8px
+}
+#ui-datepicker-div .ui-datepicker-prev {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAQAAACGG/bgAAAAQ0lEQVR4Ae3KIQ4AIBTD0N0/IeHGI3UIRA3ut/Zl+ltXc5++htVAmIAwAWECwgSEKbgthEoIlRAqIVRCqINQB9nDgQd7ktwFo6UpWQAAAABJRU5ErkJggg==)
+}
+#ui-datepicker-div .ui-datepicker-prev, #ui-datepicker-div .ui-datepicker-next{
+	 background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 75% 75%;
+    border: 0 none;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    opacity: 0.5;
+    outline: 0 none;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    z-index: 999;
+    text-indent: 20px;
+    white-space: nowrap;
+    width: 20px;
+}
+#ui-datepicker-div .ui-datepicker-next {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAQAAACGG/bgAAAAP0lEQVQ4y+3TMQoAMAgEwfwfAvvjTZ1uGzuvHhBPPGczEG+FRqqRaqQaqUaqkX6QBmmjacvQ6qEVTjsh+xizebvlaWptGXZAAAAAAElFTkSuQmCC)
+}
+
+.ui-datepicker a{color:#fff !important;}
 .ml-list-actions li a, .ml-list-actions-text li a{text-align:left;}
 .address-edit .material-icons{
     left: 59% !important;
@@ -10993,3 +11049,6 @@ a.button-full{width:100%;}
    
 }
 .account-set-lan h5{margin-top:0px; margin-bottom:0px; font-weight:bold;}
+.ml-list-actions-text li a#edit_user_address, .ml-list-actions-text li a#edit_primary_email, .ml-list-actions-text li a#edit_name, .ml-list-actions-text li a#edit_spouse,  .ml-list-actions-text li a#edit_mobile, .ml-list-actions-text li a#edit_phone{font-weight:normal; border:inherit; display:inherit; float:right; padding:0px;}
+
+.mdl-card .panel-body-list{min-height:200px;}

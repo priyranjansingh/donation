@@ -140,7 +140,7 @@
 </section>
 
 <script>
-    $(document).ready(function() {
+            $(document).ready(function() {
     $("#from_date").datepicker({
     dateFormat: "yy-mm-dd"
     });
@@ -154,7 +154,7 @@
             var from_date_flag, to_date_flag = false;
             if (from_date == '')
     {
-    $("#from_date_err").html("From date can not be blank");
+            //$("#from_date_err").html("From date can not be blank");
             from_date_flag = false;
     }
     else
@@ -164,7 +164,7 @@
     }
     if (to_date == '')
     {
-    $("#to_date_err").html("To date can not be blank");
+            //$("#to_date_err").html("To date can not be blank");
             to_date_flag = false;
     }
     else
@@ -175,8 +175,23 @@
 
     if (from_date_flag == true && to_date_flag == true)
     {
-    $("#srch_frm").submit();
+       $("#srch_frm").submit();
     }
+    else if(from_date_flag == false && to_date_flag == false)
+    {
+        $("#srch_frm").submit();
+    }
+    else
+    {
+        if(from_date_flag == false)
+        {
+            $("#from_date_err").html("From date can not be blank");
+        }   
+        if(to_date_flag == false)
+        {
+            $("#to_date_err").html("To date can not be blank");
+        } 
+    }    
 
 
     });
