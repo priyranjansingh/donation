@@ -71,32 +71,6 @@
                                             //call the method 'gridDataColumn' from the controller
                                             'value' => array($this, 'gridDataColumn'),
                                         ),
-                                        array
-                                            (
-                                            'class' => 'CButtonColumn',
-                                            'template' => '{transaction}',
-                                            'buttons' => array
-                                                (
-                                                'transaction' => array
-                                                    (
-                                                    'label' => 'View Transaction',
-                                                    'url' => 'Yii::app()->createUrl("admin/users/transaction", array("id"=>$data->id))',
-                                                ),
-                                            ),
-                                        ),
-                                        array
-                                            (
-                                            'class' => 'CButtonColumn',
-                                            'template' => '{transaction}',
-                                            'buttons' => array
-                                                (
-                                                'transaction' => array
-                                                    (
-                                                    'label' => 'Change Password',
-                                                    'url' => 'Yii::app()->createUrl("admin/users/changepassword", array("id"=>$data->id))',
-                                                ),
-                                            ),
-                                        ),
                                         array(
                                             'class' => 'CButtonColumn',
                                         ),

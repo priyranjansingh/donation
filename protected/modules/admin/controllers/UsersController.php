@@ -25,12 +25,8 @@ class UsersController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
-                'users' => array('*'),
-            ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'manage','transaction','changepassword'),
+                'actions' => array('index','view','create', 'update', 'manage','transaction','changepassword'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -136,7 +132,14 @@ class UsersController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $this->redirect(array('manage'));
+        $model = new Users('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Users']))
+            $model->attributes = $_GET['Users'];
+
+        $this->render('index', array(
+            'model' => $model, 
+        ));
     }
 
     /**

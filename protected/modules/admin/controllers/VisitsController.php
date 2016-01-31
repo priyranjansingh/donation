@@ -27,12 +27,8 @@ class VisitsController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','manage','close','details','search'),
+				'actions'=>array('index','view','create','update','manage','close','details','search','status'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -124,7 +120,11 @@ class VisitsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
+		$lists = BaseModel::getAll('Solicitor');
+		$solicitors = array();
+		foreach($lists as $list){
+			$solicitors[$list->id] = $list->first_name.' '.$list->last_name.'('.$list->solicitor_code.')';
+		}
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -172,7 +172,16 @@ class VisitsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->redirect(array('manage'));
+		$model=new Visits('search');
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Visits']))
+			$model->attributes=$_GET['Visits'];
+
+		$this->render('index',array(
+			'model'=>$model,
+			'solicitors' => $solicitors
+		));
 	}
 
 	/**
@@ -190,6 +199,19 @@ class VisitsController extends Controller
 			'model'=>$model,
 			'solicitors' => $solicitors
 		));
+	}
+
+	public function actionStatus($id)
+	{
+		$visit = Visits::model()->findByPk($id);
+		if($visit->status == 1){
+			$visit->status = 0;
+		} else {
+			$visit->status = 1;
+		}
+
+		$visit->save();
+		$this->redirect(array('manage'));
 	}
 
 	/**
@@ -230,6 +252,15 @@ class VisitsController extends Controller
         $visit = $data->visit_id;
         $code = Visits::model()->findByPk($visit)->visit_code;
         return $code;
+    }
+
+    public function gridStatus($data, $row) {
+        if($data->status == 1){
+        	$html = '<a href="'.base_url().'/admin/visits/status?id='.$data->id.'">Close</a>';
+        } else {
+        	$html = '<a href="'.base_url().'/admin/visits/status?id='.$data->id.'">Open</a>';
+        }
+        return $html;
     }
 
     public function gridUser($data, $row) {

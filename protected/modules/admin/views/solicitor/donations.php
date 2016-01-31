@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="row">
-                <div class="col-xs-4" style="float:right;">
+                <div class="col-xs-4" style="float:right;z-index: 1;margin-top: 10px;">
                     <a href="<?php echo base_url().'/admin/visits/create?solicitor='.$solicitor->id; ?>" class="btn btn-info" style="float:right;">Add Visit</a>
                 </div>
                 <div class="box">
@@ -56,10 +56,9 @@
                     <div class="box-header">
                         <h3 class="box-title">
                             Visit: <?php echo $visit['visit_code']; ?> | 
-                            Solicitor: <?php echo $visit['first_name'].' '.$visit['last_name']; ?> | 
                             <?php echo $visit['start_date'].' - '.$visit['end_date']; ?> | 
                             Active: <?php echo $visit['visit_active']; ?> | 
-                            Total: <?php echo $visit['amount']; ?>
+                            Total: $<?php echo $visit['amount']; ?>
                             <?php if($visit['visit_active'] == 'Yes'): ?>
                                 <a href="<?php echo base_url().'/admin/visits/close?id='.$visit['visit_id']; ?>" class="btn btn-info">Close Visit</a>
                             <?php else: ?>
@@ -98,6 +97,40 @@
                                                         (
                                                         'label' => 'EDIT',
                                                         'url' => 'Yii::app()->createUrl("admin/donation/update", array("id"=>$data->id))',
+                                                    ),
+                                                ),
+                                            ),
+                                        ),
+                                    ));
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div>
+                        </div>
+                        <h3 class="box-title">Payments</h3> 
+                        <div class="dataTables_wrapper form-inline dt-bootstrap">
+                            <div class="row">
+                                <div class="col-sm-12 table-responsive">
+                                    <?php
+                                    $this->widget('zii.widgets.grid.CGridView', array(
+                                        'id' => 'donation-grid-'.$i,
+                                        'itemsCssClass' => 'table table-bordered table-hover dataTable',
+                                        'dataProvider' => $payments->solicitor($solicitor->id,$visit['visit_id']),
+                                        'enablePagination' => true,
+                                        'columns' => array(
+                                            'amount',
+                                            'mode',
+                                            'date_entered',
+                                            array
+                                                (
+                                                'class' => 'CButtonColumn',
+                                                'template' => '{edit}',
+                                                'buttons' => array
+                                                    (
+                                                    'edit' => array
+                                                        (
+                                                        'label' => 'EDIT',
+                                                        'url' => 'Yii::app()->createUrl("admin/solicitorCredit/update", array("id"=>$data->id))',
                                                     ),
                                                 ),
                                             ),

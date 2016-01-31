@@ -46,6 +46,9 @@
 							)); ?>
 					</div>
 				</div>
+				<div class="box-footer">
+					<?php echo CHtml::link('Back',array('/admin/donation'),array("class" => 'btn btn-info pull-right',"style"=>"margin-left:10px;")); ?>
+				</div>
 			</div>
 		</div>
 	</div>

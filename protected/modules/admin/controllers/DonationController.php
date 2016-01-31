@@ -27,12 +27,8 @@ class DonationController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','manage','loadvisits'),
+				'actions'=>array('index','view','create','update','manage','loadvisits'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -85,7 +81,6 @@ class DonationController extends Controller
 		foreach($lists as $list){
 			$solicitors[$list->id] = $list->first_name.' '.$list->last_name.'('.$list->solicitor_code.')';
 		}
-		// $solicitors = CHtml::listData(BaseModel::getAll('Solicitor'),'id','solicitor_code');;
 		$visits = CHtml::listData(BaseModel::getAll('Visits'),'id','visit_code');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -94,8 +89,33 @@ class DonationController extends Controller
 		{
 			$model->attributes=$_POST['Donation'];
 			$model->reference_number = getToken(8);
-			if($model->save())
+			if($model->save()){
+				
+				$user_balance = Users::model()->getUserBalance($model->user_id);
+                $user_model = Users::model()->findByPk($model->user_id);
+                $credit_limits = $user_model->credit_limits;
+
+                if ($model->amount > $user_balance) {
+                    // deducting the user credit
+                    if ($user_balance > 0) {
+                        $from_user_credit = $model->amount - $user_balance;
+                    } else {
+                        $from_user_credit = $model->amount;
+                    }
+                    $final_user_credit = $credit_limits - $from_user_credit;
+                    $user_model->credit_limits = $final_user_credit;
+                    $user_model->save();
+                }
+
+                // for storing in the user_trans table
+                $trans = new UserTrans;
+				$trans->tran_type = 'DONATION';
+				$trans->user_id = $model->user_id;
+				$trans->debit = $model->amount;
+				$trans->donation_id = $model->id;
+				$trans->save();
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
@@ -114,17 +134,52 @@ class DonationController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$users = CHtml::listData(BaseModel::getAll('Users'),'id','username');
-		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'),'id','solicitor_code');;
-		$visits = CHtml::listData(BaseModel::getAll('Visits'),'id','visit_code');
+		$users_lists = BaseModel::getAll('Users');
+		$users = array();
+		foreach($users_lists as $user){
+			$users[$user->id] = $user->first_name.' '.$user->last_name.'('.$user->username.')';
+		}
+		// $users = CHtml::listData(BaseModel::getAll('Users'),'id','username');
+		$lists = BaseModel::getAll('Solicitor');
+		$solicitors = array();
+		foreach($lists as $list){
+			$solicitors[$list->id] = $list->first_name.' '.$list->last_name.'('.$list->solicitor_code.')';
+		}
+		$visits = CHtml::listData(Visits::model()->findAll(),'id','visit_code');
+		$trans = UserTrans::model()->find(array("condition" => "donation_id = '".$id."'"));
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Donation']))
 		{
 			$model->attributes=$_POST['Donation'];
-			if($model->save())
+			if($model->save()){
+				if($trans->debit != $model->amount){
+					$user_balance = Users::model()->getUserBalance($model->user_id);
+	                $user_model = Users::model()->findByPk($model->user_id);
+	                $credit_limits = $user_model->credit_limits;
+	                // $from_user_credit = ($user_balance + $trans->debit) - $model->amount;
+	                $user_balance = $user_balance + $trans->debit;
+	                
+	                if ($model->amount > $user_balance) {
+	                    // deducting the user credit
+	                    if ($user_balance > 0) {
+	                        $from_user_credit = $model->amount - $user_balance;
+	                    } else {
+	                        $from_user_credit = $model->amount;
+	                    }
+	                    $final_user_credit = $credit_limits - $from_user_credit;
+	                    $user_model->credit_limits = $final_user_credit;
+	                    $user_model->save();
+	                }
+
+	                // for storing in the user_trans table
+	                $trans->debit = $model->amount;
+					$trans->save();
+					$this->redirect(array('view','id'=>$model->id));
+				}
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
@@ -154,7 +209,20 @@ class DonationController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->redirect(array('manage'));
+		$model=new Donation('search');
+		$users = CHtml::listData(BaseModel::getAll('Users'),'id','username');
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'),'id','solicitor_code');;
+		$visits = CHtml::listData(BaseModel::getAll('Visits'),'id','visit_code');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Donation']))
+			$model->attributes=$_GET['Donation'];
+
+		$this->render('index',array(
+			'model'=>$model,
+			'users'=>$users,
+			'solicitors'=>$solicitors,
+			'visits'=>$visits
+		));
 	}
 
 	/**
@@ -163,9 +231,20 @@ class DonationController extends Controller
 	public function actionManage()
 	{
 		$model=new Donation('search');
-		$users = CHtml::listData(BaseModel::getAll('Users'),'id','username');
-		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'),'id','solicitor_code');;
+		
+		$users_lists = BaseModel::getAll('Users');
+		$users = array();
+		foreach($users_lists as $user){
+			$users[$user->id] = $user->first_name.' '.$user->last_name.'('.$user->username.')';
+		}
+		// $users = CHtml::listData(BaseModel::getAll('Users'),'id','username');
+		$lists = BaseModel::getAll('Solicitor');
+		$solicitors = array();
+		foreach($lists as $list){
+			$solicitors[$list->id] = $list->first_name.' '.$list->last_name.'('.$list->solicitor_code.')';
+		}
 		$visits = CHtml::listData(BaseModel::getAll('Visits'),'id','visit_code');
+
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Donation']))
 			$model->attributes=$_GET['Donation'];

@@ -71,19 +71,6 @@
                                         'last_name',
                                         'city',
                                         'country',
-                                        array
-                                            (
-                                            'class' => 'CButtonColumn',
-                                            'template' => '{visits}',
-                                            'buttons' => array
-                                                (
-                                                'visits' => array
-                                                    (
-                                                    'label' => 'Visits',
-                                                    'url' => 'Yii::app()->createUrl("admin/solicitor/donations", array("id"=>$data->id))',
-                                                ),
-                                            ),
-                                        ),
                                         array(
                                             'class' => 'CButtonColumn',
                                         ),

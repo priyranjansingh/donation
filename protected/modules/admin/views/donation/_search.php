@@ -12,7 +12,7 @@
 		<div class="form-group">
 			<div class="col-xs-3">
 				<?php echo $form->label($model,'user_id'); ?>
-				<?php echo $form->dropDownList($model,'visit_id',$users,array('empty' => 'Select User','class' => 'form-control')); ?>
+				<?php echo $form->dropDownList($model,'user_id',$users,array('empty' => 'Select User','class' => 'form-control')); ?>
 			</div>
 			<div class="col-xs-3">
 				<?php echo $form->label($model,'solicitor_id'); ?>

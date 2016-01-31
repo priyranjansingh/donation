@@ -166,7 +166,7 @@
                                     'dataProvider' => $logs->users($user->id),
                                     // 'enablePagination' => true,
                                     'columns' => array(
-                                        'ip',
+                                        'ip_address',
                                         'browser',
                                         'os',
                                         'platform',

@@ -38,7 +38,7 @@ class Donation extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, user_id, visit_id, mobile, solicitor_id, amount, mode, payment_status, reference_number, created_by, modified_by, date_entered, date_modified', 'required'),
+			array('id, user_id, visit_id, solicitor_id, amount, mode, payment_status, reference_number, created_by, modified_by, date_entered, date_modified', 'required'),
 			array('status, deleted', 'numerical', 'integerOnly'=>true),
 			array('id, user_id, visit_id, solicitor_id, reference_number, created_by, modified_by', 'length', 'max'=>36),
 			array('mobile, amount', 'length', 'max'=>16),
@@ -78,7 +78,7 @@ class Donation extends BaseModel
 			'mode' => 'Mode',
 			'payment_status' => 'Payment Status',
 			'reference_number' => 'Reference Number',
-                        'short_note' => 'Short Note',
+            'short_note' => 'Short Note',
 			'status' => 'Status',
 			'deleted' => 'Deleted',
 			'created_by' => 'Created By',
@@ -115,7 +115,7 @@ class Donation extends BaseModel
 		$criteria->compare('mode',$this->mode,true);
 		$criteria->compare('payment_status',$this->payment_status,true);
 		$criteria->compare('reference_number',$this->reference_number,true);
-                $criteria->compare('short_note',$this->short_note);
+        $criteria->compare('short_note',$this->short_note);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('deleted',$this->deleted);
 		$criteria->compare('created_by',$this->created_by,true);

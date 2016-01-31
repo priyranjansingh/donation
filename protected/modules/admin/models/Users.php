@@ -172,4 +172,17 @@ class Users extends BaseModel
 	{
 		return parent::model($className);
 	}
+
+	public function getUserBalance($user_id) {
+        $sql = "SELECT id, COALESCE(SUM(credit),0) - COALESCE(SUM(debit),0) AS balance from user_trans where user_id = '" .$user_id. "'";
+        $result = BaseModel::executeSimpleQueryFirstRow($sql);
+        if(!empty($result['balance']))
+        {    
+            return $result['balance'];
+        }
+        else
+        {
+            return 0;
+        }    
+    }
 }

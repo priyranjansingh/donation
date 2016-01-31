@@ -108,7 +108,19 @@ class SolicitorCreditController extends Controller
 	{
 		$model=$this->loadModel($id);
 		$solicitor = Solicitor::model()->findByPk($model->solicitor_id);
-		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
+		$lists = BaseModel::getAll('Solicitor');
+		$solicitors = array();
+		foreach($lists as $list){
+			$solicitors[$list->id] = $list->first_name.' '.$list->last_name.'('.$list->solicitor_code.')';
+		}
+		if(isset($_GET['visit'])){
+			$v_id = $_GET['visit'];
+			$visit = BaseModel::get('Visits',array("condition" => "id = '$v_id'"));
+			if($visit !== null){
+				$model->visit_id = $visit->id;
+				$model->solicitor_id = $visit->solicitor_id;	
+			}
+		}
 		$visits = CHtml::listData(BaseModel::getAll('Visits'), 'id', 'visit_code');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);

@@ -170,7 +170,7 @@ class Users extends FrontBaseModel
         
         // function for getting the total balance of the user
         
-        public function getUserBalance($user_id) {
+    public function getUserBalance($user_id) {
         $sql = "SELECT id, COALESCE(SUM(credit),0) - COALESCE(SUM(debit),0) AS balance from user_trans where user_id = '" .$user_id. "'";
         $result = BaseModel::executeSimpleQueryFirstRow($sql);
         if(!empty($result['balance']))

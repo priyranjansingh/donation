@@ -27,12 +27,8 @@ class SolicitorController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','manage','donations'),
+				'actions'=>array('index','view','create','update','manage','donations'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -51,21 +47,9 @@ class SolicitorController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$sol_vis_query = "SELECT s.first_name,s.last_name,v.visit_code,c.visit_id, CASE WHEN v.status = 1 THEN 'Yes' ELSE 'No' END AS visit_active, v.start_date,v.end_date,c.amount FROM `solicitor_credit` c LEFT JOIN visits v ON c.visit_id = v.id LEFT JOIN solicitor s ON c.solicitor_id = s.id WHERE c.solicitor_id = '$id'";
-		
-		$visits = BaseModel::executeSimpleQuery($sol_vis_query);
-        
-        $donation = new Donation('solicitor'); 
-        $donation->unsetAttributes();
-
-        $payments = new SolicitorCredit('solicitor');
-        $payments->unsetAttributes();
 
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
-			'donation' => $donation,
-			'payments' => $payments,
-			'visits' => $visits
 		));
 	}
 
@@ -137,11 +121,14 @@ class SolicitorController extends Controller
 	 */
 	public function actionIndex()
 	{
-		/*$dataProvider=new CActiveDataProvider('Solicitor');
+		$model=new Solicitor('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Solicitor']))
+			$model->attributes=$_GET['Solicitor'];
+
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));*/
-		$this->redirect(array('manage'));
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -160,7 +147,7 @@ class SolicitorController extends Controller
 	}
 
 	public function actionDonations($id){
-		$visit_sql = "SELECT d.user_id,d.visit_id,s.first_name,s.last_name,v.visit_code, CASE WHEN v.status = 1 THEN 'Yes' ELSE 'No' END AS visit_active, v.start_date,v.end_date, SUM( d.amount ) AS amount FROM `user_donation` d LEFT JOIN visits v ON d.visit_id = v.id LEFT JOIN solicitor s ON d.solicitor_id = s.id WHERE s.id = '$id' GROUP BY d.visit_id ORDER BY v.date_entered";
+		$visit_sql = "SELECT d.user_id,d.visit_id,s.first_name,s.last_name,v.visit_code, CASE WHEN v.status = 1 THEN 'Yes' ELSE 'No' END AS visit_active, v.start_date,v.end_date, SUM( d.amount ) AS amount FROM `user_donation` d LEFT JOIN visits v ON d.visit_id = v.id LEFT JOIN solicitor s ON d.solicitor_id = s.id WHERE s.id = '$id' GROUP BY d.visit_id ORDER BY d.date_entered DESC";
         $visits = BaseModel::executeSimpleQuery($visit_sql);
         
         $c_sql = "SELECT SUM(amount) AS amount FROM solicitor_credit WHERE solicitor_id = '$id'";
@@ -181,12 +168,16 @@ class SolicitorController extends Controller
         $donation = new Donation('users'); 
         $donation->unsetAttributes();
         
+        $payments = new SolicitorCredit('solicitor');
+        $payments->unsetAttributes();
+
         $this->render('donations', array(
             'visits' => $visits,
             'donation' => $donation,
             'solicitor' => $solicitor,
             'amount' => $amount,
-            'damount' => $damount
+            'damount' => $damount,
+            'payments' => $payments
         ));
 	}
 
