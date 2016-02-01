@@ -30,9 +30,8 @@
 			        	'model'=>$model,
 						'users' => $users,
 						'browsers' => $browsers,
-						'os' => $os,
-						'platforms' => $platforms
-		        ));
+						'os' => $os
+				));
                 ?>
             </div>
             <div class="box">
@@ -53,7 +52,7 @@
                                     'id' => 'log-grid',
                                     'itemsCssClass' => 'table table-bordered table-hover dataTable',
                                     'dataProvider' => $model->search(),
-                                    'enablePagination' => false,
+                                    'enablePagination' => true,
                                     // 'filter'=>$model,
                                     'columns' => array(
                                         array(
@@ -62,7 +61,6 @@
 									        ),
                                         'ip_address',
                                         'browser',
-                                        'platform',
                                         'os'
                                     ),
                                 ));

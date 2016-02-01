@@ -120,6 +120,7 @@
             <li><a href="<?php echo base_url().'/admin/donation/manage'; ?>"><i class="fa fa-circle-o"></i> Donations</a></li>
             <li><a href="<?php echo base_url().'/admin/solicitorCredit/manage'; ?>"><i class="fa fa-circle-o"></i> Payments</a></li>
             <li><a href="<?php echo base_url().'/admin/visits/manage'; ?>"><i class="fa fa-circle-o"></i> Visits</a></li>
+            <li><a href="<?php echo base_url().'/admin/log/manage'; ?>"><i class="fa fa-circle-o"></i> Logins</a></li>
           </ul>
         </section>
         <!-- /.sidebar -->

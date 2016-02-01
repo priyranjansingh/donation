@@ -76,6 +76,40 @@
                             </div>
                             <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div>
                         </div>
+                        <h3 class="box-title">Payments</h3> 
+                        <div class="dataTables_wrapper form-inline dt-bootstrap">
+                            <div class="row">
+                                <div class="col-sm-12 table-responsive">
+                                    <?php
+                                    $this->widget('zii.widgets.grid.CGridView', array(
+                                        'id' => 'donation-grid-'.$i,
+                                        'itemsCssClass' => 'table table-bordered table-hover dataTable',
+                                        'dataProvider' => $payments->solicitor($visit['solicitor_id'],$visit['visit_id']),
+                                        'enablePagination' => true,
+                                        'columns' => array(
+                                            'amount',
+                                            'mode',
+                                            'date_entered',
+                                            array
+                                                (
+                                                'class' => 'CButtonColumn',
+                                                'template' => '{edit}',
+                                                'buttons' => array
+                                                    (
+                                                    'edit' => array
+                                                        (
+                                                        'label' => 'EDIT',
+                                                        'url' => 'Yii::app()->createUrl("admin/solicitorCredit/update", array("id"=>$data->id))',
+                                                    ),
+                                                ),
+                                            ),
+                                        ),
+                                    ));
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div>
+                        </div>
                     </div>
                 </div>
             <?php $i++; endforeach; ?>

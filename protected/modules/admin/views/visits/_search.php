@@ -21,6 +21,6 @@
 </div>
 <div class="box-footer">
 	<?php echo CHtml::submitButton('Search',array("class" => 'btn btn-info search-button')); ?>
-	<a href="<?php echo base_url().'/admin/users/manage' ?>" class="btn btn-warning">Clear</a>
+	<a href="<?php echo base_url().'/admin/visits/manage' ?>" class="btn btn-warning">Clear</a>
 </div>
 <?php $this->endWidget(); ?>

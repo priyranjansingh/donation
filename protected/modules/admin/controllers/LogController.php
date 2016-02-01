@@ -131,24 +131,22 @@ class LogController extends Controller
 	public function actionManage()
 	{
 		$users_lists = BaseModel::getAll('Users');
+		
 		$users = array();
 		foreach($users_lists as $user){
 			$users[$user->id] = $user->first_name.' '.$user->last_name.'('.$user->username.')';
 		}
-		$platform_list = Log::model()->getPlatforms();
-		$platforms = array();
-		foreach($platform_list as $platform){
-			$platforms[$platform['id']] = ucfirst($platform['platform']);
-		}
+		
 		$os_list = Log::model()->getOs();
 		$os = array();
 		foreach($os_list as $o){
-			$os[$o['id']] = ucfirst($o['os']);
+			$os[$o['os']] = ucfirst($o['os']);
 		}
+		
 		$browser_list = Log::model()->getBrowsers();
 		$browsers = array();
 		foreach($browser_list as $browser){
-			$browsers[$browser['id']] = ucfirst($browser['browser']);
+			$browsers[$browser['browser']] = ucfirst($browser['browser']);
 		}
 		
 		$model=new Log('search');
@@ -160,8 +158,7 @@ class LogController extends Controller
 			'model'=>$model,
 			'users' => $users,
 			'browsers' => $browsers,
-			'os' => $os,
-			'platforms' => $platforms
+			'os' => $os
 		));
 	}
 

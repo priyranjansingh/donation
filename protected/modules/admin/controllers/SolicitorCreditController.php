@@ -27,12 +27,8 @@ class SolicitorCreditController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','manage','loadvisits'),
+				'actions'=>array('index','view','create','update','manage','loadvisits'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -121,7 +117,7 @@ class SolicitorCreditController extends Controller
 				$model->solicitor_id = $visit->solicitor_id;	
 			}
 		}
-		$visits = CHtml::listData(BaseModel::getAll('Visits'), 'id', 'visit_code');
+		$visits = CHtml::listData(Visits::model()->findAll(),'id','visit_code');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -167,7 +163,11 @@ class SolicitorCreditController extends Controller
 	 */
 	public function actionManage()
 	{
-		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
+		$lists = BaseModel::getAll('Solicitor');
+		$solicitors = array();
+		foreach($lists as $list){
+			$solicitors[$list->id] = $list->first_name.' '.$list->last_name.'('.$list->solicitor_code.')';
+		}
 
 		$model=new SolicitorCredit('search');
 		$model->unsetAttributes();  // clear any default values

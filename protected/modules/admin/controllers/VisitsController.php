@@ -99,16 +99,20 @@ class VisitsController extends Controller
 	public function actionDetails($id)
 	{
 		$visit = Visits::model()->findByPk($id);
-		$visit_sql = "SELECT d.user_id,d.visit_id,s.first_name,s.last_name,v.visit_code, CASE WHEN v.status = 1 THEN 'Yes' ELSE 'No' END AS visit_active, v.start_date,v.end_date, SUM( d.amount ) AS amount FROM `user_donation` d LEFT JOIN visits v ON d.visit_id = v.id LEFT JOIN solicitor s ON d.solicitor_id = s.id WHERE d.visit_id = '$id' GROUP BY d.visit_id";
+		$visit_sql = "SELECT d.solicitor_id,d.user_id,d.visit_id,s.first_name,s.last_name,v.visit_code, CASE WHEN v.status = 1 THEN 'Yes' ELSE 'No' END AS visit_active, v.start_date,v.end_date, SUM( d.amount ) AS amount FROM `user_donation` d LEFT JOIN visits v ON d.visit_id = v.id LEFT JOIN solicitor s ON d.solicitor_id = s.id WHERE d.visit_id = '$id' GROUP BY d.visit_id";
         $visits = BaseModel::executeSimpleQuery($visit_sql);
         // pre($visits,true);
         $donation = new Donation('users'); 
         $donation->unsetAttributes();
         
+        $payments = new SolicitorCredit('solicitor');
+        $payments->unsetAttributes();
+
         $this->render('donations', array(
         	'visit' => $visit->visit_code,
             'visits' => $visits,
-            'donation' => $donation
+            'donation' => $donation,
+            'payments' => $payments
         ));
 	}
 
@@ -190,7 +194,11 @@ class VisitsController extends Controller
 	public function actionManage()
 	{
 		$model=new Visits('search');
-		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
+		$lists = BaseModel::getAll('Solicitor');
+		$solicitors = array();
+		foreach($lists as $list){
+			$solicitors[$list->id] = $list->first_name.' '.$list->last_name.'('.$list->solicitor_code.')';
+		}
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Visits']))
 			$model->attributes=$_GET['Visits'];
