@@ -72,10 +72,10 @@ $baseUrl = Yii::app()->theme->baseUrl;
                             <tr>
                                 <td><img src="<?php echo $baseUrl; ?>/assets/img/icons/ballicons/visa.png"></td>
                                 <td class="mdl-data-table__cell--non-numeric" style="font-size: 20px;">
-                                    Feature not yet available
+                                     Feature not yet available
                                 </td>
                             </tr>
-
+                           
                         </tbody>
                     </table>
                     <div class="mdl-card__supporting-text  mdl-color-text--white">
