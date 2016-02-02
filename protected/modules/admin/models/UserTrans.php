@@ -38,7 +38,7 @@ class UserTrans extends BaseModel
 			array('user_id,tran_type,created_by, date_entered', 'required'),
 			array('status, deleted', 'numerical', 'integerOnly'=>true),
 			array('debit, credit', 'numerical'),
-			array('created_by, modified_by', 'length', 'max'=>36),
+			array('credit_id, donation_id,created_by, modified_by', 'length', 'max'=>36),
 			array('date_modified', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

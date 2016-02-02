@@ -28,15 +28,15 @@ class LogController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','manage','delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('manage','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -114,7 +114,7 @@ class LogController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('manage'));
 	}
 
 	/**
@@ -122,17 +122,33 @@ class LogController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Log');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->redirect(array('manage'));
 	}
 
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+	public function actionManage()
 	{
+		$users_lists = BaseModel::getAll('Users');
+		
+		$users = array();
+		foreach($users_lists as $user){
+			$users[$user->id] = $user->first_name.' '.$user->last_name.'('.$user->username.')';
+		}
+		
+		$os_list = Log::model()->getOs();
+		$os = array();
+		foreach($os_list as $o){
+			$os[$o['os']] = ucfirst($o['os']);
+		}
+		
+		$browser_list = Log::model()->getBrowsers();
+		$browsers = array();
+		foreach($browser_list as $browser){
+			$browsers[$browser['browser']] = ucfirst($browser['browser']);
+		}
+		
 		$model=new Log('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Log']))
@@ -140,6 +156,9 @@ class LogController extends Controller
 
 		$this->render('admin',array(
 			'model'=>$model,
+			'users' => $users,
+			'browsers' => $browsers,
+			'os' => $os
 		));
 	}
 
@@ -170,4 +189,10 @@ class LogController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function gridUser($data, $row) {
+        $user = $data->user_id;
+        $code = Users::model()->findByPk($user);
+        return $code->first_name.' '.$code->last_name.'('.$code->username.')';
+    }
 }

@@ -54,6 +54,11 @@
 									        ),
 											'start_date',
 											array(
+									            'name' => 'status',
+									            'type' => 'raw',
+									            'value' => array($this, 'gridStatus'),
+									        ),
+											array(
 												'class'=>'CButtonColumn',
 											),
 										),

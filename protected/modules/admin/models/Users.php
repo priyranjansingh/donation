@@ -144,7 +144,7 @@ class Users extends BaseModel
 		$criteria->compare('notify_solicitor',$this->notify_solicitor);
 		$criteria->compare('credit_limits',$this->credit_limits,true);
 		$criteria->compare('is_active',$this->is_active);
-		$criteria->compare('is_admin',0);
+		$criteria->compare('is_admin',$this->is_admin);
 		$criteria->compare('mobile_verified',$this->mobile_verified);
 		$criteria->compare('phone_verified',$this->phone_verified);
 		$criteria->compare('status',$this->status);
@@ -172,4 +172,17 @@ class Users extends BaseModel
 	{
 		return parent::model($className);
 	}
+
+	public function getUserBalance($user_id) {
+        $sql = "SELECT id, COALESCE(SUM(credit),0) - COALESCE(SUM(debit),0) AS balance from user_trans where user_id = '" .$user_id. "'";
+        $result = BaseModel::executeSimpleQueryFirstRow($sql);
+        if(!empty($result['balance']))
+        {    
+            return $result['balance'];
+        }
+        else
+        {
+            return 0;
+        }    
+    }
 }

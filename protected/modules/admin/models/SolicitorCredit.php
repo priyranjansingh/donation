@@ -120,8 +120,8 @@ class SolicitorCredit extends BaseModel
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 		$criteria=new CDbCriteria;
-		$criteria->compare('solicitor_id',$this->solicitor_id,$id);
-		$criteria->compare('visit_id',$this->visit_id,$visit);
+		$criteria->compare('solicitor_id',$id);
+		$criteria->compare('visit_id',$visit);
 		$criteria->compare('amount',$this->amount,true);
 		$criteria->compare('mode',$this->mode,true);
 		$criteria->compare('date_entered',$this->date_entered,true);

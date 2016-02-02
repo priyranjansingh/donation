@@ -15,8 +15,17 @@
 				<div class="box-header with-border">
 					<h3 class="box-title">Visit</h3>
 				</div>
-				<div class="warning"><?php echo $visit; ?> is closed.</div>
+				<div class="warning"><?php echo $visit; ?> 
+				<?php if($status): ?>
+					is open now.
+				<?php else: ?>
+					is close now.
+				<?php endif; ?>
+				</div>
 			</div>
+		</div>
+		<div class="col-xs-12">
+			<?php echo CHtml::link('Back',array('/admin/solicitor/donations',"id" => $solicitor),array("class" => 'btn btn-info pull-right',"style"=>"margin-left:10px;")); ?>
 		</div>
 	</div>
 </section>

@@ -27,12 +27,8 @@ class VisitsController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','manage','close','details','search'),
+				'actions'=>array('index','view','create','update','manage','close','details','search','status'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -63,6 +59,9 @@ class VisitsController extends Controller
 	public function actionCreate()
 	{
 		$model=new Visits;
+		if(isset($_GET['solicitor'])){
+			$model->solicitor_id = $_GET['solicitor'];
+		}
 		$lists = BaseModel::getAll('Solicitor');
 		$solicitors = array();
 		foreach($lists as $list){
@@ -99,17 +98,21 @@ class VisitsController extends Controller
 
 	public function actionDetails($id)
 	{
-		// $visit = Visits::model()->findByPk($id);
-		$visit_sql = "SELECT d.user_id,d.visit_id,s.first_name,s.last_name,v.visit_code, CASE WHEN v.status = 1 THEN 'Yes' ELSE 'No' END AS visit_active, v.start_date,v.end_date, SUM( d.amount ) AS amount FROM `user_donation` d LEFT JOIN visits v ON d.visit_id = v.id LEFT JOIN solicitor s ON d.solicitor_id = s.id WHERE d.visit_id = '$id' GROUP BY d.visit_id";
+		$visit = Visits::model()->findByPk($id);
+		$visit_sql = "SELECT d.solicitor_id,d.user_id,d.visit_id,s.first_name,s.last_name,v.visit_code, CASE WHEN v.status = 1 THEN 'Yes' ELSE 'No' END AS visit_active, v.start_date,v.end_date, SUM( d.amount ) AS amount FROM `user_donation` d LEFT JOIN visits v ON d.visit_id = v.id LEFT JOIN solicitor s ON d.solicitor_id = s.id WHERE d.visit_id = '$id' GROUP BY d.visit_id";
         $visits = BaseModel::executeSimpleQuery($visit_sql);
         // pre($visits,true);
         $donation = new Donation('users'); 
         $donation->unsetAttributes();
         
+        $payments = new SolicitorCredit('solicitor');
+        $payments->unsetAttributes();
+
         $this->render('donations', array(
         	'visit' => $visit->visit_code,
             'visits' => $visits,
-            'donation' => $donation
+            'donation' => $donation,
+            'payments' => $payments
         ));
 	}
 
@@ -121,7 +124,11 @@ class VisitsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
+		$lists = BaseModel::getAll('Solicitor');
+		$solicitors = array();
+		foreach($lists as $list){
+			$solicitors[$list->id] = $list->first_name.' '.$list->last_name.'('.$list->solicitor_code.')';
+		}
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -141,9 +148,13 @@ class VisitsController extends Controller
 	public function actionClose($id)
 	{
 		$model=$this->loadModel($id);
-		$model->status = 0;
+		if($model->status == 1){
+			$model->status = 0;
+		} else {
+			$model->status = 1;
+		}
 		$model->save();
-		$this->render('close',array('visit'=>$model->visit_code));
+		$this->render('close',array('visit'=>$model->visit_code,'status'=>$model->status,'solicitor'=>$model->solicitor_id));
 	}
 
 	/**
@@ -165,7 +176,16 @@ class VisitsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->redirect(array('manage'));
+		$model=new Visits('search');
+		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Visits']))
+			$model->attributes=$_GET['Visits'];
+
+		$this->render('index',array(
+			'model'=>$model,
+			'solicitors' => $solicitors
+		));
 	}
 
 	/**
@@ -174,7 +194,11 @@ class VisitsController extends Controller
 	public function actionManage()
 	{
 		$model=new Visits('search');
-		$solicitors = CHtml::listData(BaseModel::getAll('Solicitor'), 'id', 'solicitor_code');
+		$lists = BaseModel::getAll('Solicitor');
+		$solicitors = array();
+		foreach($lists as $list){
+			$solicitors[$list->id] = $list->first_name.' '.$list->last_name.'('.$list->solicitor_code.')';
+		}
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Visits']))
 			$model->attributes=$_GET['Visits'];
@@ -183,6 +207,19 @@ class VisitsController extends Controller
 			'model'=>$model,
 			'solicitors' => $solicitors
 		));
+	}
+
+	public function actionStatus($id)
+	{
+		$visit = Visits::model()->findByPk($id);
+		if($visit->status == 1){
+			$visit->status = 0;
+		} else {
+			$visit->status = 1;
+		}
+
+		$visit->save();
+		$this->redirect(array('manage'));
 	}
 
 	/**
@@ -223,6 +260,15 @@ class VisitsController extends Controller
         $visit = $data->visit_id;
         $code = Visits::model()->findByPk($visit)->visit_code;
         return $code;
+    }
+
+    public function gridStatus($data, $row) {
+        if($data->status == 1){
+        	$html = '<a href="'.base_url().'/admin/visits/status?id='.$data->id.'">Close</a>';
+        } else {
+        	$html = '<a href="'.base_url().'/admin/visits/status?id='.$data->id.'">Open</a>';
+        }
+        return $html;
     }
 
     public function gridUser($data, $row) {

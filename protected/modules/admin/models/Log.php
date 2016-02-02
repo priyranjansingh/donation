@@ -124,7 +124,7 @@ class Log extends BaseModel
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('user_id',$this->user_id,$id);
+		$criteria->compare('user_id',$id);
 		$criteria->compare('ip_address',$this->ip_address,true);
 		$criteria->compare('browser',$this->browser,true);
 		$criteria->compare('platform',$this->platform,true);
@@ -136,9 +136,14 @@ class Log extends BaseModel
 		$criteria->compare('modified_by',$this->modified_by,true);
 		$criteria->compare('date_entered',$this->date_entered,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
-
+		// $criteria->order('date_entered','DESC');
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+			    		'defaultOrder'=>'date_entered DESC',
+		  			),
+			'pagination' => array('pageSize' => 10),
+			'totalItemCount' => 1,
 		));
 	}
 
@@ -151,5 +156,23 @@ class Log extends BaseModel
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function getPlatforms()
+	{
+		$sql = "SELECT id,platform FROM log GROUP BY platform";
+		return $result = BaseModel::executeSimpleQuery($sql);
+	}
+
+	public function getOs()
+	{
+		$sql = "SELECT id,os FROM log GROUP BY os";
+		return $result = BaseModel::executeSimpleQuery($sql);
+	}
+
+	public function getBrowsers()
+	{
+		$sql = "SELECT id,browser FROM log GROUP BY browser";
+		return $result = BaseModel::executeSimpleQuery($sql);
 	}
 }
