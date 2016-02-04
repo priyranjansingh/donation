@@ -45,7 +45,7 @@
 			</div>
 			<div class="col-xs-3">
 				<?php echo $form->label($model,'mode'); ?>
-				<?php echo $form->dropDownList($model,'mode',getParam('payment_mode'),array('class' => 'form-control')); ?>
+				<?php echo $form->dropDownList($model,'mode',getParam('donation_mode'),array('class' => 'form-control')); ?>
 			</div>
 		</div>
 					

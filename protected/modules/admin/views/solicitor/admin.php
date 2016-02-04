@@ -60,6 +60,7 @@
                         <div class="row">
                             <div class="col-sm-12 table-responsive">
                                 <?php
+                                
                                 $this->widget('zii.widgets.grid.CGridView', array(
                                     'id' => 'solicitor-grid',
                                     'itemsCssClass' => 'table table-bordered table-hover dataTable',

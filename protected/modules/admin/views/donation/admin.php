@@ -20,7 +20,7 @@
 				<?php 
 						Yii::app()->clientScript->registerScript('search', "
 						$('form.search-button').submit(function(){
-							$('#donation-grid').yiiGridView('update', {
+							$('#user-donation-grid').yiiGridView('update', {
 								data: $(this).serialize()
 							});
 							return false;

@@ -25,6 +25,8 @@ class Donation extends BaseModel
 	/**
 	 * @return string the associated database table name
 	 */
+    
+    
 	public function tableName()
 	{
 		return 'user_donation';
@@ -78,7 +80,7 @@ class Donation extends BaseModel
 			'mode' => 'Mode',
 			'payment_status' => 'Payment Status',
 			'reference_number' => 'Reference Number',
-            'short_note' => 'Short Note',
+                        'short_note' => 'Short Note',
 			'status' => 'Status',
 			'deleted' => 'Deleted',
 			'created_by' => 'Created By',

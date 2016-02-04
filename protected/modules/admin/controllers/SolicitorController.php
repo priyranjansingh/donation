@@ -139,7 +139,9 @@ class SolicitorController extends Controller
 		$model=new Solicitor('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Solicitor']))
+                {    
 			$model->attributes=$_GET['Solicitor'];
+                }       
 
 		$this->render('admin',array(
 			'model'=>$model,

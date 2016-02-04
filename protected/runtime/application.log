@@ -1,1 +1,32 @@
 
+2016/02/03 17:45:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tpl/default/demo/dashboard.html".' in C:\xampp\htdocs\donation\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('tpl/default/dem...')
+#1 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/donation/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/user
+---
+2016/02/03 18:11:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('default')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('default')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('site/default/lo...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/site/login
+HTTP_REFERER=http://localhost/donation/index.php/admin/donation/manage?Donation%5Buser_id%5D=43396ef6-2ca8-903d-5df4-56503e090126&Donation%5Bsolicitor_id%5D=&Donation%5Bvisit_id%5D=&Donation%5Bamount%5D=&Donation%5Bmobile%5D=&Donation%5Bmode%5D=cash&yt0=Search
+---
+2016/02/03 18:11:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in C:\xampp\htdocs\donation\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\donation\framework\web\CController.php(270): CController->missingAction('default')
+#1 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(282): CController->run('default')
+#2 C:\xampp\htdocs\donation\framework\web\CWebApplication.php(141): CWebApplication->runController('site/default/tp...')
+#3 C:\xampp\htdocs\donation\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\donation\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/donation/index.php/site/tpl/demo/dashboard.html
+HTTP_REFERER=http://localhost/donation/index.php/site/login
+---

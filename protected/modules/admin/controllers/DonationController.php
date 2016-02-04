@@ -247,7 +247,11 @@ class DonationController extends Controller
 
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Donation']))
+                {    
 			$model->attributes=$_GET['Donation'];
+                }        
+                
+               
 
 		$this->render('admin',array(
 			'model'=>$model,
