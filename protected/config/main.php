@@ -11,7 +11,7 @@ return array(
     'name' => 'My Web Application',
     // preloading 'log' component
     'preload' => array('log'),
-    'defaultController' => 'admin/login',
+    'defaultController' => 'user/default/login',
     'theme' => 'front',
     // autoloading model and component classes
     'import' => array(

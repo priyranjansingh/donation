@@ -12,6 +12,11 @@ class AdminModule extends CWebModule
 			'admin.models.*',
 			'admin.components.*',
 		));
+
+		Yii::app()->setComponents(array(
+            'errorHandler'=>array(
+            'errorAction'=>'admin/users/error',
+        )));
                 
                
 	}

@@ -25,8 +25,6 @@ class Donation extends FrontBaseModel
 	/**
 	 * @return string the associated database table name
 	 */
-        
-    
 	public function tableName()
 	{
 		return 'user_donation';

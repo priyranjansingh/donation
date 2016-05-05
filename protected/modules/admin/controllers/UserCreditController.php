@@ -25,16 +25,12 @@ class UsercreditController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
-                'users' => array('*'),
-            ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update','admin'),
+                'actions' => array('index', 'view','create', 'update','manage'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
+                'actions' => array('manage', 'delete'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -144,30 +140,33 @@ class UsercreditController extends Controller {
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('manage'));
     }
 
     /**
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('UserCredit');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        ));
+        $this->redirect(array('manage'));
     }
 
     /**
      * Manages all models.
      */
-    public function actionAdmin() {
+    public function actionManage() {
         $model = new UserCredit('search');
         $model->unsetAttributes();  // clear any default values
+        $users_lists = BaseModel::getAll('Users');
+		$users = array();
+		foreach($users_lists as $user){
+			$users[$user->id] = $user->first_name.' '.$user->last_name.'('.$user->username.')';
+		}
         if (isset($_GET['UserCredit']))
             $model->attributes = $_GET['UserCredit'];
 
         $this->render('admin', array(
             'model' => $model,
+            'users' => $users
         ));
     }
 
@@ -194,6 +193,11 @@ class UsercreditController extends Controller {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    public function gridUser($data, $row) {
+        $code = Users::model()->findByPk($data->user_id);
+        return $code->first_name.' '.$code->last_name.'('.$code->username.')';
     }
 
 }

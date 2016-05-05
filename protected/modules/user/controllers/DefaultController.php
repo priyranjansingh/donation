@@ -9,6 +9,18 @@ class DefaultController extends Controller {
         //$this->render('index');
     }
 
+    public function actionError()
+    {
+        $this->layout = '//layouts/login_main';
+        if($error=Yii::app()->errorHandler->error)
+        {
+            if(Yii::app()->request->isAjaxRequest)
+                echo $error['message'];
+            else
+                $this->render('error', $error);
+        }
+    }
+
     public function actionLogin() {
         $this->layout = '//layouts/login_main';
         if (!isFrontUserLoggedIn()) {

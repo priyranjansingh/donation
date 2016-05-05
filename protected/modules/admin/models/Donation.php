@@ -25,8 +25,6 @@ class Donation extends BaseModel
 	/**
 	 * @return string the associated database table name
 	 */
-    
-    
 	public function tableName()
 	{
 		return 'user_donation';
@@ -44,6 +42,7 @@ class Donation extends BaseModel
 			array('status, deleted', 'numerical', 'integerOnly'=>true),
 			array('id, user_id, visit_id, solicitor_id, reference_number, created_by, modified_by', 'length', 'max'=>36),
 			array('mobile, amount', 'length', 'max'=>16),
+			//array('amount', 'checkBalance'),
 			array('mode', 'length', 'max'=>6),
 			array('payment_status', 'length', 'max'=>11),
 			// The following rule is used by search().
@@ -80,7 +79,7 @@ class Donation extends BaseModel
 			'mode' => 'Mode',
 			'payment_status' => 'Payment Status',
 			'reference_number' => 'Reference Number',
-                        'short_note' => 'Short Note',
+            'short_note' => 'Short Note',
 			'status' => 'Status',
 			'deleted' => 'Deleted',
 			'created_by' => 'Created By',
@@ -162,6 +161,23 @@ class Donation extends BaseModel
             ),
 		));
 	}
+
+//	public function checkBalance($attribute) {
+//        $user_id = $this->user_id;
+//        $user_balance = Users::model()->getUserBalance($user_id);
+//        $user_model = Users::model()->findByPk($user_id);
+//        $credit_limits = $user_model->credit_limits;
+//        $donation_amt = $this->amount;
+//        if ($user_balance >= 0) {
+//            $total_user_limit = $user_balance + $credit_limits;
+//        } else {
+//            $total_user_limit = $credit_limits;
+//        }
+//
+//        if ($total_user_limit < $donation_amt) {
+//            $this->addError($attribute, "Sorry. You do not have sufficient balance.");
+//        }
+//    }
 
 	public function solicitor($id,$visit)
 	{

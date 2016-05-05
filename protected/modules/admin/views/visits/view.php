@@ -23,6 +23,11 @@
 								'data'=>$model,
 								'attributes'=>array(
 									'visit_code',
+									array(
+							            'label'=>'Visit File',
+							            'type'=>'raw',
+							            'value'=>CHtml::link('File Here',base_url().'/assets/visits/'.$model->visit_file, array('target'=>'_blank'))
+							        ),
 									'reason',
 									'description',
 									array(

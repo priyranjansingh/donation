@@ -16,7 +16,7 @@
 				<div class="box-header with-border">
 					<h3 class="box-title">Payment</h3>
 				</div>
-				<?php $this->renderPartial('_form', array('model'=>$model,'users'=>$users)); ?>
+				<?php $this->renderPartial('_update', array('model'=>$model,'users'=>$users)); ?>
 			</div>
 		</div>
 	</div>

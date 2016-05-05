@@ -25,6 +25,10 @@ class UsersController extends Controller {
      */
     public function accessRules() {
         return array(
+            array('allow', // allow admin user to perform 'admin' and 'delete' actions
+                'actions' => array('error'),
+                'users' => array('*'),
+            ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
                 'actions' => array('index','view','create', 'update', 'manage','transaction','changepassword'),
                 'users' => array('@'),
@@ -37,6 +41,18 @@ class UsersController extends Controller {
                 'users' => array('*'),
             ),
         );
+    }
+
+    public function actionError()
+    {
+        $this->layout = '//layouts/login_main';
+        if($error=Yii::app()->errorHandler->error)
+        {
+            if(Yii::app()->request->isAjaxRequest)
+                echo $error['message'];
+            else
+                $this->render('error', $error);
+        }
     }
 
     /**

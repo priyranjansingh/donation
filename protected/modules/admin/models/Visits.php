@@ -38,11 +38,22 @@ class Visits extends BaseModel {
             array('status, deleted', 'numerical', 'integerOnly' => true),
             array('id, solicitor_id, created_by, modified_by', 'length', 'max' => 36),
             array('visit_code', 'length', 'max' => 255),
+            array('visit_file', 'length', 'max' => 128,'on'=>'insert,update'),
+            array('visit_file', 'file','types' => 'pdf,jpg,jpeg',  'on' => 'update',
+                'allowEmpty' => true,'safe'=>false
+            ),
+            array('visit_file', 'file','types' => 'pdf,jpg,jpeg',  'on' => 'insert',
+                'allowEmpty' => false
+            ),
+           
+            //array('visit_file', 'required', 'on' => 'create'),
+            //array('visit_file', 'file', 'types' => 'pdf,jpg,jpeg', 'allowEmpty' => true, 'on' => 'update'),
+            // array('image', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true, 'on'=>'update'),
             array('reason', 'length', 'max' => 512),
             array('end_date', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, visit_code, reason, description, solicitor_id, start_date, end_date, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on' => 'search'),
+            array('id, visit_code,visit_file, reason, description, solicitor_id, start_date, end_date, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on' => 'search'),
         );
     }
 
@@ -53,7 +64,7 @@ class Visits extends BaseModel {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'solicitor'=>array(self::BELONGS_TO, 'Solicitor', 'solicitor_id'),
+            'solicitor' => array(self::BELONGS_TO, 'Solicitor', 'solicitor_id'),
         );
     }
 
@@ -64,6 +75,7 @@ class Visits extends BaseModel {
         return array(
             'id' => 'ID',
             'visit_code' => 'Visit Code',
+            'visit_file' => 'Visit File',
             'reason' => 'Reason',
             'description' => 'Description',
             'solicitor_id' => 'Solicitor',
@@ -97,6 +109,7 @@ class Visits extends BaseModel {
 
         $criteria->compare('id', $this->id, true);
         $criteria->compare('visit_code', $this->visit_code, true);
+        $criteria->compare('visit_file', $this->visit_file, true);
         $criteria->compare('reason', $this->reason, true);
         $criteria->compare('description', $this->description, true);
         $criteria->compare('solicitor_id', $this->solicitor_id, true);

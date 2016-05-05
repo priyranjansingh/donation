@@ -28,11 +28,11 @@ class SolicitorController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update','manage','donations'),
+				'actions'=>array('index','view','create','update','manage','donations','status','ProcessPending'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('manage','delete'),
+				'actions'=>array('manage','delete','status','ProcessPending'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -139,9 +139,7 @@ class SolicitorController extends Controller
 		$model=new Solicitor('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Solicitor']))
-                {    
 			$model->attributes=$_GET['Solicitor'];
-                }       
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -221,4 +219,32 @@ class SolicitorController extends Controller
         $code = Users::model()->findByPk($data->user_id);
         return $code->first_name.' '.$code->last_name.'('.$code->username.')';
     }
+    
+    public function actionStatus($id) {
+        $model = Donation::model()->findByPk($id);
+        $model->payment_status = "transferred";
+        $model->save();
+        $this->redirect(array('donations','id'=> $model->solicitor_id));
+    }
+    
+    
+    
+    public function gridPaymentStatus($data, $row) {
+        $status = $data->payment_status;
+        if ($status == "pending") {
+            return CHtml::link('Pending', base_url() . '/admin/solicitor/status?id=' . $data->id);
+        } else {
+            return "Processed";
+        }
+    }
+    
+     public function actionProcessPending($id) {
+        $visit_model = Visits::model()->findByPk($id);
+        $attributes = array('payment_status' => 'transferred');
+        //Donation::model()->updateAll($attributes, 'payment_status=:payment_status', array(':payment_status' => 'pending'));
+        Donation::model()->updateAll($attributes, array('condition'=> "payment_status = 'pending' AND visit_id = '$id' "));
+        $this->redirect(array('donations','id'=> $visit_model->solicitor_id));
+    }
+    
+    
 }

@@ -68,6 +68,7 @@
                             <?php if($visit['visit_active'] == 'Yes'): ?>
                                 <a href="<?php echo base_url().'/admin/solicitorCredit/create?visit='.$visit['visit_id']; ?>" class="btn btn-info">Make Payment</a>
                             <?php endif; ?>
+                          <a href="<?php echo base_url().'/admin/solicitor/ProcessPending?id='.$visit['visit_id']; ?>" class="btn btn-info">Process Pending Payments</a>
                         </h3>
                     </div>
                     <div class="box-body">
@@ -87,6 +88,11 @@
                                               ),
                                             'amount',
                                             'date_entered',
+                                            array(
+                                            'name' => 'payment_status',
+                                            'type' => 'raw',
+                                            'value' => array($this, 'gridPaymentStatus'),
+                                        ),
                                             array
                                                 (
                                                 'class' => 'CButtonColumn',

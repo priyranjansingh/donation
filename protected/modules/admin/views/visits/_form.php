@@ -6,6 +6,7 @@
 		// There is a call to performAjaxValidation() commented in generated controller code.
 		// See class documentation of CActiveForm for details on this.
 		'enableAjaxValidation'=>false,
+		'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 		)); 
 ?>
 <div class="box-body">
@@ -29,10 +30,20 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<div class="col-xs-12">
+		<div class="col-xs-6">
 			<?php echo $form->labelEx($model,'description'); ?>
 			<?php echo $form->textArea($model,'description',array('rows'=>6,'cols'=>50,'class' => 'form-control')); ?>
 			<?php echo $form->error($model,'description'); ?>
+		</div>
+		<div class="col-xs-6">
+			<?php echo $form->labelEx($model,'visit_file'); ?>
+			<?php echo CHtml::activeFileField($model, 'visit_file'); ?>
+			<?php echo $form->error($model,'visit_file'); ?>
+			<?php if($model->isNewRecord!='1'): ?>
+				<p>
+					<a href="<?php echo base_url().'/assets/visits/'.$model->visit_file; ?>" target="_blank">Uploaded File Here</a>
+				</p>
+			<?php endif; ?>
 		</div>
 	</div>
 	<div class="form-group">

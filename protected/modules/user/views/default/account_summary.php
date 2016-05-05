@@ -6,8 +6,8 @@ $baseUrl = Yii::app()->theme->baseUrl;
     <div class="demo-header-color relative clear " style="min-height: 220px;">
 
         <div class="p-20">
-            <h4 class="mdl-color-text--white m-t-20 m-b-5">Welcome, <?php echo Yii::app()->session['first_name']; ?></h4>
-            <h5 class="mdl-color-text--white m-b-25 no-m-t w100">User Dashboard</h5>
+            <h4 class="mdl-color-text--white m-t-20 m-b-5">Welcome User</h4>
+            <h5 class="mdl-color-text--white m-b-25 no-m-t w100">Dashboard and KPI information for informed users</h5>
         </div>
     </div>
 
@@ -60,8 +60,8 @@ $baseUrl = Yii::app()->theme->baseUrl;
             <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet full-desktop">
                 <div class="mdl-card mdl-shadow--0dp  mdl-color--pink-300">
                     <div class="mdl-card__title block">
-                        <h4 class="mdl-card__title-text mdl-color-text--white f20 w600">Linked Numbers</h4>
-                        <div class="f11 mdl-color-text--white"></div>
+                        <h4 class="mdl-card__title-text mdl-color-text--white f20 w600">Linked Phone Numbers</h4>
+                        <div class="f11 mdl-color-text--white"> Latest 10 May, 10:00</div>
                     </div>
                     <table class="mdl-data-table ml-table-striped mdl-js-data-table ml-data-table is-upgraded" data-upgraded=",MaterialDataTable">
                         <colgroup>
@@ -72,10 +72,10 @@ $baseUrl = Yii::app()->theme->baseUrl;
                             <tr>
                                 <td><img src="<?php echo $baseUrl; ?>/assets/img/icons/ballicons/visa.png"></td>
                                 <td class="mdl-data-table__cell--non-numeric" style="font-size: 20px;">
-                                    Feature not yet available
+                                     Feature not yet available !!!
                                 </td>
                             </tr>
-
+                           
                         </tbody>
                     </table>
                     <div class="mdl-card__supporting-text  mdl-color-text--white">

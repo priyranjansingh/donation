@@ -20,7 +20,11 @@
                                 <div class="form-wizard condensed" id="wizard-3">
                                     <div class="tab-pane active  text-center">
                                         <div class="p-30">
-                                            <h4>You're donating to <?php echo $visit_model->solicitor->first_name . " " . $visit_model->solicitor->last_name; ?><h4>
+                                            <h4>You're donating to <?php echo $visit_model->solicitor->first_name . " " . $visit_model->solicitor->last_name; ?>.
+                                            <?php if(!empty($visit_model->visit_file)): ?>
+                                                <a href="<?php echo base_url().'/assets/visits/'.$visit_model->visit_file; ?>" target="_blank" style="float:right;">Visit File</a>
+                                            <?php endif; ?>
+                                            <h4>
                                                     <?php
                                                     $form = $this->beginWidget('CActiveForm', array(
                                                         'id' => 'step3-form',

@@ -18,7 +18,7 @@
  * @property string $date_entered
  * @property string $date_modified
  */
-class Visits extends BaseModel {
+class Visits extends FrontBaseModel {
 
     /**
      * @return string the associated database table name
@@ -38,11 +38,12 @@ class Visits extends BaseModel {
             array('status, deleted', 'numerical', 'integerOnly' => true),
             array('id, solicitor_id, created_by, modified_by', 'length', 'max' => 36),
             array('visit_code', 'length', 'max' => 255),
+            array('visit_file', 'length', 'max' => 128),
             array('reason', 'length', 'max' => 512),
             array('end_date', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, visit_code, reason, description, solicitor_id, start_date, end_date, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on' => 'search'),
+            array('id, visit_code, visit_file, reason, description, solicitor_id, start_date, end_date, status, deleted, created_by, modified_by, date_entered, date_modified', 'safe', 'on' => 'search'),
         );
     }
 
@@ -64,6 +65,7 @@ class Visits extends BaseModel {
         return array(
             'id' => 'ID',
             'visit_code' => 'Visit Code',
+            'visit_file' => 'Visit File',
             'reason' => 'Reason',
             'description' => 'Description',
             'solicitor_id' => 'Solicitor',

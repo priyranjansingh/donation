@@ -58,7 +58,7 @@ class DonateController extends Controller {
                     $donation_model->amount = $step3_model->amount;
                     $donation_model->mode = 'web';
                     $donation_model->short_note = $step3_model->message;
-                    $donation_model->payment_status = 'transferred';
+                    $donation_model->payment_status = 'pending';
 
                     $donation_model->reference_number = getToken(8);
 

@@ -12,6 +12,11 @@ class UserModule extends CWebModule
 			'user.models.*',
 			'user.components.*',
 		));
+
+		Yii::app()->setComponents(array(
+            'errorHandler'=>array(
+            'errorAction'=>'user/default/error',
+        )));
 	}
 
 	public function beforeControllerAction($controller, $action)
