@@ -182,6 +182,23 @@ class Users extends FrontBaseModel
             return 0;
         }    
     }
+    
+    public function getUserCredit($user_id)
+    {
+        $user_model = Users::model()->findByPk($user_id);
+        $credit_limit = $user_model->credit_limits;
+        $user_balance = $this->getUserBalance($user_id);
+        if($user_balance >=0)
+        {
+            return $credit_limit;
+        }   
+        else if($user_balance < 0)
+        {
+           return $credit_limit -  abs($user_balance);
+        }    
+    }        
+    
+    
         
         
 }

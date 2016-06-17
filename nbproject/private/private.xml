@@ -3,9 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/models/Donation.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/controllers/SolicitorController.php</file>
-            <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/views/solicitor/donations.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/user/controllers/DonateController.php</file>
+            <file>file:/C:/xampp/htdocs/donation/protected/modules/user/models/Step3.php</file>
             <file>file:/C:/xampp/htdocs/donation/protected/modules/admin/controllers/DonationController.php</file>
         </group>
     </open-files>

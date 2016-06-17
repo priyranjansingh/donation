@@ -73,18 +73,18 @@ class DonateController extends Controller {
                     $actual_don_amt = $step3_model->amount;
 
 
-                    if ($actual_don_amt > $user_balance) {
-                        // deducting the user credit
-                        if ($user_balance > 0) {
-                            $from_user_credit = $actual_don_amt - $user_balance;
-                        } else {
-                            $from_user_credit = $actual_don_amt;
-                        }
-                        $final_user_credit = $credit_limits - $from_user_credit;
-                        $user_model->credit_limits = $final_user_credit;
-                        $user_model->validate();
-                        $user_model->save();
-                    }
+//                    if ($actual_don_amt > $user_balance) {
+//                        // deducting the user credit
+//                        if ($user_balance > 0) {
+//                            $from_user_credit = $actual_don_amt - $user_balance;
+//                        } else {
+//                            $from_user_credit = $actual_don_amt;
+//                        }
+//                        $final_user_credit = $credit_limits - $from_user_credit;
+//                        $user_model->credit_limits = $final_user_credit;
+//                        $user_model->validate();
+//                        $user_model->save();
+//                    }
 
                     // for storing in the user_trans table
                     $trans_model = new UserTrans;

@@ -9,12 +9,10 @@ class DefaultController extends Controller {
         //$this->render('index');
     }
 
-    public function actionError()
-    {
+    public function actionError() {
         $this->layout = '//layouts/login_main';
-        if($error=Yii::app()->errorHandler->error)
-        {
-            if(Yii::app()->request->isAjaxRequest)
+        if ($error = Yii::app()->errorHandler->error) {
+            if (Yii::app()->request->isAjaxRequest)
                 echo $error['message'];
             else
                 $this->render('error', $error);
@@ -47,21 +45,18 @@ class DefaultController extends Controller {
                 $this->redirect(Yii::app()->controller->module->returnUrl);
         }
     }
-    
-    
-    public function logEntry($id)
-    {
+
+    public function logEntry($id) {
         $browser_info = getBrowser();
         $model = new Log;
         $model->user_id = $id;
         $model->ip_address = $_SERVER['REMOTE_ADDR'];
-        $model->browser = $browser_info['name']; 
-        $model->platform = $browser_info['platform']; 
+        $model->browser = $browser_info['name'];
+        $model->platform = $browser_info['platform'];
         $model->os = $browser_info['platform'];
         $model->user_agent = $browser_info['userAgent'];
         $model->save();
-    }        
-    
+    }
 
     public function actionLogout() {
         unset(Yii::app()->session['user_id']);
@@ -93,6 +88,7 @@ class DefaultController extends Controller {
 
     public function actionAccountSummary() {
         $user_id = Yii::app()->session['user_id'];
+        $available_credit = Users::model()->getUserCredit($user_id);
         $user_balance = Users::model()->getUserBalance($user_id);
         $user_model = Users::model()->findByPk($user_id);
         $criteria = new CDbCriteria;
@@ -100,15 +96,20 @@ class DefaultController extends Controller {
         $criteria->order = 'date_entered DESC';
         $criteria->params = array(':user_id' => $user_id);
         $user_trans = UserTrans::model()->findAll($criteria);
-        $this->render('account_summary', array('user_trans' => $user_trans, 'user_model' => $user_model, 'user_balance' => $user_balance));
+        $this->render('account_summary', array(
+            'user_trans' => $user_trans,
+            'user_model' => $user_model,
+            'user_balance' => $user_balance,
+            'available_credit' => $available_credit
+        ));
     }
 
     public function actionDownload($flag) {
-        $user_credit_model = UserCredit::model()->find(array("condition" => "id ='".$flag."' "));
+        $user_credit_model = UserCredit::model()->find(array("condition" => "id ='" . $flag . "' "));
         //$this->renderPartial('receipt', array('model' => $user_credit_model));
         $mPDF1 = Yii::app()->ePdf->mpdf();
-        $mPDF1->WriteHTML($this->renderPartial('receipt', array('model'=>$user_credit_model), true));
-        $mPDF1->Output('receipt.pdf','D');
+        $mPDF1->WriteHTML($this->renderPartial('receipt', array('model' => $user_credit_model), true));
+        $mPDF1->Output('receipt.pdf', 'D');
     }
 
 }

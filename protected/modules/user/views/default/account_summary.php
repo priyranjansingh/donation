@@ -20,7 +20,7 @@ $baseUrl = Yii::app()->theme->baseUrl;
                     <div class="mdl-card__title block">
                         <h4 class="mdl-card__title-text mdl-color-text--white f20 w600">Account Balance</h4>
                         <div class="f30 mdl-color-text--white"><?php echo "$" . number_format($user_balance, 2); ?></div>
-                        <div class="f20 mdl-color-text--white">Available Credit: <?php echo "$" . $user_model->credit_limits; ?></div>
+                        <div class="f20 mdl-color-text--white">Available Credit: <?php echo "$" . $available_credit; ?></div>
                     </div>
 
 

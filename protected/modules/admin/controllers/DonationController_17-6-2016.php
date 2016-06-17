@@ -84,7 +84,7 @@ class DonationController extends Controller {
         if (isset($_POST['Donation'])) {
             $model->attributes = $_POST['Donation'];
             $model->reference_number = getToken(8);
-
+            
             $model->validate();
             if (!empty($model->user_id)) {
                 $user_id = $model->user_id;
@@ -156,31 +156,59 @@ class DonationController extends Controller {
             if ($trans->debit != $model->amount) {
                 $user_balance = Users::model()->getUserBalance($model->user_id);
                 $user_model = Users::model()->findByPk($model->user_id);
+                $user_model->verifyPassword = $user_model->password;
                 $credit_limits = $user_model->credit_limits;
 
-                $donation_amount = $model->amount; // current donation amount
-                $current_amount = $trans->debit; // previous donation amount
+                $donation_amount = $model->amount;
+                $current_amount = $trans->debit;
                 if ($donation_amount > $current_amount) {
                     $credit_limits = $user_model->credit_limits;
                     $donation_amt = $donation_amount - $current_amount;
                     if ($user_balance >= 0) {
-                         $user_allowable_amount = $user_balance + $credit_limits;
-                    } else if($user_balance < 0) {
-                         $user_allowable_amount = $credit_limits - abs($user_balance);
+                        $total_user_limit = $user_balance + $credit_limits;
+                    } else {
+                        $total_user_limit = $credit_limits;
                     }
 
-                    if ($user_allowable_amount < $donation_amt) {
+                    if ($total_user_limit < $donation_amt) {
                         $model->addError('amount', 'Sorry. The user has not the sufficient balance.');
                     } else {
-                        $model->save();
-                        $trans->debit = $donation_amount;
-                        $trans->save();
+                        $change_amt = $donation_amount - $current_amount;
+                        if ($user_balance >= $change_amt) {
+                            $model->save();
+                            $trans->debit = $donation_amount;
+                            $trans->save();
+                        } else if ($user_balance < $change_amt) {
+                            if ($user_balance > 0) {
+                                $amt_from_credit = $change_amt - $user_balance;
+                                $credit_new = $credit_limits - $amt_from_credit;
+                            } else if ($user_balance <= 0) {
+                                $amt_from_credit = $change_amt;
+                                $credit_new = $credit_limits - $amt_from_credit;
+                            }
+
+                            $model->save();
+                            $trans->debit = $donation_amount;
+                            $trans->save();
+                            $user_model->credit_limits = $credit_new;
+                            $user_model->save();
+                        }
                         $this->redirect(array('view', 'id' => $model->id));
                     }
                 } else if ($donation_amount < $current_amount) {
-                    $trans->debit = $donation_amount;
-                    $model->save();
-                    $trans->save();
+                    $change_amt = $current_amount - $donation_amount;
+                    if ($user_balance >= 0) {
+                        $trans->debit = $donation_amount;
+                        $model->save();
+                        $trans->save();
+                    } else if ($user_balance < 0) {
+                        $credit_new = $credit_limits + $change_amt;
+                        $user_model->credit_limits = $credit_new;
+                        $user_model->save();
+                        $trans->debit = $donation_amount;
+                        $model->save();
+                        $trans->save();
+                    }
                     $this->redirect(array('view', 'id' => $model->id));
                 }
             }
