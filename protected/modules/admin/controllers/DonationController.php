@@ -84,29 +84,39 @@ class DonationController extends Controller {
         if (isset($_POST['Donation'])) {
             $model->attributes = $_POST['Donation'];
             $model->reference_number = getToken(8);
-            if ($model->save()) {
 
-                $user_balance = Users::model()->getUserBalance($model->user_id);
-                $user_model = Users::model()->findByPk($model->user_id);
+            $model->validate();
+            if (!empty($model->user_id)) {
+                $user_id = $model->user_id;
+                $user_balance = Users::model()->getUserBalance($user_id);
+                $user_model = Users::model()->findByPk($user_id);
                 $credit_limits = $user_model->credit_limits;
-                $user_model->verifyPassword = $user_model->password;
-                if ($model->amount > $user_balance) {
-                    if ($user_balance > 0) {
-                        $from_user_credit = $model->amount - $user_balance;
-                    } else {
-                        $from_user_credit = $model->amount;
+                $donation_amt = $model->amount;
+
+                if ($user_balance >= 0) {
+                    if ($user_balance < $donation_amt) {
+                        $user_allowable_amount = $user_balance + $credit_limits;
+                        if ($donation_amt > $user_allowable_amount) {
+                            $model->addError('amount', "Sorry. The user has not the sufficient balance.");
+                        }
                     }
-                    $final_user_credit = $credit_limits - $from_user_credit;
-                    $user_model->credit_limits = $final_user_credit;
-                    $user_model->save();
+                } else if ($user_balance < 0) {
+                    $user_allowable_amount = $credit_limits - abs($user_balance);
+                    if ($donation_amt > $user_allowable_amount) {
+                        $model->addError('amount', "Sorry. The user has not the sufficient balance.");
+                    }
                 }
-                $trans = new UserTrans;
-                $trans->tran_type = 'DONATION';
-                $trans->user_id = $model->user_id;
-                $trans->debit = $model->amount;
-                $trans->donation_id = $model->id;
-                $trans->save();
-                $this->redirect(array('view', 'id' => $model->id));
+            }
+            if (empty($model->errors)) {
+                if ($model->save()) {
+                    $trans = new UserTrans;
+                    $trans->tran_type = 'DONATION';
+                    $trans->user_id = $model->user_id;
+                    $trans->debit = $model->amount;
+                    $trans->donation_id = $model->id;
+                    $trans->save();
+                    $this->redirect(array('view', 'id' => $model->id));
+                }
             }
         }
 
@@ -146,63 +156,33 @@ class DonationController extends Controller {
             if ($trans->debit != $model->amount) {
                 $user_balance = Users::model()->getUserBalance($model->user_id);
                 $user_model = Users::model()->findByPk($model->user_id);
-                $user_model->verifyPassword = $user_model->password;
                 $credit_limits = $user_model->credit_limits;
 
-                $donation_amount = $model->amount;
-                $current_amount = $trans->debit;
+                $donation_amount = $model->amount; // current donation amount
+                $current_amount = $trans->debit; // previous donation amount
                 if ($donation_amount > $current_amount) {
                     $credit_limits = $user_model->credit_limits;
                     $donation_amt = $donation_amount - $current_amount;
                     if ($user_balance >= 0) {
-                        $total_user_limit = $user_balance + $credit_limits;
-                    } else {
-                        $total_user_limit = $credit_limits;
+                         $user_allowable_amount = $user_balance + $credit_limits;
+                    } else if($user_balance < 0) {
+                         $user_allowable_amount = $credit_limits - abs($user_balance);
                     }
 
-                    if ($total_user_limit < $donation_amt) {
+                    if ($user_allowable_amount < $donation_amt) {
                         $model->addError('amount', 'Sorry. The user has not the sufficient balance.');
                     } else {
-                        $change_amt = $donation_amount - $current_amount;
-                        if ($user_balance >= $change_amt) {
-                            $model->save();
-                            $trans->debit = $donation_amount;
-                            $trans->save();
-                        } else if ($user_balance < $change_amt) {
-                            if ($user_balance > 0) {
-                                $amt_from_credit = $change_amt - $user_balance;
-                                $credit_new = $credit_limits - $amt_from_credit;
-                            } else if ($user_balance <= 0) {
-                                $amt_from_credit = $change_amt;
-                                $credit_new = $credit_limits - $amt_from_credit;
-                            }
-
-                            $model->save();
-                            $trans->debit = $donation_amount;
-                            $trans->save();
-                            $user_model->credit_limits = $credit_new;
-                            $user_model->save();
-                        }
+                        $model->save();
+                        $trans->debit = $donation_amount;
+                        $trans->save();
                         $this->redirect(array('view', 'id' => $model->id));
                     }
                 } else if ($donation_amount < $current_amount) {
-                    $change_amt = $current_amount - $donation_amount;
-                    if ($user_balance >= 0) {
-                        $trans->debit = $donation_amount;
-                        $model->save();
-                        $trans->save();
-                    } else if ($user_balance < 0) {
-                        $credit_new = $credit_limits + $change_amt;
-                        $user_model->credit_limits = $credit_new;
-                        $user_model->save();
-                        $trans->debit = $donation_amount;
-                        $model->save();
-                        $trans->save();
-                    }
+                    $trans->debit = $donation_amount;
+                    $model->save();
+                    $trans->save();
                     $this->redirect(array('view', 'id' => $model->id));
                 }
-
-
             }
         }
 
